@@ -1,0 +1,36 @@
+.WgContainer[data-v-f0333374] {
+  width: 100%;
+  max-width: 1040px;
+  padding: 0 var(--gutter, 8px);
+  margin: auto;
+}
+@media screen and (max-width: 1040px) {
+.WgContainer[data-v-f0333374] {
+      max-width: 800px;
+}
+}
+@media screen and (max-width: 800px) {
+.WgContainer[data-v-f0333374] {
+      max-width: 480px;
+}
+}
+@media screen and (max-width: 480px) {
+.WgContainer[data-v-f0333374] {
+      max-width: unset;
+}
+}
+
+.WgButton[data-v-c6d76f86] {
+  padding: var(--gutter, 8px);
+}
+.WgButton--large[data-v-c6d76f86] {
+    padding: calc(var(--gutter, 8px) * 2);
+}
+.WgButton--small[data-v-c6d76f86] {
+    padding: calc(var(--gutter, 8px) / 2);
+}
+
+.WgHero[data-v-3f7c0f11] {
+  background: #CCC;
+}
+

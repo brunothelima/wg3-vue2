@@ -1,0 +1,38 @@
+<template>
+	<button @click="onClick($event)" :class="[
+		'WgButton',
+		{'WgButton--small': size === 'small'},
+		{'WgButton--large': size === 'large'}
+	]">
+		<slot></slot>
+	</button>
+</template>
+
+<script>
+	export default {
+		name: 'WgButton',
+		props: {
+			size: {
+				type: String,
+				default: null
+			},
+		},
+		methods: {
+			onClick() {
+				this.$emit('click');
+			}
+		},
+	}
+</script>
+
+<style lang="scss" scoped>
+.WgButton {
+	padding: var(--gutter, #{$gutter});
+	&--large {
+		padding: calc(var(--gutter, #{$gutter}) * 2);
+	}
+	&--small {
+		padding: calc(var(--gutter, #{$gutter}) / 2);
+	}
+}
+</style>
