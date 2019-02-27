@@ -18,8 +18,8 @@
 			},
 		},
 		methods: {
-			onClick() {
-				this.$emit('click');
+			onClick(e) {
+				this.$store.commit('WgFoundation/increment');
 			}
 		},
 	}

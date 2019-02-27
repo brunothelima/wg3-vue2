@@ -1,0 +1,14 @@
+.WgButton[data-v-1d19fe05] {
+  padding: var(--gutter, 8px);
+}
+.WgButton--large[data-v-1d19fe05] {
+    padding: calc(var(--gutter, 8px) * 2);
+}
+.WgButton--small[data-v-1d19fe05] {
+    padding: calc(var(--gutter, 8px) / 2);
+}
+
+.WgHero[data-v-06c4476e] {
+  background: #CCC;
+}
+

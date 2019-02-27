@@ -1,9 +1,16 @@
 // Plugin Components
-import WgHero from './WgHero.vue'
+import WgContainer from './WgContainer.vue'
+import WgHeading from './WgHeading.vue'
+import WgButton from './WgButton.vue'
+import Store from './store'
 
-export default {
+export const WgFoundation = {
+	name: 'WgFoundation',
+	store: Store,
 	components: {
-		WgHero,
+		WgContainer,
+		WgHeading,
+		WgButton,
 	},
   install(Vue) {
 		this.register(this.components);
