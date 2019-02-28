@@ -11,7 +11,7 @@
   <head>
     <title>WG - Foundation</title>
     <?php foreach($modules as $module): ?>
-      <link rel="stylesheet" href="./src/<?=$module?>/dist/main.min.css">
+      <link rel="stylesheet" href="./wg_modules/<?=$module?>/dist/main.min.css">
     <?php endforeach; ?>
     <script id="data" type="application/json"></script>
   </head>
@@ -22,15 +22,15 @@
       <wg-hero></wg-hero>
     </div>
     
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vuex/dist/vuex.js"></script>
+    <script src="./wg_vendors/vue/dist/vue.min.js"></script>
+    <script src="./wg_vendors/vuex/dist/vuex.min.js"></script>
     
     <?php foreach($modules as $module): ?>
-      <script src="./src/<?=$module?>/dist/main.min.js"></script>
+      <script src="./wg_modules/<?=$module?>/dist/main.min.js"></script>
     <?php endforeach; ?>
 
     <script type="module">
-      import Widgrid from './src/widgrid.js';
+      import Widgrid from './index.js';
       const widgrid = new Widgrid('#widgrid');
     </script>
   </body>

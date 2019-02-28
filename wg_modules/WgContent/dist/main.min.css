@@ -1,14 +1,14 @@
-.WgButton[data-v-1d19fe05] {
+.WgButton[data-v-2fb16630] {
   padding: var(--gutter, 8px);
 }
-.WgButton--large[data-v-1d19fe05] {
+.WgButton--large[data-v-2fb16630] {
     padding: calc(var(--gutter, 8px) * 2);
 }
-.WgButton--small[data-v-1d19fe05] {
+.WgButton--small[data-v-2fb16630] {
     padding: calc(var(--gutter, 8px) / 2);
 }
 
-.WgHero[data-v-06c4476e] {
+.WgHero[data-v-27a2fb18] {
   background: #CCC;
 }
 

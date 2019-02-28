@@ -8,8 +8,8 @@
 </template>
 
 <script>
-	import WgHeading from './../WgFoundation/WgHeading.vue';
-	import WgButton from './../WgFoundation/WgButton.vue';
+	import WgHeading from './../../WgFoundation/src/WgHeading.vue';
+	import WgButton from './../../WgFoundation/src/WgButton.vue';
 
 	export default {
 		name: 'WgHero',

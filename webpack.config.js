@@ -13,6 +13,7 @@ const defaults = {
 };
 
 defaults.plugins.push(new VueLoaderPlugin());
+
 defaults.plugins.push(new MiniCssExtractPlugin({
 	path: path.resolve(__dirname, 'dist'),
 	filename: `[name].min.css`,
@@ -37,21 +38,23 @@ defaults.module.rules.push({
 		{ 
 			loader: 'sass-loader', 
 			options: { 
-				data: `@import "./src/WgFoundation/assets/scss/index.scss";` 
+				data: `
+					@import "./wg_modules/WgFoundation/src/assets/scss/index.scss";
+				` 
 			} 
 		}
 	]
 });
 
 module.exports = new Promise((resolve, reject) => {
-	fs.readdir('./src/', (err, ls) => { 
-		const wgModules = ls.filter(dir => fs.lstatSync(`./src/${dir}`).isDirectory());
+	fs.readdir('./wg_modules/', (err, ls) => { 
+		const wgModules = ls.filter(dir => fs.lstatSync(`./wg_modules/${dir}`).isDirectory());
 		resolve(wgModules.map(wgModule => {
 			return {
 				name: wgModule,
-				entry: `./src/${wgModule}/index.js`,
+				entry: `./wg_modules/${wgModule}/src/index.js`,
 				output: {
-					path: path.resolve(__dirname, `src/${wgModule}/dist`),
+					path: path.resolve(__dirname, `wg_modules/${wgModule}/dist`),
 					filename: `[name].min.js`,
 					library: wgModule,
 					libraryExport: wgModule,
