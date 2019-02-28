@@ -1,68 +1,64 @@
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
-const mode = 'development';
 const fs = require('fs');
 const path = require('path');
 
-const VueRules = {
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
+
+const defaults = {
+	mode: 'production',
+	plugins: [],
+	module: {
+		rules: []
+	}
+};
+
+defaults.plugins.push(new VueLoaderPlugin());
+defaults.plugins.push(new MiniCssExtractPlugin({
+	path: path.resolve(__dirname, 'dist'),
+	filename: `[name].min.css`,
+}));
+
+defaults.module.rules.push({
 	test: /\.vue$/,
 	loader: 'vue-loader'
-};
-const JSRules = {
+});
+
+defaults.module.rules.push({
 	test: /\.js$/,
 	exclude: /(node_modules|bower_components)/,
-	loader: 'babel-loader',
-};
-const CSSRules = {
+	loader: 'babel-loader'
+});
+
+defaults.module.rules.push({
 	test: /\.scss$/,
 	use: [
 		MiniCssExtractPlugin.loader,
-		{ loader: 'css-loader', options: { sourceMap: true, importLoaders: 1 }},
+		'css-loader',
 		{ 
 			loader: 'sass-loader', 
 			options: { 
-				sourceMap: true,
-				data: `@import "./src/WgFoundation/assets/scss/index.scss";`,
+				data: `@import "./src/WgFoundation/assets/scss/index.scss";` 
 			} 
-		},
-	],
-};
-
-const defaultConfig = {
-	mode: mode,
-	plugins: [
-		new VueLoaderPlugin(),
-		new MiniCssExtractPlugin({
-			path: path.resolve(__dirname, 'dist'),
-			filename: `[name].min.css`,
-		}),
-	],
-	module: {
-		rules: [
-			JSRules,
-			VueRules,
-			CSSRules,
-		],
-	}
-}
+		}
+	]
+});
 
 module.exports = new Promise((resolve, reject) => {
-	fs.readdir('./src/', (err, srcPaths) => { 
-		const modules = srcPaths.filter(srcPath => fs.lstatSync(`./src/${srcPath}`).isDirectory());
-		const rules = modules.map(moduleName => {
+	fs.readdir('./src/', (err, ls) => { 
+		const wgModules = ls.filter(dir => fs.lstatSync(`./src/${dir}`).isDirectory());
+		resolve(wgModules.map(wgModule => {
 			return {
-				name: moduleName,
-				entry: `./src/${moduleName}/index.js`,
+				name: wgModule,
+				entry: `./src/${wgModule}/index.js`,
 				output: {
-					path: path.resolve(__dirname, `src/${moduleName}/dist`),
+					path: path.resolve(__dirname, `src/${wgModule}/dist`),
 					filename: `[name].min.js`,
-					library: moduleName,
+					library: wgModule,
+					libraryExport: wgModule,
 					libraryTarget: 'var',
-					libraryExport: moduleName,
 				},
-				...defaultConfig,
+				...defaults,
 			};
-		});
-		resolve(rules);
+		}));
 	});
 });

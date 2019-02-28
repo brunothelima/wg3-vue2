@@ -31,7 +31,7 @@
 
     <script type="module">
       import Widgrid from './src/widgrid.js';
-      const widgrid = Widgrid('#widgrid');
+      const widgrid = new Widgrid('#widgrid');
     </script>
   </body>
 </html>
