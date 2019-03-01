@@ -8,7 +8,6 @@ const paths       = require('./../../config/paths')
 const config      = require(`${paths.CONFIG}/config`)
 const warns       = require(`${paths.LIB}/warns`)
 const call        = require(`${paths.LIB}/caller`).call;
-const nyan        = require(`${paths.LIB}/helpers`).nyan;
 const hasWgConfig = require(`${paths.LIB}/helpers`).hasWgConfig;
 const hasPack     = require(`${paths.LIB}/helpers`).hasPack;
 const getRepositoryName = require(`${paths.LIB}/helpers`).getRepositoryName;
@@ -87,9 +86,4 @@ module.exports = (context) => {
    */
   if(context.args.indexOf('--no-install') === -1)
     call('install', '', {cmd: ['install'], args: []})
-
-  //
-
-  nyan();
-  console.log(color.green('New Project Sucessfully Created!\n'));  
 }
