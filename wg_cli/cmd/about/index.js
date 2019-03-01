@@ -1,13 +1,13 @@
 const color  = require('chalk');
 const paths  = require('./../../config/paths')
-const wglogo = require(`${paths.LIB}/helpers`).wglogo;
+const wglogo = require(`${paths.LIB}/candies`).wglogo;
 const config = require(`${paths.CONFIG}/config`);
 
 module.exports = (context) => {
 
-wglogo();
+  wglogo();
 
-console.log(`
+  console.log(`
 WIDGRID DEVELOPMENT ENVIROMENT
 
 This is the Widgrid Development Enviroment.
@@ -22,19 +22,18 @@ Authors     Widgrid Core Team
 Copyright   Resultage (c) All Rights Reserved
 
 Type "$ wg about config" To see all the configuration.
-`)
+  `)
 
-// SHOWS THE CONFIGURATION ON 'config' PARAM 
-
-if(context.args.includes('config') > 0) {
-  console.log(color.green('ENVIROMENT CONFIGURATION\n'));
-  Object.keys(config).map((key, value) => {
-    console.log(`${key}\n${config[key]}\n`)
-  });
-  console.log(color.green('ENVIROMENT PATHS\n'));
-  Object.keys(paths).map((key, value) => {
-    console.log(`${key}\n${paths[key]}\n`)
-  })  
-}
-
+  // SHOWS THE CONFIGURATION ON 'config' PARAM 
+  
+  if(context.args.includes('config') > 0) {
+    console.log(color.green('ENVIROMENT CONFIGURATION\n'));
+    Object.keys(config).map((key, value) => {
+      console.log(`${key}\n${config[key]}\n`)
+    });
+    console.log(color.green('ENVIROMENT PATHS\n'));
+    Object.keys(paths).map((key, value) => {
+      console.log(`${key}\n${paths[key]}\n`)
+    })  
+  }
 }

@@ -1,0 +1,20 @@
+{
+  "title": "",
+  "url": "",
+  "created": "",
+  "version": "",
+  "description": "",
+  "repository": "",
+  "modules": [
+    "module_a",
+    "module_b",
+    "module_c",
+  ],
+  "deploy": [
+    {
+      "host": "",
+      "pass": "",
+      "dir": ""
+    }
+  ]
+}

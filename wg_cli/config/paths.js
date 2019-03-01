@@ -9,10 +9,10 @@ const path     = require('path')
 const CLI_ROOT = path.dirname(require.main.filename)
 
 module.exports = {
-  ROOT:    CLI_ROOT,
-  CMD:     `${CLI_ROOT}/cmd`,
-  CONFIG:  `${CLI_ROOT}/config`,
-  LIB:     `${CLI_ROOT}/lib`,
-  WGROOT:  `${CLI_ROOT}/..`,
-  MODULES: `${CLI_ROOT}/../wg_modules`
+  CLI_ROOT: CLI_ROOT,
+  CMD:      `${CLI_ROOT}/cmd`,
+  CONFIG:   `${CLI_ROOT}/config`,
+  LIB:      `${CLI_ROOT}/lib`,
+  WGROOT:   `${CLI_ROOT}/..`,
+  MODULES:  `${CLI_ROOT}/../wg_modules`
 }

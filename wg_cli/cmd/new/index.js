@@ -1,6 +1,3 @@
-/**
- * Help output for "wg init help"
- */
-module.exports = () => {
+module.exports = (context) => {
   console.log('Under Construction')
 }
