@@ -38,9 +38,7 @@ defaults.module.rules.push({
 		{ 
 			loader: 'sass-loader', 
 			options: { 
-				data: `
-					@import "./wg_modules/WgFoundation/src/assets/scss/index.scss";
-				` 
+				data: `@import "./wg_utils/scss/index.scss";` 
 			} 
 		}
 	]
