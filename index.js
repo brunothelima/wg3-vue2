@@ -14,11 +14,13 @@ export default class {
         this._stores[module] = window[module].store;
       }
     }
+    this.mount();
+  }
+  mount() {
     new Vue({
-      el: this.$el,
       store: new Vuex.Store({
         modules: this._stores
-      }),
-    });
+      })
+    }).$mount('#app')
   }
 }

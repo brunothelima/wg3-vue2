@@ -5,32 +5,42 @@ import App from './App.vue'
 Vue.use(Vuex)
 Vue.config.productionTip = false
 
-class WgAdmin {
+const modules = [];
+const stores = {};
+
+async function loadModule (moduleName = '') {
+  return await import(`wg_modules/${moduleName}/src/index.js`)
+    .then(response => {
+      const module = response[moduleName];
+      Vue.use(module)
+      if (module.store) {
+        this._stores[moduleName] = module.store
+      }
+    })
+}
+
+export class WgAdmin {
   constructor () {
     this._modules = []
     this._stores = {}
-    this.init()
+    this.init();
+  }
+  get _url() {
+    return 'http://localhost/exp/widgrid/modules.php'
   }
   async loadModule (moduleName = '') {
-    const response = await import(`wg_modules/${moduleName}/src/index.js`)
-    const module = response[moduleName]
+    return await import(`wg_modules/${moduleName}/src/index.js`)
+      .then(importedModule => {
+       this.installModule(importedModule[moduleName]);
+      });
+  }
+  installModule(module) {
     Vue.use(module)
     if (module.store) {
-      this._stores[moduleName] = module.store
-    }
-    return module
-  }
-  async init () {
-    const url = 'http://localhost/widgrid/modules.php'
-    this._modules = await fetch(url).then(resp => resp.json())
-    for (const [i, module] of this._modules.entries()) {
-      await this.loadModule(module)
-      if (i === (this._modules.length - 1)) {
-        this.mount()
-      }
+      this._stores[module.name] = module
     }
   }
-  mount () {
+  mount() {
     new Vue({
       render: h => h(App),
       store: new Vuex.Store({
@@ -38,6 +48,17 @@ class WgAdmin {
       })
     }).$mount('#app')
   }
+  init () {
+    fetch(this._url)
+      .then(r => r.json())
+      .then(wgModules => {
+        wgModules.map(async (name, i) => {
+          await this.loadModule(name)
+          if (i === wgModules.length - 1) 
+            this.mount();
+        })
+      })
+  }
 }
 
-const admin = new WgAdmin()
+const widgrid = new WgAdmin();
