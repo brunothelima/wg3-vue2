@@ -1,11 +1,10 @@
 {
-  "title": "",
-  "url": "",
+  "title": "Widgrid3 Dev BETA",
+  "url": "http://widgrid.com",
   "created": "",
-  "version": "",
-  "description": "",
-  "repository": "",
-  "modules": "wg_modules"
+  "version": "BETA",
+  "description": "Widgrid3 Development Project",
+  "repository": "https://github.com/brunothelima/widgrid.git",
   "deploy": [
     {
       "host": "",
