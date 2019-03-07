@@ -12,7 +12,7 @@ help            Shows this help message
 
 new             Create a new plugin, module, widget, etc
 about           Shows information about this Enviroment.
-build           Build a Project based on its wgconfig
+build           Build a Project based on webpack.config.js
 deploy          Deploy the current project
 updatedev       Update this Development Enviroment
   `);

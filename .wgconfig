@@ -1,0 +1,16 @@
+{
+  "title": "",
+  "url": "",
+  "created": "",
+  "version": "",
+  "description": "",
+  "repository": "",
+  "modules": "wg_modules"
+  "deploy": [
+    {
+      "host": "",
+      "pass": "",
+      "dir": ""
+    }
+  ]
+}

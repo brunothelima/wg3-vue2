@@ -13,7 +13,7 @@
     <?php foreach($modules as $module): ?>
       <link rel="stylesheet" href="wg_modules/<?=$module?>/dist/main.min.css">
     <?php endforeach; ?>
-    <base href="/widgrid/">
+    <base href="/widgrid3/">
   </head>
   <body>
     
