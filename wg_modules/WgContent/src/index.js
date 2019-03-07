@@ -6,13 +6,13 @@ export const WgContent = {
 	components: {
 		WgHero,
 	},
-	register(components={}) {
+	register(Vue, components={}) {
 		for(const component of Object.keys(components).values()) {
 			Vue.component(component, components[component]);
-			this.register(components[component].components);
+			this.register(Vue, components[component].components);
 		}
 	},
 	install(Vue) {
-		this.register(this.components);
-	}
+		this.register(Vue, this.components);
+	},
 };

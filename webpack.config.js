@@ -7,6 +7,12 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const defaults = {
 	mode: 'production',
 	plugins: [],
+	resolve: {
+		alias: {
+			'wg_modules': path.resolve(__dirname, './wg_modules'),
+			'wg_utils': path.resolve(__dirname, './wg_utils'),
+		}
+	},
 	module: {
 		rules: []
 	}
