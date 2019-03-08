@@ -5,6 +5,13 @@ export function installModule (Vue, module, store = {}) {
 	}
 }
 
+export function registerModule(Vue, components={}) {
+  for(const component of Object.keys(components).values()) {
+    Vue.component(component, components[component]);
+    registerModule(Vue, components[component].components);
+  }
+}
+
 export function importModules (Vue, modules, store = {}) {
 	return new Promise(async (resolve, reject) => {
 		while (modules.length > 0) {
