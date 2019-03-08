@@ -27,23 +27,6 @@
     <?php foreach($modules as $module): ?>
       <script src="../wg_modules/<?=$module?>/dist/main.min.js"></script>
     <?php endforeach; ?>
-    <script src="../wg_utils/store.js"></script>
-    <script>
-      fetch('../modules.php')
-        .then(response => response.json())
-        .then(modules => {
-            for (let module of modules.values()) {
-              module = window[module];
-              Vue.use(module)
-              if (module.store) {
-                store[module.name] = module.store
-              }
-            }
-            new Vue({
-              el: '#WG3',
-              store: new Vuex.Store(store),
-            });
-          });
-    </script>
+    <script src="../wg_core/dist/main.min.js"></script>
   </body>
 </html>
