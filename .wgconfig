@@ -1,0 +1,15 @@
+{
+  "title": "Widgrid3 Dev BETA",
+  "url": "http://widgrid.com",
+  "created": "",
+  "version": "BETA",
+  "description": "Widgrid3 Development Project",
+  "repository": "https://github.com/brunothelima/widgrid.git",
+  "deploy": [
+    {
+      "host": "",
+      "pass": "",
+      "dir": ""
+    }
+  ]
+}
