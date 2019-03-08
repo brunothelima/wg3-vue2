@@ -3,7 +3,8 @@ import WgHeading from './WgHeading.vue'
 import WgButton from './WgButton.vue'
 import Store from './store'
 
-export const WgFoundation = {
+export default {
+	name: 'WgFoundation',
 	store: Store,
 	components: {
 		WgContainer,
