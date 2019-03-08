@@ -13,7 +13,7 @@
     <?php foreach($modules as $module): ?>
       <link rel="stylesheet" href="wg_modules/<?=$module?>/dist/main.min.css">
     <?php endforeach; ?>
-    <base href="/exp/widgrid/">
+    <base href="/widgrid/">
   </head>
   <body>
     
@@ -28,10 +28,6 @@
     <?php foreach($modules as $module): ?>
       <script src="wg_modules/<?=$module?>/dist/main.min.js"></script>
     <?php endforeach; ?>
-
-    <script type="module">
-      import Widgrid from './index.js';
-      const WG3 = new Widgrid('#WG3');
-    </script>
+    <script type="module" src="./index.js"></script>
   </body>
 </html>

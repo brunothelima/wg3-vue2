@@ -1,7 +1,8 @@
 import WgHero from './WgHero.vue'
 import Store from './store'
 
-export const WgContent = {	
+export default {	
+	name: 'WgContent',
 	store: Store,
 	components: {
 		WgHero,

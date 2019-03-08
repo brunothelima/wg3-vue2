@@ -50,18 +50,23 @@ defaults.module.rules.push({
 	]
 });
 
+
+const isModule = dir => {
+	return fs.lstatSync(`./wg_modules/${dir}`).isDirectory()
+}
+
 module.exports = new Promise((resolve, reject) => {
 	fs.readdir('./wg_modules/', (err, ls) => { 
-		const wgModules = ls.filter(dir => fs.lstatSync(`./wg_modules/${dir}`).isDirectory());
-		resolve(wgModules.map(wgModule => {
+		const modules = ls.filter(dir => isModule(dir));
+		resolve(modules.map(module => {
 			return {
-				name: wgModule,
-				entry: `./wg_modules/${wgModule}/src/index.js`,
+				name: module,
+				entry: `./wg_modules/${module}/src/index.js`,
 				output: {
-					path: path.resolve(__dirname, `wg_modules/${wgModule}/dist`),
+					path: path.resolve(__dirname, `wg_modules/${module}/dist`),
 					filename: `[name].min.js`,
-					library: wgModule,
-					libraryExport: wgModule,
+					library: module,
+					libraryExport: 'default',
 					libraryTarget: 'var',
 				},
 				...defaults,

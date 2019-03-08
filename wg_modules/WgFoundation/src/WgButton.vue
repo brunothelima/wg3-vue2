@@ -18,7 +18,7 @@
 			},
 		},
 		methods: {
-			onClick(e) {
+			onClick() {
 				this.$store.commit('WgFoundation/increment');
 			}
 		},
