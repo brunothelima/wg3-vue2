@@ -50,14 +50,9 @@ defaults.module.rules.push({
 	]
 });
 
-
-const isModule = dir => {
-	return fs.lstatSync(`./wg_modules/${dir}`).isDirectory()
-}
-
 module.exports = new Promise((resolve, reject) => {
 	fs.readdir('./wg_modules/', (err, ls) => { 
-		const modules = ls.filter(dir => isModule(dir));
+		const modules = ls.filter(dir => fs.lstatSync(`./wg_modules/${dir}`).isDirectory());
 		resolve(modules.map(module => {
 			return {
 				name: module,
