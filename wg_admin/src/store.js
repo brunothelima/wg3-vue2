@@ -1,14 +1,7 @@
 export default {
-  state: {
-
-  },
-  mutations: {
-
-  },
-  actions: {
-
-  },
-  modules: {
-
-  }
+  state: {},
+  getters: {},
+  actions: {},
+  mutations: {},
+  modules: {}
 }

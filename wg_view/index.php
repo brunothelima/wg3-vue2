@@ -3,9 +3,6 @@
     'WgFoundation',
     'WgContent',
   ];
-  $skin = json_encode([
-    ['property' => 'gutter', 'value' => '8px']
-  ]);
 ?>
 <html>
   <head>

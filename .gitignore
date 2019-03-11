@@ -1,2 +1,4 @@
 node_modules
-wg_cli/node_modules
+wg_admin/node_modules
+wg_core/dist/
+wg_modules/**/dist/
