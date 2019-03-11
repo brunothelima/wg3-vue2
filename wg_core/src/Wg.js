@@ -1,10 +1,7 @@
 export default class {
-  get url() {
-    return ''
-  }
   static async getPurchasedModules() {
-    const modules = await fetch('http://localhost/widgrid/modules.php')
-      .then(resp => resp.json());
+    const modules = await fetch('http://localhost/widgrid/wg_api/modules.php')
+      .then(response => response.json());
     return modules;
   }
   static importModules(Vue, modules, store = {}) {
@@ -24,6 +21,12 @@ export default class {
     Vue.use(module)
     if (module.store) {
       store['modules'][module.name] = module.store
+    }
+  }
+  static installComponents(Vue, components = {}) {
+    for (const component in components) {
+      Vue.component(component, components[component]);
+      this.installComponents(Vue, components[component].components);
     }
   }
 }

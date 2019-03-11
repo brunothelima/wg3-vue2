@@ -2,7 +2,6 @@
   <div id="app">
     <wg-hero />
     <wg-hero />
-    Bruno Lima
   </div>
 </template>
 

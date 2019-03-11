@@ -1,19 +1,13 @@
 import WgHero from './WgHero.vue'
-import Store from './store'
+import store from './store'
+import Wg from 'wg_core/wg.js';
 
-export default {	
+export default {
 	name: 'WgContent',
-	store: Store,
-	components: {
-		WgHero,
-	},
-	register(Vue, components={}) {
-		for(const component of Object.keys(components).values()) {
-			Vue.component(component, components[component]);
-			this.register(Vue, components[component].components);
-		}
-	},
+	store: store,
 	install(Vue) {
-		this.register(Vue, this.components);
+		Wg.installComponents(Vue, {
+			WgHero
+		});
 	},
 };

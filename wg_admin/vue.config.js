@@ -5,7 +5,7 @@ module.exports = {
   css: {
     loaderOptions: {
       sass: {
-        data: '@import "wg_core/scss/index.scss";'
+        data: '@import "wg_core/scss/main.scss";'
       }
     }
   },

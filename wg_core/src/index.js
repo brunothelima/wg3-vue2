@@ -1,8 +1,8 @@
-import WG3 from './widgrid.js'
-import store from './stores/main.js'
+import Wg from './Wg.js'
+import store from './store/index.js'
 
-WG3.getPurchasedModules().then(modules => {
-  modules.map(module => WG3.installModule(Vue, window[module], store))
+Wg.getPurchasedModules().then(modules => {
+  modules.map(module => Wg.installModule(Vue, window[module], store))
   new Vue({
     el: '#WG3',
     store: new Vuex.Store(store),
