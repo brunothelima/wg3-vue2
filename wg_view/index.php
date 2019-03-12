@@ -14,10 +14,9 @@
   <body>
     
     <div class="WG3" id="WG3">
+      <wg-container>Bruno Lima</wg-container>
     </div>
     
-    <script src="../wg_vendors/vue/dist/vue.min.js"></script>
-    <script src="../wg_vendors/vuex/dist/vuex.min.js"></script>
     <?php foreach($modules as $module): ?>
       <script src="../wg_modules/<?=$module?>/dist/main.min.js"></script>
     <?php endforeach; ?>

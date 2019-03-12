@@ -8,6 +8,11 @@
 <script>
   export default {
     name: 'WgContainer',
+    data() {
+      return {
+        count: 0
+      }
+    },
     props: {
       tag: {
         type: String,
