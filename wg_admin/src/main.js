@@ -3,25 +3,28 @@ import Vuex from 'vuex'
 import Wg from 'wg_core/Wg.js'
 import WgApp from './WgApp.vue'
 
-import wgCoreStore from 'wg_core/store/index.js'
-import wgAdminStore from './store.js'
+import router from './router'
 
-const store = {
-  state: { ...wgCoreStore.state, ...wgAdminStore.state },
-  getters: { ...wgCoreStore.getters, ...wgAdminStore.getters },
-  actions: { ...wgCoreStore.actions, ...wgAdminStore.actions },
-  mutations: { ...wgCoreStore.mutations, ...wgAdminStore.mutations },
-  modules: { ...wgCoreStore.modules, ...wgAdminStore.modules }
+import wgCoreStore from 'wg_core/store'
+import wgAdminStore from './store'
+
+let store = {}
+for(const prop in wgAdminStore) {
+  store[prop] = {
+    ...wgAdminStore[prop],
+    ...wgCoreStore[prop],
+  }
 }
 
 Vue.use(Vuex)
 Vue.config.productionTip = true
 
 Wg.getPurchasedModules().then(module => {
-  Wg.importModules(Vue, module, store).then(_ => {
+  Wg.importModules(Vue, module, store).then(() => {
     new Vue({
-      render: html => html(WgApp),
-      store: new Vuex.Store(store)
+      router: router,
+      store: new Vuex.Store(store),
+      render: html => html(WgApp)
     }).$mount('#WgApp')
   })
 })

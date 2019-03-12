@@ -1,12 +1,11 @@
 module.exports = {
-  root: false,
+  root: true,
   env: {
-    node: true,
-    browser: true,
+    node: true
   },
   'extends': [
     'plugin:vue/essential',
-    '@vue/standard'
+    'eslint:recommended'
   ],
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',

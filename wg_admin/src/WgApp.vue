@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    <wg-hero />
-    <wg-hero />
+    WG_ADMIN
   </div>
 </template>
 

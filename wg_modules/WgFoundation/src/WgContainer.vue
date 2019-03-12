@@ -1,9 +1,7 @@
 <template>
-  <component :is="tag" :class="[
-    'WgContainer',
-    {'WgContainer--full': full}
-  ]">
-    <slot></slot>
+  <component :is="tag" 
+    :class="['WgContainer', {'WgContainer--full': full}]">
+      <slot></slot>
   </component>
 </template>
 
@@ -36,6 +34,9 @@
   }
   @media screen and (max-width: $mobile-brakepoint) {
     max-width: unset;
+  }
+  &--full {
+    max-width: unset !important;
   }
 }
 </style>
