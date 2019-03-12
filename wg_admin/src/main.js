@@ -8,13 +8,10 @@ import router from './router'
 import wgCoreStore from 'wg_core/store'
 import wgAdminStore from './store'
 
-let store = {}
-for(const prop in wgAdminStore) {
-  store[prop] = {
-    ...wgAdminStore[prop],
-    ...wgCoreStore[prop],
-  }
-}
+const store = Wg.mergeStores(
+  wgAdminStore, 
+  wgCoreStore
+);
 
 Vue.use(Vuex)
 Vue.config.productionTip = true

@@ -1,3 +1,4 @@
+/* Centralizes the content of a given container */
 @mixin flex-center() {
 	display: flex;
 	align-content: center;

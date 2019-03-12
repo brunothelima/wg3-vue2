@@ -1,6 +1,9 @@
 import Wg from './Wg.js'
 import store from './store/index.js'
 
+/**
+ * Widgrid runtime initialization
+ */
 Wg.getPurchasedModules().then(modules => {
   modules.map(module => Wg.installModule(Vue, window[module], store))
   new Vue({
