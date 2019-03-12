@@ -14,8 +14,6 @@
   <body>
     
     <div class="WG3" id="WG3">
-      <wg-hero></wg-hero>
-      <wg-hero></wg-hero>
     </div>
     
     <script src="../wg_vendors/vue/dist/vue.min.js"></script>
