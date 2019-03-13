@@ -1,4 +1,5 @@
 const path = require('path')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   lintOnSave: false,
@@ -6,10 +7,24 @@ module.exports = {
     loaderOptions: {
       sass: {
         data: '@import "wg_core/scss/main.scss";'
-      }
+      },
+      postcss: {
+        config: {
+          path: path.resolve(__dirname, './')
+        }
+      },
     }
   },
   configureWebpack: {
+    optimization: {
+      minimizer: [new UglifyJsPlugin({
+        uglifyOptions: {
+          output: {
+            comments: false,
+          },
+        }
+      })],
+    },
     resolve: {
       alias: {
         'wg_modules': path.resolve(__dirname, '../wg_modules'),
