@@ -40,15 +40,18 @@ export default class {
    */
   static installModule(Vue, module, store = {}, locale = {}) {
     Vue.use(module)
+    this.extendStoreFromModule(store, module);
+    this.extendI18nFromModule(locale, module);
+  }
+  static extendStoreFromModule(store, module) {
     if (module.store) {
       store.modules[module.name] = module.store
     }
-    if (module.locale) {
-      for (const lng in module.locale) {
-        locale.messages[lng] = { 
-          ...locales.messages[lng], 
-          ...module.locale[lng]
-        }
+  }
+  static extendI18nFromModule(locale, module) {
+    if (module.i18n) {
+      for (const lang in module.i18n) {
+        locale.messages[lang][module.name] = module.i18n[lang]
       }
     }
   }

@@ -6,6 +6,7 @@ import VueI18n from 'vue-i18n'
 import router from './router'
 import store from './store'
 import i18n from './i18n'
+
 import Wg from 'wg_core/Wg.js'
 
 // Initial .vue file
@@ -15,7 +16,6 @@ Vue.config.productionTip = true
 
 Vue.use(Vuex)
 Vue.use(VueI18n)
-
 
 /** 
  * WgAdmin initializer

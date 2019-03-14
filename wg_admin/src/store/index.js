@@ -6,7 +6,6 @@ export default {
     ...WgCoreStore.state
   },
   getters: {
-    
     ...WgCoreStore.getters
   },
   actions: {

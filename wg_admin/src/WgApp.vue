@@ -1,10 +1,10 @@
 <i18n>
 {
   "pt": {
-    "hello": "Este é o Widgrid!"
+    "hello": "Este é um componente admin!"
   },
   "en": {
-    "hello": "This is widgrid!"
+    "hello": "This is an admin component!"
   }
 }
 </i18n>
@@ -12,7 +12,10 @@
 <template>
   <div id="app">
     <WgContainer>
-      {{ $t('hello') }}
+      {{ $t('hello') }}<br>
+      {{ $t('WgAdmin.hello') }}<br>
+      {{ $t('WgCore.hello') }}<br>
+      {{ $t('WgFoundation.hello') }}<br>
     </WgContainer>
   </div>
 </template>
@@ -21,6 +24,9 @@
 
 export default {
   name: 'app',
+  mounted() {
+
+  }
 }
 </script>
 

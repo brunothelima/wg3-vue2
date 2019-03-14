@@ -1,6 +1,22 @@
+<i18n>
+{
+  "pt": {
+    "hello": "Este é um modulo WgContainer"
+  },
+  "en": {
+    "hello": "This is a WgContainer module"
+  }
+}
+</i18n>
+
 <template>
   <div :class="['WgContainer']">
       <slot></slot>
+      <br>
+      {{ $t('hello') }}<br>
+      {{ $t('WgAdmin.hello') }}<br>
+      {{ $t('WgCore.hello') }}<br>
+      {{ $t('WgFoundation.hello') }}<br>
   </div>
 </template>
 
