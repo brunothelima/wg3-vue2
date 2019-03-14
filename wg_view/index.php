@@ -1,7 +1,5 @@
 <?php
-  $modules = [
-    'WgFoundation',
-  ];
+  $modules = ['WgFoundation'];
 ?>
 <html>
   <head>

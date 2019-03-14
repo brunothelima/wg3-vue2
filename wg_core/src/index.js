@@ -1,18 +1,16 @@
 import Vue from 'vue/dist/vue.js'
-import Vuex from 'vuex'
-
+import store from './store/index.js'
 import Wg from './Wg.js'
-import Store from './store/index.js'
 
-Vue.use(Vuex);
+
 
 /**
  * Widgrid runtime initialization
  */
 Wg.getPurchasedModules().then(modules => {
-  modules.map(module => Wg.installModule(Vue, window[module], Store))
+  modules.map(module => Wg.installModule(Vue, window[module], store))
   new Vue({
     el: '#WgView',
-    store: new Vuex.Store(Store),
+    store: new Vuex.Store(store),
   });
 });

@@ -5,9 +5,11 @@ module.exports = {
   lintOnSave: false,
   configureWebpack: {
     optimization: {
-      minimizer: [new UglifyJsPlugin({
-        uglifyOptions: { output: { comments: false }, }
-      })],
+      minimizer: [
+        new UglifyJsPlugin({
+          uglifyOptions: { output: { comments: false }, }
+        }),
+      ],
     },
     resolve: {
       alias: {

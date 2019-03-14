@@ -1,20 +1,21 @@
 // Stores to be merged
-import Vuex from 'vuex'
-import Vue from 'vue'
 import WgCoreStore from 'wg_core/store'
-import Wg from 'wg_core/Wg.js'
 
-Vue.use(Vuex)
-
-const WgAdminStore =  {
-  state: {},
-  getters: {},
-  actions: {},
-  mutations: {},
-  modules: {}
+export default {
+  state: {
+    ...WgCoreStore.state
+  },
+  getters: {
+    
+    ...WgCoreStore.getters
+  },
+  actions: {
+    ...WgCoreStore.actions
+  },
+  mutations: {
+    ...WgCoreStore.mutations
+  },
+  modules: {
+    ...WgCoreStore.modules
+  }
 }
-
-export default Wg.mergeStores(
-  WgAdminStore, 
-  WgCoreStore
-);

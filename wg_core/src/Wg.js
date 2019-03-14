@@ -19,11 +19,11 @@ export default class {
    * @param {Object} store - Store to merge the modules own stores
    * @returns {Promise} 
    */
-  static importModules(Vue, modules, store = {}) {
+  static importModules(Vue, modules, store = {}, locale = {}) {
     return new Promise(async (resolve, reject) => {
       while (modules.length > 0) {
         await import(`wg_modules/${modules.pop()}/src/index.js`).then(response => {
-            this.installModule(Vue, response.default, store)
+            this.installModule(Vue, response.default, store, locale)
         });
         if (!modules.length) {
           resolve()
@@ -38,27 +38,29 @@ export default class {
    * @param {Array} module - Module plugin to be installed 
    * @param {Object} store - Store to merge the module own stores 
    */
-  static installModule(Vue, module, store = {}) {
+  static installModule(Vue, module, store = {}, locale = {}) {
     Vue.use(module)
     if (module.store) {
       store.modules[module.name] = module.store
     }
-  }
-  /**
-   * Merge the given stores into one 
-   * 
-   * @param {Array} stores - List of stores passed as argument 
-   */
-  static mergeStores(...stores) {
-    const merge = {};
-    for(const store of stores.values()) {
-      for(const prop in store) {
-        merge[prop] = {
-          ...merge[prop],
-          ...store[prop],
+    if (module.locale) {
+      for (const lng in module.locale) {
+        locale.messages[lng] = { 
+          ...locales.messages[lng], 
+          ...module.locale[lng]
         }
       }
     }
-    return merge;
+  }
+  static extractLocaleMessages (locales={}) {
+    const messages = {}
+    locales.keys().forEach(key => {
+      const matched = key.match(/([A-Za-z0-9-_]+)\./i)
+      if (matched && matched.length > 1) {
+        const locale = matched[1]
+        messages[locale] = locales(key)
+      }
+    })
+    return messages
   }
 }

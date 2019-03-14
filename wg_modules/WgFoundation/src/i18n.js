@@ -1,6 +1,6 @@
 import Wg from 'wg_core/Wg.js'
 
-const locales = require.context('wg_core/locales', true, /[A-Za-z0-9-_,\s]+\.json$/i)
+const locales = require.context('./locales', true, /[A-Za-z0-9-_,\s]+\.json$/i)
 
 export default {
   locale: 'pt',
