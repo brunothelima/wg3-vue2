@@ -1,29 +1,13 @@
 <template>
-  <component :is="tag" 
-    :class="['WgContainer', {'WgContainer--full': full}]">
+  <div :class="['WgContainer']">
       <slot></slot>
-  </component>
+  </div>
 </template>
 
 <script>
   export default {
     name: 'WgContainer',
-    data() {
-      return {
-        count: 0
-      }
-    },
-    props: {
-      tag: {
-        type: String,
-        default: 'div'
-      },
-      full: {
-        type: Boolean,
-        default: false
-      }
-    },
-  };
+  }
 </script>
 <style scoped lang="scss">
 .WgContainer {

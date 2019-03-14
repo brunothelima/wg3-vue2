@@ -22,8 +22,7 @@ export default class {
   static importModules(Vue, modules, store = {}) {
     return new Promise(async (resolve, reject) => {
       while (modules.length > 0) {
-        await import(/* webpackIgnore: true */ 
-          `wg_modules/${modules.pop()}/src/index.js`).then(response => {
+        await import(`wg_modules/${modules.pop()}/src/index.js`).then(response => {
             this.installModule(Vue, response.default, store)
         });
         if (!modules.length) {

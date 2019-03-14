@@ -1,6 +1,19 @@
+<i18n>
+{
+  "pt": {
+    "hello": "Este é o Widgrid!"
+  },
+  "en": {
+    "hello": "This is widgrid!"
+  }
+}
+</i18n>
+
 <template>
   <div id="app">
-    WG_ADMIN
+    <WgContainer>
+      {{ $t('hello') }}
+    </WgContainer>
   </div>
 </template>
 
