@@ -22,9 +22,11 @@ export default class {
   static importModules(Vue, modules, store = {}, locale = {}) {
     return new Promise(async (resolve, reject) => {
       while (modules.length > 0) {
-        await import(`wg_modules/${modules.pop()}/src/index.js`).then(response => {
-            this.installModule(Vue, response.default, store, locale)
-        });
+        await import(/* webpackIgnore: true */
+          `wg_modules/${modules.pop()}/src/index.js`)
+          .then(response => {
+              this.installModule(Vue, response.default, store, locale)
+          });
         if (!modules.length) {
           resolve()
         }
@@ -38,20 +40,20 @@ export default class {
    * @param {Array} module - Module plugin to be installed 
    * @param {Object} store - Store to merge the module own stores 
    */
-  static installModule(Vue, module, store = {}, locale = {}) {
+  static installModule(Vue, module, store = {}, i18n = {}) {
     Vue.use(module)
     this.extendStoreFromModule(store, module);
-    this.extendI18nFromModule(locale, module);
+    this.extendI18nFromModule(i18n, module);
   }
   static extendStoreFromModule(store, module) {
     if (module.store) {
       store.modules[module.name] = module.store
     }
   }
-  static extendI18nFromModule(locale, module) {
+  static extendI18nFromModule(i18n, module) {
     if (module.i18n) {
       for (const lang in module.i18n) {
-        locale.messages[lang][module.name] = module.i18n[lang]
+        i18n.messages[lang][module.name] = module.i18n[lang]
       }
     }
   }

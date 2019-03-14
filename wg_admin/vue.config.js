@@ -1,16 +1,10 @@
 const path = require('path')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+
+console.log(process.argv);
 
 module.exports = {
   lintOnSave: false,
   configureWebpack: {
-    optimization: {
-      minimizer: [
-        new UglifyJsPlugin({
-          uglifyOptions: { output: { comments: false }, }
-        }),
-      ],
-    },
     resolve: {
       alias: {
         'wg_modules': path.resolve(__dirname, '../wg_modules'),

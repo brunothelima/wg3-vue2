@@ -14,7 +14,7 @@ for(const lang in messages) {
   }
 }
 export default {
-  locale: 'pt',
+  locale: 'en',
   fallbackLocale: 'en',
   silentTranslationWarn: true,
   messages: messages

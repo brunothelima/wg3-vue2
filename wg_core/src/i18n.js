@@ -6,6 +6,12 @@ const messages = Wg.extractLocaleMessages(require.context(
   /[A-Za-z0-9-_,\s]+\.json$/i
 ));
 
+for(const lang in messages) {
+  messages[lang] = {
+    WgCore: messages[lang]
+  }
+}
+
 export default {
   locale: 'pt',
   fallbackLocale: 'en',

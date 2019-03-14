@@ -1,16 +1,23 @@
-import Vue from 'vue/dist/vue.js'
+import Vue from 'vue/dist/vue.min.js'
+import VueI18n from 'vue-i18n/dist/vue-i18n.min.js'
+import Vuex from 'vuex'
+
+import i18n from './i18n.js'
+
 import store from './store/index.js'
 import Wg from './Wg.js'
 
-
+Vue.use(VueI18n)
+Vue.use(Vuex);
 
 /**
  * Widgrid runtime initialization
  */
 Wg.getPurchasedModules().then(modules => {
-  modules.map(module => Wg.installModule(Vue, window[module], store))
+  modules.map(module => Wg.installModule(Vue, window[module], store, i18n))
   new Vue({
     el: '#WgView',
+    i18n: new VueI18n(i18n),
     store: new Vuex.Store(store),
   });
 });
