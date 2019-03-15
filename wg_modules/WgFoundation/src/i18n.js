@@ -1,4 +1,4 @@
-import { createLocaleEnv } from 'wg_core/Wg.js'
+import { createLocaleEnv } from 'wg_core/wg.js'
 
 const messages =  createLocaleEnv(
   'WgFoundation',

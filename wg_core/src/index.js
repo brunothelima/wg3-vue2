@@ -6,8 +6,6 @@ import i18n from './i18n.js'
 import store from './store/index.js'
 import { getPurchasedModules, installModule } from './Wg.js'
 
-console.log(i18n);
-
 Vue.use(VueI18n)
 Vue.use(Vuex);
 

@@ -1,29 +1,15 @@
-
-/**
- * Fetches the users default and purchased modules list
- * 
- * @returns {Promise} 
- */
 export async function getPurchasedModules() {
   return await fetch('http://localhost/widgrid/wg_api/modules.php')
     .then(response => response.json());
 }
-/**
- * Dynamicly import/install modules 
- * 
- * @param {Object} Vue - Vue instance to install the modules
- * @param {Array} modules - Array of modules to import
- * @param {Object} store - Store to merge the modules own stores
- * @returns {Promise} 
- */
-export function importModules(Vue, modules, store = {}, locale = {}) {
+
+export function importModules(Vue, modules, store, i18n) {
   return new Promise(async (resolve, reject) => {
     while (modules.length > 0) {
-      // await import(/* webpackIgnore: true */
-      // `wg_modules/${modules.pop()}/src/index.js`)
+      // await import(/* webpackIgnore: true */`wg_modules/${modules.pop()}/src/index.js`)
       await import(`wg_modules/${modules.pop()}/src/index.js`)
         .then(response => {
-          installModule(Vue, response.default, store, locale)
+          installModule(Vue, response.default, store, i18n)
         });
       if (!modules.length) {
         resolve()
@@ -31,41 +17,46 @@ export function importModules(Vue, modules, store = {}, locale = {}) {
     }
   })
 }
-/**
- * Install the module in to the given Vue instance
- * 
- * @param {Object} Vue - Vue instance to install the module
- * @param {Array} module - Module plugin to be installed 
- * @param {Object} store - Store to merge the module own stores 
- */
-export function installModule(Vue, module, store = {}, i18n = {}) {
+
+export function installModule(Vue, module, store, i18n) {
   Vue.use(module)
-  installStore(store, module);
-  installI18n(i18n, module);
-}
-
-export function installStore(store, module) {
   if (module.store) {
-    store.modules[module.name] = module.store
+    installStore(module, store);
   }
-}
-
-export function installI18n(i18n, module) {
   if (module.i18n) {
-    for (const lang in module.i18n) {
-      i18n.messages[lang][module.name] = module.i18n[lang][module.name]
-    }
+    installI18n(module, i18n);
   }
 }
 
-export function createLocaleEnv(env = '', locales = {}) {
+function installStore(module, store) {
+  store.modules[module.name] = module.store
+}
+
+function installI18n(module, i18n) {
+  for (const locale in module.i18n) {
+    const translations = module.i18n[locale][module.name];
+    i18n.messages[locale][module.name] = translations;
+  }
+}
+
+export function createLocaleEnv(env, locales) {
   const messages = {}
   for (const key of locales.keys()) {
     const match = key.match(/([A-Za-z0-9-_]+)\./i)
     if (match && match.length > 1) {
-      const locale = match[1]
-      messages[locale] = { [env]: locales(key) } 
+      const locale = match[1];
+      messages[locale] = {
+        ...messages[locale],
+        [env]: locales(key),
+      }
     }
   }
   return messages
+}
+
+export default {
+  getPurchasedModules,
+  importModules,
+  installModule,
+  createLocaleEnv
 }

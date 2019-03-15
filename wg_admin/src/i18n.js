@@ -1,4 +1,4 @@
-import { createLocaleEnv } from 'wg_core/Wg.js'
+import { createLocaleEnv } from 'wg_core/wg.js'
 import WgCoreI18n from 'wg_core/i18n.js'
 
 const messages = createLocaleEnv(
@@ -10,10 +10,10 @@ const messages = createLocaleEnv(
   )
 )
 
-for(const lang in messages) {
-  messages[lang] = {
-    WgAdmin: messages[lang]['WgAdmin'],
-    WgCore: WgCoreI18n.messages[lang]['WgCore']
+for(const locale in messages) {
+  messages[locale] = {
+    WgAdmin: messages[locale]['WgAdmin'],
+    WgCore: WgCoreI18n.messages[locale]['WgCore']
   }
 }
 

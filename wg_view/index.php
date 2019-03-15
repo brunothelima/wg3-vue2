@@ -13,6 +13,7 @@
     
     <div class="WgView" id="WgView">
       <wg-container>
+        <wg-i18n-selector />
         {{ $t('WgCore.hello') }}<br>
         {{ $t('WgFoundation.hello') }}<br>
       </wg-container>

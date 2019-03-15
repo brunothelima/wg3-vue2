@@ -12,11 +12,8 @@
 <template>
   <div id="app">
     <wg-container>
-      <wg-i18n />
-    </wg-container>
-    <wg-container>
+      <wg-i18n-selector />
       {{ $t('hello') }}<br>
-      {{ $t('WgAdmin.hello') }}<br>
       {{ $t('WgCore.hello') }}<br>
       {{ $t('WgFoundation.hello') }}<br>
     </wg-container>

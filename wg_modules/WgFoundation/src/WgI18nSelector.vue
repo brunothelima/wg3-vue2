@@ -1,5 +1,5 @@
 <template>
-  <select class="wg-i18n" v-model="locale">
+  <select class="wg-i18n-selector" v-model="locale">
     <option value="pt" selected>PT</option>
     <option value="en">EN</option>
   </select>
@@ -7,10 +7,10 @@
 
 <script>
 export default {
-  name: "WgI18n",
+  name: 'WgI18nSelector',
   data() {
     return {
-      locale: "pt"
+      locale: 'pt'
     };
   },
   watch: {
@@ -25,7 +25,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.wg-i18n {
+.wg-i18n-selector {
   outline: none;
 }
 </style>

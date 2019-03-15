@@ -1,6 +1,6 @@
-<?php
-header('Access-Control-Allow-Origin: *');
-echo json_encode([
-  "WgFoundation",
-]);
+<?php 
+  header("Access-Control-Allow-Origin: *");
+  echo json_encode([
+    'WgFoundation'
+  ]);
 ?>
