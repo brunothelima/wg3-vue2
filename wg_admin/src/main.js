@@ -7,7 +7,7 @@ import router from './router'
 import store from './store'
 import i18n from './i18n'
 
-import Wg from 'wg_core/Wg.js'
+import { getPurchasedModules, importModules } from 'wg_core/Wg.js'
 
 // Initial .vue file
 import WgApp from './WgApp.vue'
@@ -20,8 +20,8 @@ Vue.use(VueI18n)
 /** 
  * WgAdmin initializer
 */
-Wg.getPurchasedModules().then(modules => {
-  Wg.importModules(Vue, modules, store, i18n).then(() => {
+getPurchasedModules().then(modules => {
+  importModules(Vue, modules, store, i18n).then(() => {
     new Vue({
       router: router,
       i18n: new VueI18n(i18n),

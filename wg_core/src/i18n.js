@@ -1,19 +1,16 @@
-import Wg from 'wg_core/Wg.js'
+import { createLocaleEnv } from 'wg_core/Wg.js'
 
-const messages = Wg.extractLocaleMessages(require.context(
-  'wg_core/locales', 
-  true, 
-  /[A-Za-z0-9-_,\s]+\.json$/i
-));
-
-for(const lang in messages) {
-  messages[lang] = {
-    WgCore: messages[lang]
-  }
-}
+const messages = createLocaleEnv(
+  'WgCore',
+  require.context(
+    'wg_core/locales', 
+    true, 
+    /[A-Za-z0-9-_,\s]+\.json$/i
+  )
+)
 
 export default {
   locale: 'pt',
-  fallbackLocale: 'en',
+  fallbackLocale: 'pt',
   messages: messages
 }

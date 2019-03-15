@@ -1,6 +1,8 @@
-import WgContainer from './WgContainer.vue'
 import i18n from './i18n'
 import store from './store'
+
+import WgContainer from './WgContainer.vue'
+import WgI18n from './WgI18n.vue'
 
 export default {
 	name: 'WgFoundation',
@@ -8,6 +10,7 @@ export default {
 	store: store,
 	components: {
 		WgContainer,
+		WgI18n,
 	},
 	install(Vue) {
 		for (const component in this.components) {

@@ -11,12 +11,15 @@
 
 <template>
   <div id="app">
-    <WgContainer>
+    <wg-container>
+      <wg-i18n />
+    </wg-container>
+    <wg-container>
       {{ $t('hello') }}<br>
       {{ $t('WgAdmin.hello') }}<br>
       {{ $t('WgCore.hello') }}<br>
       {{ $t('WgFoundation.hello') }}<br>
-    </WgContainer>
+    </wg-container>
   </div>
 </template>
 
