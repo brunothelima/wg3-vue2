@@ -1,15 +1,17 @@
+import { GET } from './api.js'
+
 export async function getPurchasedModules() {
-  return await fetch('http://localhost/widgrid/wg_api/modules.php')
+  return await GET('modules.php')
     .then(response => response.json());
 }
 
-export function importModules(Vue, modules, store, i18n) {
+export function importModules(Vue, modules, defaults) {
   return new Promise(async (resolve, reject) => {
     while (modules.length > 0) {
       // await import(/* webpackIgnore: true */`wg_modules/${modules.pop()}/src/index.js`)
       await import(`wg_modules/${modules.pop()}/src/index.js`)
         .then(response => {
-          installModule(Vue, response.default, store, i18n)
+          installModule(Vue, response.default, defaults)
         });
       if (!modules.length) {
         resolve()
@@ -18,24 +20,19 @@ export function importModules(Vue, modules, store, i18n) {
   })
 }
 
-export function installModule(Vue, module, store, i18n) {
+export function installModule(Vue, module, { store, i18n, router }) {
   Vue.use(module)
-  if (module.store) {
-    installStore(module, store);
+  if (module.routes && router) {
+    router.routes.push(module.routes)
   }
-  if (module.i18n) {
-    installI18n(module, i18n);
+  if (module.store && store) {
+    store.modules[module.name] = module.store
   }
-}
-
-function installStore(module, store) {
-  store.modules[module.name] = module.store
-}
-
-function installI18n(module, i18n) {
-  for (const locale in module.i18n) {
-    const translations = module.i18n[locale][module.name];
-    i18n.messages[locale][module.name] = translations;
+  if (module.i18n && i18n) {
+    for (const locale in module.i18n) {
+      const translations = module.i18n[locale][module.name];
+      i18n.messages[locale][module.name] = translations;
+    }
   }
 }
 
