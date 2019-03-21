@@ -1,8 +1,8 @@
 import i18n from './i18n'
 import store from './store'
 
-import WgContainer from './WgContainer.vue'
-import WgI18nSelector from './WgI18nSelector.vue'
+import WgContainer from './components/WgContainer.vue'
+import WgI18nSelector from './components/WgI18nSelector.vue'
 
 export default {
 	name: 'WgFoundation',

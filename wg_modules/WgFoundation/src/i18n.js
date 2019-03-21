@@ -1,6 +1,6 @@
-import { createLocaleEnv } from 'wg_core/wg.js'
+import { I18nFromLocales } from 'wg_core/wg.js'
 
-const messages =  createLocaleEnv(
+const i18n =  I18nFromLocales(
   'WgFoundation',
   require.context(
     './locales', 
@@ -9,4 +9,4 @@ const messages =  createLocaleEnv(
   )
 );
 
-export default messages 
+export default i18n 

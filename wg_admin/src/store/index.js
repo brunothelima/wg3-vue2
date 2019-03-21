@@ -1,20 +1,8 @@
-// Stores to be merged
-import WgCoreStore from 'wg_core/store'
-
+/**
+ * Export for the admin main store object.
+ * This object extends every installed module sotres as store modules,
+ *  referenced by its module name
+ */
 export default {
-  state: {
-    ...WgCoreStore.state
-  },
-  getters: {
-    ...WgCoreStore.getters
-  },
-  actions: {
-    ...WgCoreStore.actions
-  },
-  mutations: {
-    ...WgCoreStore.mutations
-  },
-  modules: {
-    ...WgCoreStore.modules
-  }
+  modules: {}
 }

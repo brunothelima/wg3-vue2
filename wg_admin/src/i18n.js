@@ -1,7 +1,6 @@
-import { createLocaleEnv } from 'wg_core/wg.js'
-import WgCoreI18n from 'wg_core/i18n.js'
+import { I18nFromLocales } from 'wg_core/wg.js'
 
-const messages = createLocaleEnv(
+const i18n = I18nFromLocales(
   'WgAdmin',
   require.context(
     'wg_admin/locales', 
@@ -10,16 +9,8 @@ const messages = createLocaleEnv(
   )
 )
 
-for(const locale in messages) {
-  messages[locale] = {
-    WgAdmin: messages[locale]['WgAdmin'],
-    WgCore: WgCoreI18n.messages[locale]['WgCore']
-  }
-}
-
 export default {
   locale: 'pt',
-  fallbackLocale: 'pt',
-  messages: messages,
+  messages: i18n,
   silentTranslationWarn: true
 }
