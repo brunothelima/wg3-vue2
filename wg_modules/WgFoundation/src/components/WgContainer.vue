@@ -10,13 +10,8 @@
 </i18n>
 
 <template>
-  <div :class="['WgContainer']">
-      <slot></slot>
-      <br>
-      {{ $t('hello') }}<br>
-      {{ $t('WgAdmin.hello') }}<br>
-      {{ $t('WgCore.hello') }}<br>
-      {{ $t('WgFoundation.hello') }}<br>
+  <div class="wg-container">
+    <slot></slot>
   </div>
 </template>
 
@@ -26,22 +21,8 @@
   }
 </script>
 <style scoped lang="scss">
-.WgContainer {
+.wg-container {
   width: 100%;
-  max-width: $desktop-brakepoint;
-  padding: 0 var(--gutter, #{$gutter});
   margin: auto;
-  @media screen and (max-width: #{$desktop-brakepoint}) {
-    max-width: $tablet-brakepoint;
-  }
-  @media screen and (max-width: #{$tablet-brakepoint}) {
-    max-width: $mobile-brakepoint;
-  }
-  @media screen and (max-width: $mobile-brakepoint) {
-    max-width: unset;
-  }
-  &--full {
-    max-width: unset !important;
-  }
 }
 </style>

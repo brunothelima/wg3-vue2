@@ -10,26 +10,14 @@
 </i18n>
 
 <template>
-  <div id="app">
-    <wg-container>
-      <wg-i18n-selector />
-      {{ $t('hello') }}<br>
-      {{ $t('WgCore.hello') }}<br>
-      {{ $t('WgFoundation.hello') }}<br>
-    </wg-container>
-  </div>
+  <div id="app"></div>
 </template>
 
 <script>
-
+/**
+ * This is the main component for the admin application.
+ */
 export default {
   name: 'app',
-  mounted() {
-
-  }
 }
 </script>
-
-<style lang="scss">
-
-</style>

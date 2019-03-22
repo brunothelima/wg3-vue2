@@ -12,7 +12,7 @@ import i18n from './i18n'
 import { GET } from 'wg_core/api.js' 
 import { importModules } from 'wg_core/wg.js'
 // Root component to render the application
-import App from './App.vue'
+import App from './app.vue'
 // Installing Vue plugins to the Vue instance
 Vue.config.productionTip = true
 Vue.use(Vuex)

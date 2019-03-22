@@ -5,14 +5,13 @@
  * 
  * @return {URL}
  */
-const urlFromServer = (endpoint) => new URL(`http://localhost/wg_api/${endpoint}`);
-
+const urlFromServer = (endpoint) => new URL(`http://localhost/widgrid/wg_api/${endpoint}`);
 /**
  * Fetch data from a given endpoint via GET method,
  *  passing data properties as a query string
  * 
- * @param {String} endpoint - 
- * @param {Object} data 
+ * @param {String} endpoint - The server endpoint 
+ * @param {Object} data - Data to passed as query string
  */
 export function GET(endpoint = '', data = {}) {
   const url = urlFromServer(endpoint);
