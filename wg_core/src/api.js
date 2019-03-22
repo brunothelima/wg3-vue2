@@ -28,7 +28,7 @@ export function GET(endpoint = '', data = {}) {
  * This function send data to a given endpoint via fetch POST method
  * 
  * @param {String} endpoint - The server endpoint 
- * @param {*} data - Data to be posted to the server 
+ * @param {Object} data - Data to passed as query string
  */
 export function POST(endpoint = '', data = {}) {
   const url = urlFromServer(endpoint);

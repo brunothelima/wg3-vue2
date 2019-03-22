@@ -1,0 +1,3 @@
+[submodule "wg_modules/wg-foundation"]
+	path = wg_modules/wg-foundation
+	url = https://github.com/brunothelima/wg-foundation.git

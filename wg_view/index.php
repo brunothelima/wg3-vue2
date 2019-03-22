@@ -1,4 +1,4 @@
-<?php $modules = ['WgFoundation']; ?>
+<?php $modules = ['wg-foundation']; ?>
 <html>
   <head>
     <title>WG - Foundation</title>
