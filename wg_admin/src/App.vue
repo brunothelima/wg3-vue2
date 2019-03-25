@@ -10,14 +10,25 @@
 </i18n>
 
 <template>
-  <div id="app"></div>
+  <div id="app" :class="theme">
+    <router-view />
+  </div>
 </template>
 
 <script>
-/**
- * This is the main component for the admin application.
- */
+import { mapGetters } from 'vuex';
+
 export default {
   name: 'app',
+  computed: {
+    ...mapGetters({
+      theme: 'currTheme'
+    }),
+  },
 }
 </script>
+
+<style lang="scss">
+  @import 'wg_core/assets/scss/normalize.scss';
+  @import '@/assets/scss/app.scss';
+</style>

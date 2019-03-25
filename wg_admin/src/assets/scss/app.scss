@@ -1,0 +1,22 @@
+@import './colors';
+
+#app {
+	min-height: 100vh;
+	background-color: var(--color-x-11);
+	@for $index from 1 through 7 {
+		--color-a-#{$index}: #{nth($colors-seafoam, $index)};
+		--color-b-#{$index}: #{nth($colors-amethyst, $index)};		
+	}
+	@for $index from 1 through 11 {
+		--color-x-#{$index}: #{nth($colors-system, $index)};
+	}
+	&.dark {
+		@for $index from 1 through 7 {
+			--color-a-#{$index}: #{nth($colors-amethyst, $index)};
+			--color-b-#{$index}: #{nth($colors-seafoam, $index)};
+		}
+		@for $index from 11 through 1 {
+			--color-x-#{$index}: #{nth($colors-system, (12 - $index))};
+		}
+	}
+}

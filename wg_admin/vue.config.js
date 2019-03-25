@@ -16,7 +16,10 @@ module.exports = {
   },
   css: {
     loaderOptions: {
-      sass: { data: '@import "wg_core/scss/main.scss";' },
+      sass: { data: `
+        @import "wg_core/assets/scss/_vars.scss"; 
+        @import "wg_core/assets/scss/_mixins.scss"; 
+      ` },
       postcss: { config: { path: path.resolve(__dirname) } },
     }
   },
