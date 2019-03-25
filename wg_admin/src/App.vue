@@ -1,14 +1,3 @@
-<i18n>
-{
-  "pt": {
-    "hello": "Este é um componente admin!"
-  },
-  "en": {
-    "hello": "This is an admin component!"
-  }
-}
-</i18n>
-
 <template>
   <div id="app" :class="theme">
     <router-view />
@@ -29,6 +18,5 @@ export default {
 </script>
 
 <style lang="scss">
-  @import 'wg_core/assets/scss/normalize.scss';
-  @import '@/assets/scss/app.scss';
+  @import 'wg_admin/assets/scss/app.scss';
 </style>

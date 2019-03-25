@@ -12,32 +12,34 @@
 </i18n>
 
 <template>
-  <select class="wg-theme-selector" @change="onChange($event.target.value)">
-    <option value="light" selected>{{$t('light')}}</option>
-    <option value="dark">{{$t('dark')}}</option>
+  <select class="wg-theme-selector" 
+    @change="onChange($event.target.value)"
+    :value="theme">
+      <option value="light">{{ $t('light') }}</option>
+      <option value="dark">{{ $t('dark') }}</option>
   </select>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters } from 'vuex';
 
 export default {
-  name: 'WgI18nSelector',
-	computed: {
-		...mapGetters({
-			theme: 'currTheme',
-		})
-	},
-	methods: {
-		onChange(theme) {
-			this.$store.commit('setTheme', theme);
-		},
-	},
+  name: 'WgThemeSelector',
+  computed: {
+    ...mapGetters({
+      theme: 'currTheme'
+    })
+  },
+  methods: {
+    onChange(theme) {
+      this.$store.commit('setTheme', theme);
+    }
+  }
 };
 </script>
 
 <style lang="scss" scoped>
-.wg-i18n-selector {
+.wg-theme-selector {
   outline: none;
 }
 </style>

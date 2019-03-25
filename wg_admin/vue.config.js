@@ -1,7 +1,5 @@
 const path = require('path')
 
-console.log(process.argv);
-
 module.exports = {
   lintOnSave: false,
   configureWebpack: {
@@ -17,8 +15,8 @@ module.exports = {
   css: {
     loaderOptions: {
       sass: { data: `
-        @import "wg_core/assets/scss/_vars.scss"; 
-        @import "wg_core/assets/scss/_mixins.scss"; 
+        @import "wg_admin/assets/scss/_settings.scss"; 
+        @import "wg_core/assets/scss/_settings.scss"; 
       ` },
       postcss: { config: { path: path.resolve(__dirname) } },
     }
@@ -26,7 +24,7 @@ module.exports = {
   pluginOptions: {
     i18n: {
       locale: 'pt',
-      fallbackLocale: 'en',
+      fallbackLocale: 'pt',
       localeDir: 'locales',
       enableInSFC: true
     }

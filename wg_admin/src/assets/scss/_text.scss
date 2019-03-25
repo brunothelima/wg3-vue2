@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,400i,600,600i');
+
+:root {
+  --font-size: 14px;
+  font-size: var(--font-size);
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+	@media screen and (max-width: #{$tablet-brakepoint}) {
+    font-size: calc(var(--font-size) - 2px);
+	}
+	@media screen and (max-width: #{$mobile-brakepoint}) {
+    font-size: calc(var(--font-size) - 4px);
+	}
+}
+
+h1 { font-size: 4.571rem; }
+h2 { font-size: 4rem; }
+h3 { font-size: 3.429rem; }
+h4 { font-size: 2.857rem; }
+h5 { font-size: 2.286rem; }
+h6 { font-size: 1.714rem; }
+
+h1, h2, h3 {
+  margin: 0 0 0.33em;
+}  
+h4, h5, h6, p {
+  margin: 0 0 0.50em;
+}  
+
+p {
+  font-size: calc(var(--font-size) + 4px);
+  line-height: 1.778em;
+  a, span, label {
+    font-size: inherit;
+  }
+}
+
+a {
+  color: var(--color-b-1);
+  text-decoration: none;
+  font-weight: 600;
+  &:hover {
+    color: var(--color-a-1);
+    text-decoration: underline;
+  }
+}
+
+.txt-larger {
+  font-size: calc(var(--font-size) + 4px);
+}
+.txt-large {
+  font-size: calc(var(--font-size) + 2px);
+}
+.txt-small {
+  font-size: calc(var(--font-size) - 2px);
+}
+.txt-smaller {
+  font-size: calc(var(--font-size) - 4px);
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+small, sup, sub {
+  font-size: calc(var(--font-size) - 4px);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+hr {
+  margin: 2rem 0;
+}

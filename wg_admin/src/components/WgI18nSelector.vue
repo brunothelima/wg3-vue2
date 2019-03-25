@@ -1,23 +1,27 @@
 <template>
-  <select class="wg-i18n-selector" v-model="locale">
-    <option value="pt" selected>Pt</option>
-    <option value="en">En</option>
+  <select class="wg-i18n-selector" 
+    @change="onChange($event.target.value)"
+    :value="locale">
+      <option value="pt">Pt</option>
+      <option value="en">En</option>
   </select>
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
   name: 'WgI18nSelector',
-  data() {
-    return {
-      locale: this.$localStorage.get('locale', 'pt'),
-    };
+  computed: mapState(['locale']),
+  methods: {
+    onChange(locale) {
+      this.$store.commit('setLocale', locale);
+    }
   },
   watch: {
     locale: {
       immediate: true,
       handler(locale) {
-        this.$localStorage.set('locale', locale)
         this.$i18n.locale = locale;
       }
     }
