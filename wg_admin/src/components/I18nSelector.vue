@@ -11,7 +11,7 @@
 import { mapState } from 'vuex';
 
 export default {
-  name: 'WgI18nSelector',
+  name: 'I18nSelector',
   computed: mapState(['locale']),
   methods: {
     onChange(locale) {

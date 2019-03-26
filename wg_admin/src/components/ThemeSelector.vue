@@ -24,7 +24,7 @@
 import { mapGetters } from 'vuex';
 
 export default {
-  name: 'WgThemeSelector',
+  name: 'ThemeSelector',
   computed: {
     ...mapGetters({
       theme: 'currTheme'

@@ -1,0 +1,14 @@
+.txt-larger {
+  font-size: calc(var(--font-size) + 4px);
+}
+.txt-large {
+  font-size: calc(var(--font-size) + 2px);
+}
+.txt-small {
+  font-size: calc(var(--font-size) - 2px);
+}
+.txt-smaller {
+  font-size: calc(var(--font-size) - 4px);
+  text-transform: uppercase;
+  font-weight: 900;
+}
