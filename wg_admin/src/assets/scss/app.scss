@@ -1,5 +1,14 @@
 @import "wg_core/assets/scss/_normalize.scss";
 @import "wg_core/assets/scss/_reset.scss";
 
-@import "./text/text";
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,400i,600,600i');
+@import 'wg_core/assets/widgricon/style.scss';
+
+:root {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  --transition-duration: #{$transition-duration};
+  --transition-timing-function: #{$transition-timing-function};
+}
+
+@import "wg_core/assets/scss/text/_index.scss";
 @import "./theme";

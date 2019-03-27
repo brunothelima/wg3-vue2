@@ -19,4 +19,7 @@ export default {
 
 <style lang="scss">
   @import 'wg_admin/assets/scss/app.scss';
+  #app {
+    @include default-transition(background-color);
+  }
 </style>

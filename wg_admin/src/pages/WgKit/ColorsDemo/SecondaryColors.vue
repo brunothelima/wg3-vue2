@@ -10,27 +10,25 @@
 </i18n>
 
 <template>
-  <div class="secondary-colors">
-		<h5>{{ $t('title') }}:</h5>
-    <ul>
-			<li v-for="(_, index) in new Array(7)" :key="`color-b-${index+1}`"
-				:class="`color-b-${index+1}`">			
-			</li>
-		</ul>
+  <div class="secondary-colors"> 
+    <h6>{{ $t('title') }}</h6>
+    <color-palette class="secondary" :range="7" cssVar="--color-b" />
   </div>
 </template>
 
 <script> 
+import ColorPalette from './ColorPalette'
+
 export default {
-	name: 'SecondaryCollors',
+	name: 'SeconaryColors',
+	components: {
+		ColorPalette,
+	}
 }
 </script>
+
 <style lang="scss" scoped>
-.secondary-colors ul li {		
-	@for $index from 1 through 7 {
-		&.color-b-#{$index} {
-			background-color: var(--color-b-#{$index});
-		}
-	}
+.secondary-colors /deep/ li:nth-child(1n + 4) {
+	color: var(--color-x-1);
 }
 </style>

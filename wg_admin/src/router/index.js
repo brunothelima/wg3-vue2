@@ -4,13 +4,10 @@
  *  and validates the user authentication on any route changes
  */
 
- import WgKit from '@/pages/WgKit/WgKit';
-
-
 export default {
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
-    { path: '/wg-kit', component: WgKit }
+    { path: '/wg-kit', component: () => import('@/pages/WgKit') }
   ]
 }

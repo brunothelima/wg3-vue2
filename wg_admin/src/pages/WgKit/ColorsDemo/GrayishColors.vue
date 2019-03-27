@@ -1,18 +1,18 @@
 <i18n>
 {
   "pt": {
-    "title": "Cores Primárias"
+    "title": "Tons de cinza"
   },
   "en": {
-    "title": "Primary colors"
+    "title": "Shades of gray"
   }
 }
 </i18n>
 
 <template>
-  <div class="primary-colors"> 
+  <div class="grayish-colors"> 
     <h6>{{ $t('title') }}</h6>
-    <color-palette class="primary" :range="7" cssVar="--color-a" />
+    <color-palette class="grayish" :range="11" cssVar="--color-x" />
   </div>
 </template>
 
@@ -20,7 +20,7 @@
 import ColorPalette from './ColorPalette'
 
 export default {
-	name: 'PrimaryColors',
+	name: 'GrayishColors',
 	components: {
 		ColorPalette,
 	}
@@ -28,7 +28,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.primary-colors /deep/ li:nth-child(1n + 4) {
+.grayish-colors /deep/ li:nth-child(1n + 7) {
 	color: var(--color-x-1);
+	&:last-child {
+		border: 1px solid var(--color-x-1);
+	}
 }
 </style>
