@@ -1,10 +1,10 @@
 <i18n>
 {
   "pt": {
-    "title": "Outros tamanhos de texto"
+    "title": "Outros tamanhos de texto:"
   },
   "en": {
-    "title": "Othe text sizes"
+    "title": "Othe text sizes:"
   }
 }
 </i18n>
@@ -14,9 +14,9 @@
     <h6>{{ $t('title') }}</h6>
     <ul>
       <li class="xxl"><code>$font-size-xxl</code>Larger font size</li>
-      <li class="xl"><code>$font-size-xl</code>Slightly larger text size</li>
+      <li class="xl"><code>$font-size-xl</code>Slightly large text size</li>
       <li>Default font size</li>
-      <li class="xs"><code>$font-size-xxl</code>Slightly smaller text size</li>
+      <li class="xs"><code>$font-size-xxl</code>Slightly small text size</li>
       <li class="xxs"><code>$font-size-xxl</code>Smaller text size</li>
     </ul>
   </div>

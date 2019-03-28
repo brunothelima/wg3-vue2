@@ -21,23 +21,20 @@
   <section class="buttons-demo">
     <h1>{{ $t('title') }}</h1>
     <hr>
-    <small-buttons />
-    <medium-buttons />
-    <large-buttons />
+    <glassy-buttons />
+    <clean-buttons />
   </section>
 </template>
 
 <script> 
-import LargeButtons from './LargeButtons'
-import MediumButtons from './MediumButtons'
-import SmallButtons from './SmallButtons'
+import GlassyButtons from './GlassyButtons'
+import CleanButtons from './CleanButtons'
 
 export default {
   name: 'ButtonsDemo',
   components: {
-    LargeButtons,
-    MediumButtons,
-    SmallButtons
+    GlassyButtons,
+    CleanButtons
   }
 }
 </script>
@@ -48,6 +45,9 @@ export default {
     color: var(--color-a-1);
   }
   /deep/ {
+    > div {
+      margin-bottom: 4rem;
+    }
     [class*="-buttons-list"] {
       margin-bottom: 2rem;
     }

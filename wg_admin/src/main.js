@@ -3,7 +3,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import VueI18n from 'vue-i18n'
 import VueRouter from 'vue-router'
-import VueLocalStorage from 'vue-localstorage'
+
 // Modules extentions imports
 import router from './router'
 import store from './store'
@@ -18,7 +18,7 @@ Vue.config.productionTip = true
 Vue.use(Vuex)
 Vue.use(VueI18n)
 Vue.use(VueRouter)
-Vue.use(VueLocalStorage)
+
 /** 
  * WgAdmin async initialization
 */

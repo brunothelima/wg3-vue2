@@ -11,10 +11,12 @@
 
 <template>
   <div :class="`${size}-buttons-list`">
-    <wg-button :size="size" :model="model">{{ title }}</wg-button>
+    <wg-button :size="size" :model="model">Button</wg-button>
+    <wg-button :size="size" :model="model" icon="icontest">Icon Left</wg-button>
+    <wg-button :size="size" :model="model" :reverse="true" icon="icontest">Icon Right</wg-button>
     <wg-button :size="size" :model="model" :hover="true">Hover</wg-button>
     <wg-button :size="size" :model="model" :active="true">Active</wg-button>
-    <wg-button :size="size" :model="model" :disabled="true">{{ $t('disabled') }}</wg-button>
+    <wg-button :size="size" :model="model" :disabled="true">Disabled</wg-button>
   </div>
 </template>
 
