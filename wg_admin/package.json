@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "image-clipper": "^0.4.4",
     "uglifyjs-webpack-plugin": "^2.1.2",
     "vue": "^2.6.6",
     "vue-i18n": "^8.0.0",
