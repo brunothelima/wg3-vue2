@@ -6,11 +6,7 @@
       <text-demo />
       <buttons-demo />
       <page-settings />
-      <img src="http://localhost:8081/?img=image_before.webp&ratio=4:3&width=300&attention=true" alt="">
-      <img src="http://localhost:8081/?img=image_before.webp&ratio=16:9&width=300&attention=true" alt="">
-      <img src="http://localhost:8081/?img=image_before.webp&ratio=3:4&height=225&attention=true" alt="">
-      <img src="http://localhost:8081/?img=image_before.webp&ratio=9:16&width=300&attention=true" alt="">
-      <img src="http://localhost:8081/?img=image_before.webp&ratio=1:1&width=300&attention=true" alt="">
+      <wg-img src="image_before.webp" :height="200" :width="200" :x="230" :y="460">My caption</wg-img>
     </container>
   </div>
 </template>
@@ -37,6 +33,9 @@ export default {
   padding: 2rem 0;
   section, .page-settings{
     margin-bottom: 10rem;
+  }
+  /deep/ figure {
+    margin: 2rem;
   }
 }
 </style>
