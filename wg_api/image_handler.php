@@ -1,11 +1,10 @@
 <?php 
-
 class ImageHandler {
     
     public static function extractProps($query = []) {
       return [
-        'top' => (isset($query['top'])) ? intval($query['top']) : null,
-        'left' => (isset($query['left'])) ? intval($query['left']) : null,
+        'top' => (isset($query['top'])) ? intval($query['top']) : 0,
+        'left' => (isset($query['left'])) ? intval($query['left']) : 0,
         'width' => (isset($query['width'])) ? intval($query['width']) : null,
         'height' => (isset($query['height'])) ? intval($query['height']) : null
       ];
@@ -25,11 +24,12 @@ class ImageHandler {
     }
     
     public static function calcResize($props = [], $original = []) {
+      
       $ratio = ($props['width'] > $props['height']) 
         ? ($original['height'] / $original['width'])
         : ($original['width'] / $original['height']);
         
-      if ($props['height'] > $props['width']) {
+      if ($props['width'] > $props['height']) {
         $props['height'] = intval($props['width'] * $ratio);
       } else {
         $props['width'] = intval($props['height'] * $ratio);
@@ -80,8 +80,8 @@ class ImageHandler {
       ];
     
       if (!$props['width'] && !$props['height']) {
-        $props['height'] = intval($original['width'] * $ratios[$ratio]);
-        $props['width'] = $original['width'];
+        $props['width'] = intval($props['height'] * $ratios[strrev($ratio)]);
+        $props['height'] = $original['height'];
       }
     
       if ($props['width'] && !$props['height']) {
@@ -89,13 +89,10 @@ class ImageHandler {
       }
     
       if (!$props['width'] && $props['height']) {
-        $$props['width'] = intval($props['height'] * $ratios[strrev($ratio)]);
+        $props['width'] = intval($props['height'] * $ratios[strrev($ratio)]);
       }
 
-      return [
-        'width' => $params['width'], 
-        'height' => $params['height'] 
-      ];
+      return $props;
     }
   }
 ?>

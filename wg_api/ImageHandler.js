@@ -73,8 +73,8 @@ module.exports = class {
   static calcRatio(ratio = '', { width, height }, original = {}) {
 
     if (!width && !height) {
-      height = parseInt(original.width * ratios[ratio]);
-      width = original.width;
+      width = parseInt(height * ratios[this.invertRatio(ratio)]);
+      height = original.height
     }
 
     if (width && !height) {
@@ -83,7 +83,7 @@ module.exports = class {
 
     if (!width && height) {
       ratio = this.invertRatio(ratio)
-      width = parseInt(height * ratios[ratio]);
+      width = parseInt(height * ratios[this.invertRatio(ratio)]);
     }
   
     return { width, height }
