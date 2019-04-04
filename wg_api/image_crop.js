@@ -2,64 +2,37 @@ const http = require('http');
 const fs = require('fs');
 const url = require('url');
 const sharp = require('sharp');
-const imageSize = require('image-size');
-
-const ratios = { 
-  '1:1': 1, 
-  '4:3': 0.75, 
-  '3:4': 1.3333,
-  '16:9': 0.5625, 
-  '9:16': 1.7777, 
-}
-
-function sort(obj) {
-  let ordered = {};
-  for (const key in obj) {
-    ordered[key] = obj[key];
-  }
-  return ordered;
-}
-
-function hash(str) {
-  return str.split('').reduce((a, b) => { a = ((a << 5) - a) + b.charCodeAt(0); return a & a }, 0);
-}
+const ImageHandler = require('./ImageHandler.js')
+const extractSize = require('image-size');
 
 http.createServer((request, response) => {
 
   response.writeHead(200, { 'Content-Type': 'image/webp' })
 
-  const url_parts = url.parse(request.url, true);
-  const query = url_parts.query;
+  const query = url.parse(request.url, true).query;
 
   if (!query.src) {
     return
   }
 
-  const img = `./${hash(JSON.stringify(sort(query)))}.webp`;
+  let props = ImageHandler.extractProps(query)
+  const original = extractSize(`./${query.src}`)
+  const img = `./${ImageHandler.createHash(query)}.webp`;
   
-  // if (fs.existsSync(img)) {
-  //   fs.createReadStream(img)
-  //     .pipe(response);
-  //   return
-  // }
+  if (props.left && props.top) {
 
-  const params = {};
-  const original = imageSize(`./${query.src}`)
-
-  params.width = (query.width) ? parseInt(query.width) : null;
-  params.height = (query.height) ? parseInt(query.height) : null;
-  params.left = (query.x) ? parseInt(query.x) : null;
-  params.top = (query.y) ? parseInt(query.y) : null;
-
-  if (params.left && params.top) {
-
-    // TODO
+    const resize = ImageHandler.calcResize(props, original)
+    const extract = ImageHandler.calcExtract(props, original, resize)
 
     sharp(`./${query.src}`)
-      .extract(params)
+      .resize(resize)
+      .extract(extract)
       .webp()
-      .toFile(img, (a ,b) => {
-        console.error(a)
+      .toFile(img, (error) => {
+        if (error) {
+          console.error(error)
+          return;
+        }
         fs.createReadStream(img)
           .pipe(response);
       })
@@ -68,31 +41,19 @@ http.createServer((request, response) => {
   }
 
   if (query.ratio) {
-    params.position = 'center';
-    let ratio = query.ratio;
-    if (!params.width && !params.height) {
-      params.height = parseInt(original.width * ratios[ratio]);
-      params.width = original.width;
-    }
-    if (params.width && !params.height) { 
-      params.height = parseInt(params.width * ratios[ratio]);
-    }
-    if (!params.width && params.height) {
-      ratio = ratio.split(':').reverse().join(':')
-      params.width = parseInt(params.height * ratios[ratio]); 
-    }
+    props = ImageHandler.calcRatio(query.ratio, props, original)
   }
 
   if (query.attention) {
-    params.position = sharp.strategy.attention;
+    props.position = sharp.strategy.attention;
   }
 
   sharp(`./${query.src}`)
-    .resize(params)
+    .resize(props)
     .webp()
     .toFile(img, () => {
       fs.createReadStream(img)
         .pipe(response);
-    })
+    })  
 
 }).listen(8081);
