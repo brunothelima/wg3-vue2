@@ -34,14 +34,27 @@
   $resize = ImageHandler::calcResize($props, $original);
   
   if ( isset($query['width']) && isset($query['height']) ) {
-    $image = $image->resize($resize['width'], $resize['height'], true);
+    
+    $image = $image->resize(
+      $resize['width'], 
+      $resize['height'], 
+      true
+    );
+    
     $image = ImageResize::createFromString($image->getImageAsString());      
   }
   
   if ( isset($query['left']) && isset($query['top']) ) {
     
     $extract = ImageHandler::calcExtract($props, $original, $resize);  
-    $image->freecrop($props['width'], $props['height'], $extract['left'], $extract['top']);
+    
+    $image->freecrop(
+      $props['width'], 
+      $props['height'], 
+      $extract['left'], 
+      $extract['top']
+    );
+
     $image->save($img);
 
     readfile($img);
@@ -73,7 +86,10 @@
     exit;
   }
 
-  $image->crop($props['width'], $props['height']);
+  $image->crop(
+    !empty($props['width']) ? $props['width'] : $resize['width'],
+    !empty($props['height']) ? $props['height'] : $resize['height']
+  );
 
   $image->save($img);
   
