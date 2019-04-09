@@ -1,9 +1,19 @@
 <i18n>
   {
     "pt": {
-      "disabled": "Desabilitado"
+      "button": "Botão",
+      "icon-left": "Icone a esquerda",
+      "icon-right": "Icone a direita",
+      "hover": "Foco",
+      "active": "Ativo",
+      "disabled": "Desativado"
     },
     "en": {
+      "button": "Button",
+      "icon-left": "Icon Left",
+      "icon-right": "Icon Right",
+      "hover": "Hover",
+      "active": "Active",
       "disabled": "Disabled"
     }
   }
@@ -11,12 +21,12 @@
 
 <template>
   <div :class="`${size}-buttons-list`">
-    <wg-button :size="size" :model="model">Button</wg-button>
-    <wg-button :size="size" :model="model" icon="icontest">Icon Left</wg-button>
-    <wg-button :size="size" :model="model" :reverse="true" icon="icontest">Icon Right</wg-button>
-    <wg-button :size="size" :model="model" :hover="true">Hover</wg-button>
-    <wg-button :size="size" :model="model" :active="true">Active</wg-button>
-    <wg-button :size="size" :model="model" :disabled="true">Disabled</wg-button>
+    <wg-button :size="size" :model="model">{{ $t('button') }}</wg-button>
+    <wg-button :size="size" :model="model" icon="icontest">{{ $t('icon-left') }}</wg-button>
+    <wg-button :size="size" :model="model" :reverse="true" icon="icontest">{{ $t('icon-right') }}</wg-button>
+    <wg-button :size="size" :model="model" :hover="true">{{ $t('hover') }}</wg-button>
+    <wg-button :size="size" :model="model" :active="true">{{ $t('active') }}</wg-button>
+    <wg-button :size="size" :model="model" :disabled="true">{{ $t('disabled') }}</wg-button>
   </div>
 </template>
 

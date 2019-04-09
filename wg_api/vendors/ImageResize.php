@@ -4,6 +4,11 @@ namespace Gumlet;
 
 use Exception;
 
+class ImageResizeException extends \Exception
+{
+}
+
+
 /**
  * PHP class to resize and scale images
  */

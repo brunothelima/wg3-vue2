@@ -8,6 +8,8 @@
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   --transition-duration: #{$transition-duration};
   --transition-timing-function: #{$transition-timing-function};
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 @import "wg_core/assets/scss/text/_index.scss";

@@ -1,99 +1,98 @@
 <?php 
 
-  include './image_handler.php';
-  include './ImageResize/ImageResize.php';
-  include './ImageResize/smartcrop.php';
+  header("Access-Control-Allow-Origin: *");
 
+  include 'vendors/imageHandler.php';
+  include 'vendors/ImageResize.php';
+  
   use \Gumlet\ImageResize;
-  use xymak\image\smartcrop;
 
-  $query = $_GET;
+  /**
+   * Possible params to recieve as configuration:
+   *  'w' => (Int) The new image width
+   *  'h' => (Int) The new image height
+   *  'x' => (Int) The focal point x axis
+   *  'y' => (Int) The focal point y axis
+   *  'smart' => (Boolean) Smart crop flag
+   *  'ratio' => (String) Dimension ratio for the new image
+   */
+  $params = $_GET; // Given params for the new image
+  $src  = 'originals/' . $params['src']; // Original image path
+  $dest = 'cache/'; // Destiny path for the new image to be created
+
+  $original         = getimagesize($src); // The original image dimensions
+  $original['mime'] = str_replace('image/', '', $original['mime']); // The image extension
+  $original['w']    = $original[0]; // Assign the first value to a new key 'w' for width
+  $original['h']    = $original[1]; // Assign the first value to a new key 'h' for height
   
-  if ( empty($query['src']) ) {
-    return;
-  }
-  
+  $hash = ImageHandler::extractHash($params); // The new image name
+  $dest .= $hash .'.' . $original['mime']; // Complete path to the new image
+
   header("Content-type: {$original['mime']}");
+
+  /**
+   * If a image exists in the $dest path with the same hash name,
+   *  $dest is imediatly returned
+   */
+  if (file_exists($dest)) {
+    readfile($dest);
+    exit;
+  }
   
-  $img = './' . ImageHandler::createHash($query) .'.jpg';
+  $output = new ImageResize($src); // Image data instance to manipulate
+  $config  = ImageHandler::extractConfig($params); // The given configuration params for the new image
   
-  if (file_exists($img)) {
-    readfile($img);
-    return;
+  if (isset($params['ratio'])) {
+    $config = ImageHandler::calcRatio($params['ratio'], $config, $original);
   }
 
-  $props = ImageHandler::extractProps($query);
-  $image = new ImageResize('./' . $query['src']);
-  $sizes = getimagesize('./' . $query['src']);
-  $original = ['width' => $sizes[0], 'height' => $sizes[1]];
+  $minRes = ImageHandler::calcMinResolution($config, $original); // Image minimal resolution params
   
-  if (isset($query['ratio'])) {
-    $props = ImageHandler::calcRatio($query['ratio'], $props, $original);
+
+  if ( (isset($params['w']) && isset($params['h'])) || isset($params['smart'])) {
+    $output = $output->resize($minRes['w'], $minRes['h'], true);
+    $output = ImageResize::createFromString($output->getImageAsString());      
   }
   
-  $resize = ImageHandler::calcResize($props, $original);
-  
-  if ( isset($query['width']) && isset($query['height']) ) {
+  if ( isset($params['x']) && isset($params['y']) ) {
     
-    $image = $image->resize(
-      $resize['width'], 
-      $resize['height'], 
-      true
-    );
+    $focus = ImageHandler::calcFocalPoint($config, $original, $minRes);  
     
-    $image = ImageResize::createFromString($image->getImageAsString());      
-  }
-  
-  if ( isset($query['left']) && isset($query['top']) ) {
-    
-    $extract = ImageHandler::calcExtract($props, $original, $resize);  
-    
-    $image->freecrop(
-      $props['width'], 
-      $props['height'], 
-      $extract['left'], 
-      $extract['top']
+    $output->freecrop(
+      $config['w'], 
+      $config['h'], 
+      $focus['x'], 
+      $focus['y']
     );
 
-    $image->save($img);
-
-    readfile($img);
-    return;
+    $output->save($dest);
+    readfile($dest);
+    exit;
   }
 
-  if (isset($query['smart'])) {
-
-    $smartcrop = new smartcrop('./' . $query['src'], [
-      'width' => $props['width'],
-      'height' => $props['height']
-    ]);
+  if (isset($params['smart'])) {
     
-    $analysis = $smartcrop->analyse();
-
-    $image = $image->resize($resize['width'], $resize['height'], true);
-    $image = ImageResize::createFromString($image->getImageAsString());      
+    $analysis = ImageHandler::analyse($src, $config);
     
-    $image->freecrop(
-      $analysis['topCrop']['width'], 
-      $analysis['topCrop']['height'],
+    $output->freecrop(
+      $config['w'],
+      $config['h'],
       $analysis['topCrop']['x'], 
       $analysis['topCrop']['y']
     );
     
-    $image->save($img);
-
-    readfile($img);
+    $output->save($dest);
+    readfile($dest);
     exit;
   }
 
-  $image->crop(
-    !empty($props['width']) ? $props['width'] : $resize['width'],
-    !empty($props['height']) ? $props['height'] : $resize['height']
+  $output->crop(
+    !empty($config['w']) ? $config['w'] : $minRes['w'],
+    !empty($config['h']) ? $config['h'] : $minRes['h']
   );
 
-  $image->save($img);
-  
-  readfile($img);
+  $output->save($dest);
+  readfile($dest);
   exit;
-
+  
 ?>
