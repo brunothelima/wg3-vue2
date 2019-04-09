@@ -16,7 +16,7 @@
     <div>
       <wg-img src="image_before5.jpg" :w="180" ratio="16:9" :smart="true">Landscape 16:9</wg-img>
       <wg-img src="image_before5.jpg" :w="180" ratio="4:3" :smart="true">Landscape 4:3</wg-img>
-      <wg-img src="image_before5.jpg" :w="180" ratio="1:1" :smart="true">Squared 1:1</wg-img>
+      <wg-img src="image_before5.jpg" :w="180" ratio="1:1" :smart="true">Square 1:1</wg-img>
       <wg-img src="image_before5.jpg" :w="180" ratio="3:4" :smart="true">Portrait 3:4</wg-img>
       <wg-img src="image_before5.jpg" :w="180" ratio="9:16" :smart="true">Portrait 9:16</wg-img>
     </div>
