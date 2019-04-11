@@ -1,17 +1,18 @@
 @font-face {
   font-family: 'Widgricon';
-  src:  url('fonts/Widgricon.eot?2wykuq');
-  src:  url('fonts/Widgricon.eot?2wykuq#iefix') format('embedded-opentype'),
-    url('fonts/Widgricon.ttf?2wykuq') format('truetype'),
-    url('fonts/Widgricon.woff?2wykuq') format('woff'),
-    url('fonts/Widgricon.svg?2wykuq#Widgricon') format('svg');
+  src:  url('fonts/Widgricon.eot?n78fy5');
+  src:  url('fonts/Widgricon.eot?n78fy5#iefix') format('embedded-opentype'),
+    url('fonts/Widgricon.ttf?n78fy5') format('truetype'),
+    url('fonts/Widgricon.woff?n78fy5') format('woff'),
+    url('fonts/Widgricon.svg?n78fy5#Widgricon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
-[class^="wg-icon"], [class*=" wg-icon"] {
+[class^="wg-icon-"], [class*=" wg-icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'Widgricon' !important;
+  speak: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -23,6 +24,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.wg-icontest:before {
+.wg-icon-caret-down-huge:before {
   content: "\e900";
+}
+.wg-icon-form-huge:before {
+  content: "\e901";
 }
