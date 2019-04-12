@@ -1,0 +1,35 @@
+/* Responsivines variables */
+/* Spacing  variables */
+/* Centralizes the content of a given container */
+.WgContainer[data-v-51469f73] {
+  width: 100%;
+  max-width: 1040px;
+  padding: 0 var(--gutter, 8px);
+  margin: auto;
+}
+@media screen and (max-width: 1040px) {
+.WgContainer[data-v-51469f73] {
+      max-width: 800px;
+}
+}
+@media screen and (max-width: 800px) {
+.WgContainer[data-v-51469f73] {
+      max-width: 480px;
+}
+}
+@media screen and (max-width: 480px) {
+.WgContainer[data-v-51469f73] {
+      max-width: unset;
+}
+}
+.WgContainer--full[data-v-51469f73] {
+    max-width: unset !important;
+}
+
+/* Responsivines variables */
+/* Spacing  variables */
+/* Centralizes the content of a given container */
+.wg-i18n-selector[data-v-2094811b] {
+  outline: none;
+}
+
