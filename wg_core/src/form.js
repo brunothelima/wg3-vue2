@@ -1,4 +1,4 @@
-class Validations {
+class Validate {
   static required(value) {
     return value.length > 0
   }
@@ -13,9 +13,12 @@ export function validate(model, schema) {
     if (input.disabled) {
       continue;
     }
-    errors[input.name] = [];
+    errors[input.name] = []
     for (const validation in input.validations) {
-      if (!Validations[validation](model[input.name], input.validations[validation])) {
+      const value = model[input.name]
+      const rules = input.validations[validation]
+      const valid = Validate[validation]
+      if (!valid(value, rules)) {
         errors[input.name].push(validation)
       }
     }

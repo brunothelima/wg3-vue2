@@ -22,8 +22,8 @@
 <template>
   <div :class="`${size}-buttons-list`">
     <wg-button :size="size" :model="model">{{ $t('button') }}</wg-button>
-    <wg-button :size="size" :model="model" icon="icontest">{{ $t('icon-left') }}</wg-button>
-    <wg-button :size="size" :model="model" :reverse="true" icon="icontest">{{ $t('icon-right') }}</wg-button>
+    <wg-button :size="size" :model="model" icon="icon-form">{{ $t('icon-left') }}</wg-button>
+    <wg-button :size="size" :model="model" :reverse="true" icon="icon-form">{{ $t('icon-right') }}</wg-button>
     <wg-button :size="size" :model="model" :hover="true">{{ $t('hover') }}</wg-button>
     <wg-button :size="size" :model="model" :active="true">{{ $t('active') }}</wg-button>
     <wg-button :size="size" :model="model" :disabled="true">{{ $t('disabled') }}</wg-button>

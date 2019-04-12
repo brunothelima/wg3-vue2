@@ -3,26 +3,30 @@
   "pt": {
     "title": "Formulário",
     "form": {
-      "first_name": {
-        "label": "Nome",
+      "input_text": {
+        "label": "Campo de texto",
         "placeholder": "Escreva aqui",
         "required": "Input obrigatório",
         "minlength": "Mínimo de 20 caracteres"
       },
-      "last_name": {
-        "label": "Sobrenome",
-        "placeholder": "Escreva aqui",
-        "required": "Input obrigatório",
-        "minlength": "Mínimo de 20 caracteres"
-      },
-      "gender": {
-        "label": "Gênero",
+      "input_select": {
+        "label": "Campo de seleção",
         "placeholder": "Selecione uma opção",
         "required": "Input obrigatório",
         "options": {
-          "m": "Masculino",
-          "f": "Feminino",
-          "o": "Outro"
+          "a": "Option A",
+          "b": "Option B",
+          "c": "Option C"
+        }
+      },
+      "input_radio": {
+        "label": "Campo de seleção radial",
+        "placeholder": "Selecione uma opção",
+        "required": "Input obrigatório",
+        "options": {
+          "a": "Option A",
+          "b": "Option B",
+          "c": "Option C"
         }
       }
     }
@@ -30,26 +34,30 @@
   "en": {
     "title": "Form inputs",
     "form": {
-      "first_name": {
+      "input_text": {
         "label": "First name",
         "placeholder": "Type here",
         "required": "Required input",
         "minlength": "Minimum of 20 characters"
       },
-      "last_name": {
-        "label": "Last name",
-        "placeholder": "Type here",
-        "required": "Required input",
-        "minlength": "Minimum of 20 characters"
-      },
-      "gender": {
+      "input_select": {
         "label": "Gender",
         "placeholder": "Select one option",
         "required": "Required input",
         "options": {
-          "m": "Masculine",
-          "f": "Feminine",
-          "o": "Others"
+          "a": "Option A",
+          "b": "Option B",
+          "c": "Option C"
+        }
+      },
+       "input_radio": {
+        "label": "Radio input",
+        "placeholder": "Selecione uma opção",
+        "required": "Input obrigatório",
+        "options": {
+          "a": "Option A",
+          "b": "Option B",
+          "c": "Option C"
         }
       }
     }
@@ -80,56 +88,58 @@ export default {
       schema: [
         {
           type: "text",
-          name: "first_name",
-          value: "Bruno",
-          label: "form.first_name.label",
-          placeholder: "form.first_name.placeholder",
+          name: "input_text",
+          value: "",
+          label: "form.input_text.label",
+          placeholder: "form.input_text.placeholder",
           disabled: false,
           validations: {
             required: {
-              message: "form.first_name.required"
+              message: "form.input_text.required"
             },
             minlength: {
               limit: 20,
-              message: "form.first_name.minlength"
-            }
-          }
-        },
-        {
-          type: "text",
-          name: "last_name",
-          value: "Lima",
-          label: "form.last_name.label",
-          placeholder: "form.last_name.placeholder",
-          disabled: false,
-          validations: {
-            required: {
-              message: "form.first_name.required"
-            },
-            minlength: {
-              limit: 20,
-              message: "form.first_name.minlength"
+              message: "form.input_text.minlength"
             }
           }
         },
         {
           type: "select",
-          name: "gender",
-          value: "M",
-          label: "form.gender.label",
-          placeholder: "form.gender.placeholder",
+          name: "input_select",
+          value: "",
+          label: "form.input_select.label",
+          placeholder: "form.input_select.placeholder",
           disabled: false,
           options: [
-            { value: "M", label: "form.gender.options.m" },
-            { value: "F", label: "form.gender.options.f" },
-            { value: "O", label: "form.gender.options.o" }
+            { value: "a", label: "form.input_select.options.a" },
+            { value: "b", label: "form.input_select.options.b" },
+            { value: "c", label: "form.input_select.options.c" }
           ],
           validations: {
             required: {
-              message: "form.gender.required"
+              message: "form.input_select.required"
             }
           }
-        }
+        },
+        {
+          type: "radio",
+          name: "input_radio",
+          value: "",
+          label: "form.input_radio.label",
+          placeholder: "form.input_radio.placeholder",
+          disabled: false,
+          options: [
+            { value: "a", label: "form.input_radio.options.a" },
+            { value: "b", label: "form.input_radio.options.b" },
+            { value: "c", label: "form.input_radio.options.c" }
+          ],
+          validations: {
+            required: {
+              message: "form.input_radio.required"
+            }
+          }
+        },
+        
       ]
     };
   }
@@ -140,4 +150,7 @@ export default {
 .form-demo > h1 {
   color: var(--color-a-1);
 }
+// .form-demo .wg-form {
+//   display:  flex;
+// }
 </style>
