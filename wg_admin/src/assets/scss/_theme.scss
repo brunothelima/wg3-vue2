@@ -1,0 +1,32 @@
+// Application themes css variables declarations
+// --color-a-# for primary colors
+// --color-b-# for secondary colors 
+// --color-x-# for monochromatic colors
+#app {
+	min-height: 100vh;
+	// The application background color (white/black)
+	background-color: var(--color-x-11);
+	// Default font color 
+	color: var(--color-x-1);
+	// Creating the primary and secondary color variations
+	@for $index from 1 through 7 {
+		--color-a-#{$index}: #{nth($colors-amethyst, $index)};
+		--color-b-#{$index}: #{nth($colors-seafoam, $index)};		
+	}
+	// Creating the system monochromatic color variations
+	@for $index from 1 through 11 {
+		--color-x-#{$index}: #{nth($colors-grayish, $index)};
+	}
+	// Dark theme variations overwrite
+	&.dark {
+		// Swap primary to secondary color and vice versa
+		@for $index from 1 through 7 {
+			--color-a-#{$index}: #{nth($colors-seafoam, $index)};
+			--color-b-#{$index}: #{nth($colors-amethyst, $index)};
+		}
+		// Invert the system monochromatic color variations order
+		@for $index from 11 through 1 {
+			--color-x-#{$index}: #{nth($colors-grayish, (12 - $index))};
+		}
+	}
+}

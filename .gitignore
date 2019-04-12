@@ -1,0 +1,4 @@
+node_modules
+wg_admin/node_modules
+wg_api/node_modules
+wg_core/dist/

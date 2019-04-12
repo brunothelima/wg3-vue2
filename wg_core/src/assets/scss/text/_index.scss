@@ -1,0 +1,16 @@
+:root {
+  --font-size: #{$font-size};
+  font-weight: 400;
+  font-size: var(--font-size);
+ 	@media screen and (max-width: #{$tablet-brakepoint}) {
+    font-size: calc(var(--font-size) - 2px);
+	}
+	@media screen and (max-width: #{$mobile-brakepoint}) {
+    font-size: calc(var(--font-size) - 4px);
+	}
+}
+
+@import './headings';
+@import './paragraphs';
+@import './hyperlinks';
+@import './misc';
