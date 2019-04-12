@@ -1,5 +1,0 @@
-@mixin default-transition($properties) {
-  transition-duration: var(--transition-duration);
-  transition-timing-function: var(--transition-timing-function);
-  transition-property: $properties;
-}
