@@ -1,6 +1,7 @@
 <template>
   <div :class="['wg-input-select', { 'wg-input-select--error': error }]">
-    <select @input="onInput($event)">
+    <slot name="before" />
+    <select @input="onInput($event.target.value)">
       <option
         v-for="(option, index) of options"
         :key="`option-${index}`"
@@ -11,6 +12,7 @@
     <span class="selected" v-if="selected">{{ i18n.t(selected.label) }}</span>
     <span class="placeholder" v-else>{{ i18n.t(placeholder) }}</span>
     <i class="wg-icon-caret-down"/>
+    <slot name="after" />
   </div>
 </template>
 
@@ -29,10 +31,10 @@ export default {
     }
   },
   methods: {
-    onInput(event) {
-      this.$emit("input", event);
-      this.$emit("interaction", event);
-      this.callback("input", event);
+    onInput(value) {
+      this.$emit("input", value);
+      this.$emit("interaction", value);
+      this.callback("input", value);
     }
   }
 };

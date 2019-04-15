@@ -1,15 +1,18 @@
 <template>
   <div :class="['wg-input-textarea', { 'wg-input-textarea--error': error }]">
+    <slot name="before" />
     <textarea
       type="text"
       ref="input"
       :value="value"
       :placeholder="i18n.t(placeholder)"
-      @input="onInput($event)"
-      @blur="onBlur($event)"
-      @focus="onFocus($event)"
+      :maxlength="maxlength"
+      @input="onInput($event.target.value)"
+      @focus="onFocus($event.target.value)"
     ></textarea>
-    <small>{{ count }}</small>
+    <small v-if="maxlength">{{ `${count}/${maxlength}` }}</small>
+    <small v-else>{{ count }}</small>
+    <slot name="after" />
   </div>
 </template>
 
@@ -19,7 +22,16 @@ import inputDefaults from "wg_modules/wg-foundation/src/mixins/InputDefaults.js"
 export default {
   name: "InputTextarea",
   mixins: [inputDefaults],
+  props: {
+    validations: Object
+  },
   computed: {
+    maxlength() {
+      const limit = (this.validations.maxlength)
+        ? this.validations.maxlength.limit
+        : false 
+      return limit
+    },
     count() {
       if (!this.value) {
         return 0;
@@ -28,10 +40,15 @@ export default {
     }
   },
   methods: {
-    onInput(event) {
-      this.$emit("input", event);
-      this.$emit("interaction", event);
-      this.callback("input", event);
+    onInput(value) {
+      this.$emit("input", value);
+      this.$emit("interaction", value);
+      this.callback("input", value);
+    },
+    onFocus(value) {
+      this.$emit("focus", value);
+      this.$emit("interaction", value);
+      this.callback("focus", value);
     }
   }
 };

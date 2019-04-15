@@ -2,6 +2,7 @@ export default {
   props: {
     i18n: Object,
     name: String,
+    info: String,
     placeholder: String,
     value: [Number, String, Boolean, Array],
     disabled: Boolean,

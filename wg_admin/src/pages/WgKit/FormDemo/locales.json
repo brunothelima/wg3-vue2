@@ -6,7 +6,8 @@
         "label": "Campo de texto",
         "placeholder": "Escreva aqui",
         "required": "Input obrigatório",
-        "minlength": "Mínimo de 20 caracteres"
+        "minlength": "Mínimo de 20 caracteres",
+        "custom": "O valor não pode ser 'custom'"
       },
       "input_select": {
         "label": "Campo de seleção",
@@ -47,7 +48,8 @@
         "label": "Text input",
         "placeholder": "Type here",
         "required": "Required input",
-        "minlength": "Minimum of 20 characters"
+        "maxlength": "Minimum of 20 characters",
+        "custom": "The value can't be 'custom'"
       },
       "input_select": {
         "label": "Selec input",
@@ -63,12 +65,12 @@
         "label": "Textarea",
         "placeholder": "Type here",
         "required": "Required input",
-        "minlength": "Minimum of 50 characters"
+        "maxlength": "Minimum of 50 characters"
       },
        "input_radio": {
         "label": "Radio input",
         "placeholder": "Selecione uma opção",
-        "required": "Input obrigatório",
+        "required": "Required input",
         "options": {
           "a": "Option A",
           "b": "Option B",

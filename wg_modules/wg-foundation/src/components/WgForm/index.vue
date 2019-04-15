@@ -5,6 +5,7 @@
       :key="`${input.name}_${index}`"
       :i18n="i18n"
       :input="input"
+      :info="input.info || ''"
       :errors="errors[input.name] || []"
       :disabled="input.disabled"
     >
@@ -15,8 +16,12 @@
         :value="model[input.name]"
         :error="!!errors[input.name]"
         @interaction="errors[input.name] = []"
-        @input="model[input.name] = $event.target.value"
-      />
+        @input="model[input.name] = $event"
+      >
+        <template v-slot:after>
+          <input-info v-if="input.info" :text="input.info"/>
+        </template>
+      </component>
     </input-field>
     <slot/>
   </form>
@@ -24,10 +29,12 @@
 
 <script>
   import { validate, schema2Model } from "wg_core/form.js";
+  import InputInfo from "./InputInfo.vue";
 
   export default {
     name: "WgForm",
     components: {
+      InputInfo,
       "input-field": () => import("./InputField.vue"),
       "input-text": () => import("./InputText.vue"),
       "input-textarea": () => import("./InputTextarea.vue"),
@@ -42,7 +49,7 @@
     data() {
       return {
         errors: {},
-        model: schema2Model(this.schema),
+        model: schema2Model(this.schema)
       };
     },
     methods: {

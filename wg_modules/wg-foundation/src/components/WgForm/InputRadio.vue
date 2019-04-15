@@ -1,8 +1,9 @@
 <template>
   <div class="wg-input-radio">
+    <slot name="before" />
     <div v-for="(option, index) of options" :key="`option-${index}`">
       <input
-        @input="onInput($event)"
+        @input="onInput($event.target.value)"
         :name="name"
         :id="`option-${index}`"
         type="radio"
@@ -11,6 +12,7 @@
       >
       <label :for="`option-${index}`">{{ i18n.t(option.label) }}</label>
     </div>
+    <slot name="after" />
   </div>
 </template>
 
@@ -24,10 +26,10 @@ export default {
     options: Array
   },
   methods: {
-    onInput(event) {
-      this.$emit("input", event);
-      this.$emit("interaction", event);
-      this.callback("input", event);
+    onInput(value) { 
+      this.$emit("input", value);
+      this.$emit("interaction", value);
+      this.callback("input", value);
     }
   }
 };
