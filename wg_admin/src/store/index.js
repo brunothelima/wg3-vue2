@@ -5,8 +5,8 @@
  */
 export default {
   state: {
-    theme: 'light',
-    locale: 'pt',
+    theme: 'dark',
+    locale: 'en',
   },
   getters: {
     currTheme: state => state.theme,

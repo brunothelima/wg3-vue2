@@ -33,6 +33,7 @@ export default {
 	li {
 		flex: 1;
 		height: 40px;
+		padding: 1em;
 		color: var(--color-x-11);
 		@include flex-center();
 		&.color-info { background-color: $color-info; }

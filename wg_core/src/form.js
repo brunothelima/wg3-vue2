@@ -11,7 +11,7 @@ export function validate(model, schema) {
   const errors = {};
   for (const input of schema.values()) {
     if (input.disabled) {
-      continue;
+      continue
     }
     errors[input.name] = []
     for (const validation in input.validations) {

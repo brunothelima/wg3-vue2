@@ -48,5 +48,6 @@ export default {
 [class*="-buttons-list"] {
   display: flex;
   align-items: flex-end;
+  flex-wrap: wrap;
 }
 </style>

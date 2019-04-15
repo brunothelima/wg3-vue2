@@ -1,7 +1,8 @@
 <template>
   <div class="wg-input-radio">
     <div v-for="(option, index) of options" :key="`option-${index}`">
-      <input @input="onInput($event)"
+      <input
+        @input="onInput($event)"
         :name="name"
         :id="`option-${index}`"
         type="radio"
@@ -14,26 +15,25 @@
 </template>
 
 <script>
-  import inputDefaults from "wg_modules/wg-foundation/src/mixins/InputDefaults.js";
+import inputDefaults from "wg_modules/wg-foundation/src/mixins/InputDefaults.js";
 
-  export default {
-    name: "InputRadio",
-    mixins: [inputDefaults],
-    props: {
-      options: Array,
-      name: String
-    },
-     methods: {
-      onInput(event) {
-        this.$emit("input", event);
-        this.$emit("interaction", event);
-        this.callback("input", event);
-      }
-    },
-  };
+export default {
+  name: "InputRadio",
+  mixins: [inputDefaults],
+  props: {
+    options: Array
+  },
+  methods: {
+    onInput(event) {
+      this.$emit("input", event);
+      this.$emit("interaction", event);
+      this.callback("input", event);
+    }
+  }
+};
 </script>
 <style lang="scss" scoped>
-.wg-input-radio { 
+.wg-input-radio {
   display: flex;
   margin-left: -1em;
   > div {
@@ -43,6 +43,7 @@
     margin-left: 2em;
   }
   label {
+    cursor: pointer;
     margin-left: 0.5em;
   }
 }

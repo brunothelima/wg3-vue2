@@ -46,21 +46,22 @@ export default {
   }
   /deep/ {
     > div {
-      margin-bottom: 4rem;
+      margin-bottom: 4em;
     }
     [class*="-buttons-list"] {
-      margin-bottom: 2rem;
+      margin-bottom: 2em;
     }
     code {
       display: inline-block;
-      padding: 0.64rem 1rem;
-      margin-bottom: 1rem;
+      padding: 0.64em 1em;
+      margin-bottom: 0.5em;
       background-color: var(--color-x-3);
       color: var(--color-x-11);
       @include default-transition(#{backgorund-color, color});
     }
     .wg-button {
-      margin-right: 1rem;
+      margin-right: 1em;
+      margin: 0.5em 1em 0.5em 0;
     }
   } 
 }

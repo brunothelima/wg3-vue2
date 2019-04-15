@@ -18,7 +18,7 @@ import ColorsDemo from './ColorsDemo/';
 import TextDemo from './TextDemo/';
 import ButtonsDemo from './ButtonsDemo/';
 import ImagesDemo from './ImagesDemo';
-import FormDemo from './FormDemo';
+import FormDemo from './FormDemo/';
 
 export default {
 	name: 'WgKit',

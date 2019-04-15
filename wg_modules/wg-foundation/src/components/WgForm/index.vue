@@ -13,6 +13,7 @@
         :is="`input-${input.type}`"
         :i18n="i18n"
         :value="model[input.name]"
+        :error="!!errors[input.name]"
         @interaction="errors[input.name] = []"
         @input="model[input.name] = $event.target.value"
       />
@@ -22,15 +23,17 @@
 </template>
 
 <script>
-  import { validate } from "wg_core/form.js";
+  import { validate, schema2Model } from "wg_core/form.js";
 
   export default {
     name: "WgForm",
     components: {
       "input-field": () => import("./InputField.vue"),
       "input-text": () => import("./InputText.vue"),
+      "input-textarea": () => import("./InputTextarea.vue"),
       "input-select": () => import("./InputSelect.vue"),
-      "input-radio": () => import("./InputRadio.vue")
+      "input-radio": () => import("./InputRadio.vue"),
+      "input-checkbox": () => import("./InputCheckbox.vue")
     },
     props: {
       schema: Array,
@@ -38,18 +41,11 @@
     },
     data() {
       return {
-        model: this.schema2Model(),
-        errors: {}
+        errors: {},
+        model: schema2Model(this.schema),
       };
     },
     methods: {
-      schema2Model() {
-        const model = {};
-        for (const input of this.schema.values()) {
-          model[input.name] = input.value;
-        }
-        return model;
-      },
       onSubmit(event) {
         this.errors = validate(this.model, this.schema);
       }

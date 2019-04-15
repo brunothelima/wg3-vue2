@@ -37,6 +37,9 @@ export default {
     color: inherit;
     @include default-transition(color);
   }
+  span {
+    white-space: nowrap;
+  }
   &:not([disabled]) {
     &:hover,
     &.wg-button--hover {

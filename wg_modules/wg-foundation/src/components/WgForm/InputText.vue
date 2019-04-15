@@ -1,5 +1,5 @@
 <template>
-  <div class="wg-input-text">
+  <div :class="['wg-input-text', { 'wg-input-text--error': error }]">
     <input
       type="text"
       :value="value"
@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import inputDefaults from 'wg_modules/wg-foundation/src/mixins/InputDefaults.js'
+import inputDefaults from "wg_modules/wg-foundation/src/mixins/InputDefaults.js";
 
 export default {
   name: "InputText",
@@ -32,7 +32,7 @@ export default {
       this.$emit("blur", event);
       this.$emit("interaction", event);
       this.callback("blur", event);
-    },
+    }
   }
 };
 </script>
@@ -56,6 +56,12 @@ export default {
     &:focus {
       border-color: var(--color-x-4);
       box-shadow: inset 0 0 0 1px var(--color-x-4);
+    }
+  }
+  &--error {
+    border-color: $color-error;
+    i {
+      color: $color-error;
     }
   }
 }

@@ -27,6 +27,7 @@ export default {
 <style lang="scss" scoped>
 .gradient > div {
   height: 40px;
+  padding: 1em;
 	background-image: linear-gradient(to right, var(--color-a-3), var(--color-b-3));
 	color: var(--color-x-11);
 	@include flex-center();

@@ -49,10 +49,13 @@ export default {
 .css-vars {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	grid-gap: 1.143rem;
-	margin-bottom: 1.143rem;
+	grid-gap: 1.143em;
+	margin-bottom: 1.143em;
+	@media screen and (max-width: #{$mobile-brakepoint}) {
+		grid-template-columns: 1fr;
+	}
 }
 .system-colors {
-	margin-bottom: 4.571rem;
+	margin-bottom: 4.571em;
 }
 </style>
