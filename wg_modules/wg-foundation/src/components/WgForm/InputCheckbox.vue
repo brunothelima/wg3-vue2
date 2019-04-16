@@ -40,7 +40,7 @@
 <style lang="scss" scoped>
   .wg-input-checkbox {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     padding: 1em 0;
     margin-left: 1em;
     label {

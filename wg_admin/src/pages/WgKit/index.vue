@@ -6,6 +6,7 @@
       <text-demo />
       <buttons-demo />
       <images-demo />
+      <icons-demo />
       <form-demo />
       <page-settings />
     </container>
@@ -19,6 +20,7 @@ import TextDemo from './TextDemo/';
 import ButtonsDemo from './ButtonsDemo/';
 import ImagesDemo from './ImagesDemo';
 import FormDemo from './FormDemo/';
+import IconsDemo from './IconsDemo';
 
 export default {
 	name: 'WgKit',
@@ -29,6 +31,7 @@ export default {
     ButtonsDemo,
     ImagesDemo,
     FormDemo,
+    IconsDemo
   },
 }
 </script>

@@ -53,7 +53,7 @@ export default {
 <style lang="scss" scoped>
 .images-demo {
   /deep/ figure {
-    margin: $gutter;
+    margin: 1em;
     figcaption {
       align-self: center;
     }

@@ -58,6 +58,7 @@ export default {
   margin-bottom: 0.5rem;
   small {
     display: block;
+    margin-top: 0.25em;
     text-align: right;
   }
   textarea {
