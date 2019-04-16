@@ -97,7 +97,6 @@ export default {
 				height: 2em;
 				border-radius: 0.25em;
 				background-color: var(--color-x-9);
-				box-shadow: $box-shadow-light;
 				color: var(--color-a-1);
 			}
 			span {

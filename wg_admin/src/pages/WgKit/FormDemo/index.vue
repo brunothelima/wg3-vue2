@@ -55,6 +55,17 @@
               }
             }
           },
+           {
+            type: "file",
+            name: "input_file",
+            label: "form.input_file.label",
+            placeholder: "form.input_file.placeholder",
+            validations: {
+              required: {
+                message: "form.input_file.required"
+              },
+            }
+          },
           {
             type: "textarea",
             name: "input_textarea",
@@ -93,7 +104,7 @@
             label: "form.input_checkbox.label",
             title: "form.input_checkbox.title",
             checked: false
-          }
+          },
         ]
       };
     }

@@ -14,12 +14,12 @@
         :is="`input-${input.type}`"
         :i18n="i18n"
         :value="model[input.name]"
-        :error="!!errors[input.name]"
+        :error="errors[input.name] && errors[input.name].length > 0"
         @interaction="errors[input.name] = []"
         @input="model[input.name] = $event"
       >
         <template v-slot:after>
-          <input-info v-if="input.info" :text="input.info"/>
+          <input-help v-if="input.info" :text="input.info"/>
         </template>
       </component>
     </input-field>
@@ -29,18 +29,19 @@
 
 <script>
   import { validate, schema2Model } from "wg_core/form.js";
-  import InputInfo from "./InputInfo.vue";
+  import InputHelp from "./InputHelp.vue";
 
   export default {
     name: "WgForm",
     components: {
-      InputInfo,
+      InputHelp,
       "input-field": () => import("./InputField.vue"),
       "input-text": () => import("./InputText.vue"),
       "input-textarea": () => import("./InputTextarea.vue"),
       "input-select": () => import("./InputSelect.vue"),
       "input-radio": () => import("./InputRadio.vue"),
-      "input-checkbox": () => import("./InputCheckbox.vue")
+      "input-checkbox": () => import("./InputCheckbox.vue"),
+      "input-file": () => import("./InputFile.vue")
     },
     props: {
       schema: Array,
@@ -55,7 +56,7 @@
     methods: {
       onSubmit(event) {
         this.errors = validate(this.model, this.schema);
-      }
+      },
     }
   };
 </script>

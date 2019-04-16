@@ -9,8 +9,9 @@
         :selected="option.value === value"
       >{{ i18n.t(option.label) }}</option>
     </select>
-    <span class="selected" v-if="selected">{{ i18n.t(selected.label) }}</span>
-    <span class="placeholder" v-else>{{ i18n.t(placeholder) }}</span>
+    <span :class="(selected) ? 'selected' : 'placeholder'">
+      {{ i18n.t((selected) ? selected.label : placeholder) }}
+    </span>
     <i class="wg-icon-caret-down"/>
     <slot name="after" />
   </div>

@@ -9,7 +9,7 @@
   import WgTooltip from './../WgTooltip'
   
   export default {
-    name: "InputInfo",
+    name: "InputHelp",
     props: {
       text: String
     },
@@ -27,11 +27,5 @@
     justify-content: center;
     padding: 1em;
     cursor: help;
-    .tooltip {
-      display: none;
-    }
-    &:hover .tooltip {
-      display: inherit;
-    }
   }
 </style>

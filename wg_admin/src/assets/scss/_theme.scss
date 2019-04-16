@@ -18,6 +18,9 @@
 		--color-x-#{$index}: #{nth($colors-grayish, $index)};
 	}
 	// Dark theme variations overwrite
+	::selection {
+		background: var(--color-b-3);
+	}
 	&.dark {
 		// Swap primary to secondary color and vice versa
 		@for $index from 1 through 7 {

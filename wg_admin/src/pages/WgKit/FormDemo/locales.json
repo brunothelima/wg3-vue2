@@ -19,6 +19,11 @@
           "c": "Opção C"
         }
       },
+      "input_file": {
+        "label": "Input de arquivo",
+        "placeholder": "Selecione um arquivo",
+        "required": "Input obrigatório"
+      },
       "input_textarea": {
         "label": "Campo de texto grande",
         "placeholder": "Escreva aqui",
@@ -61,13 +66,18 @@
           "c": "Option C"
         }
       },
+      "input_file": {
+        "label": "File input",
+        "placeholder": "Click to select a file",
+        "required": "Required input"
+      },
       "input_textarea": {
         "label": "Textarea",
         "placeholder": "Type here",
         "required": "Required input",
         "maxlength": "Minimum of 50 characters"
       },
-       "input_radio": {
+      "input_radio": {
         "label": "Radio input",
         "placeholder": "Selecione uma opção",
         "required": "Required input",

@@ -23,7 +23,12 @@
   };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
+  *:hover > .tooltip {
+    transform: translate(0,0);
+    visibility: visible;
+    opacity: 1;
+  }
   .tooltip {
     display: flex;
     flex-direction: column;
@@ -31,6 +36,10 @@
     z-index: 2;
     top: 2.5em;
     min-width: 220px;
+    transform: translate(0, 0.5em);
+    visibility: hidden;
+    opacity: 0;
+    @include default-transition('transform, opacity, visibility');
     &__content {
       display: block;
       background-color: var(--color-x-9);
