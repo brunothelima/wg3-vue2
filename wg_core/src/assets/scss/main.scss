@@ -1,0 +1,18 @@
+:root {
+	--font-size: 14px;
+	--font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+	--transition-duration: 200ms;
+	--transition-timing-function: ease-out;
+
+	--box-shadow-x: 0;
+	--box-shadow-y: 4px;
+	--box-shadow-blur: 8px;
+	--box-shadow-spread: 0;
+
+	--color-info: #3B9DEA;
+	--color-error: #FA4646;
+	--color-warning: #DBC53D;
+	--color-success: #46CD72;
+}
+
+@import 'text/_index';

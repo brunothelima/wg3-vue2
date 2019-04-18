@@ -46,11 +46,11 @@
     width: 100%;
     padding: 1em;
     margin-bottom: 0.5em;
-    border-radius: 0.5em;
-    border: 1px solid var(--color-x-8);
+    border-radius: var(--input-border-radius);
+    border: var(--input-border-width) var(--input-border-style) var(--color-x-8);
     background-color: var(--color-x-11);
     outline: none;
-    @include default-transition("border-color, box-shadow");
+    @include default-transition(#{border-color, box-shadow});
     span {
       flex: 1;
       padding-right: 1em;
@@ -66,9 +66,9 @@
       display: none;
     }
     &--error {
-      border-color: $color-error;
+      border-color: var(--color-error);
       i {
-        color: $color-error;
+        color: var(--color-error);
       }
     }
   }

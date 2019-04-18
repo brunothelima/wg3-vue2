@@ -11,7 +11,7 @@ class WgValidations {
    * @return {Boolean}
    */
   static required(value) {
-    return value.length > 0
+    return !!value
   }
   /**
    * Validation for inputs with min-length value defined

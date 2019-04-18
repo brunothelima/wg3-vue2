@@ -7,7 +7,7 @@
       <buttons-demo />
       <images-demo />
       <icons-demo />
-      <form-demo />
+      <!-- <form-demo /> -->
       <page-settings />
     </container>
   </div>

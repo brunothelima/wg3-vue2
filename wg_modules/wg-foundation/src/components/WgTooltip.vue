@@ -3,7 +3,7 @@
     <svg width="16px" height="8px" viewBox="0 0 16 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
       <g bstroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g transform="translate(-148.000000, 1.000000)">
-          <g id="Group" transform="translate(150.000000, 1.000000)">
+          <g transform="translate(150.000000, 1.000000)">
             <path d="M6,-0.833333333 L13,8.5 L-1,8.5 L6,-0.833333333 Z"></path>
             <polygon fill="#F2F3F5" points="6 0 12 8 0 8"></polygon>
           </g>
@@ -39,12 +39,12 @@
     transform: translate(0, 0.5em);
     visibility: hidden;
     opacity: 0;
-    @include default-transition('transform, opacity, visibility');
+    @include default-transition(#{transform, opacity, visibility});
     &__content {
       display: block;
       background-color: var(--color-x-9);
       padding: 1em;
-      border-radius: 0.25em;
+      border-radius: var(--border-radius);
       box-shadow: $box-shadow-light;
       border: 1px solid var(--color-x-8);
       font-size: $font-size-xs;

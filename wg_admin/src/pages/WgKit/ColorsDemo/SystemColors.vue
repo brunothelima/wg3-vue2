@@ -36,10 +36,10 @@ export default {
 		padding: 0.25em 1em;
 		color: var(--color-x-11);
 		@include flex-center();
-		&.color-info { background-color: $color-info; }
-		&.color-error { background-color: $color-error; }
-		&.color-warning { background-color: $color-warning;}
-		&.color-success { background-color: $color-success; }
+		&.color-info { background-color: var(--color-info); }
+		&.color-error { background-color: var(--color-error); }
+		&.color-warning { background-color: var(--color-warning);}
+		&.color-success { background-color: var(--color-success); }
 	}
 }
 </style>
