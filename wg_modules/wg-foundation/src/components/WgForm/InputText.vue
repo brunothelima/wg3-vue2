@@ -47,24 +47,24 @@ export default {
     overflow: hidden;
     box-sizing: border-box;
     padding: 1em;
-    border-radius: 0.5rem;
-    border: 1px solid var(--color-x-8);
+    border-radius: var(--input-border-radius);
+    border: var(--input-border-width) var(--input-border-style) var(--color-x-8);
     background-color: var(--color-x-11);
     color: var(--color-x-3);
     outline: none;
-    @include default-transition("border-color, box-shadow");
+    @include default-transition(#{border-color, box-shadow});
     &::placeholder {
       color: var(--color-x-7);
     }
     &:focus {
       border-color: var(--color-x-4);
-      box-shadow: inset 0 0 0 1px var(--color-x-4);
+      box-shadow: inset 0 0 0 var(--input-border-width) var(--color-x-4);
     }
   }
   &--error {
-    border-color: $color-error;
+    border-color: var(--color-error);
     i {
-      color: $color-error;
+      color: var(--color-error);
     }
   }
 }

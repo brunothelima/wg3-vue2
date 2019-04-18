@@ -36,12 +36,19 @@
   };
 </script>
 
+<style lang="scss">
+:root {
+  --button-padding: 1em;
+  --button-border-radius: 0.25em;
+}
+</style>
+
 <style scoped lang="scss">
   .wg-button {
     display: flex;
     align-items: center;
-    padding: 0.8em 1em;
-    border-radius: 0.25em;
+    padding: var(--button-padding);
+    border-radius: var(--button-border-radius);
     outline: none;
     cursor: pointer;
     &[disabled] {
@@ -51,7 +58,7 @@
     i,
     svg {
       display: inline-block;
-      font-size: 16px;
+      font-size: inherit;
     }
     * ~ span {
       margin: 0 0 0 1em;

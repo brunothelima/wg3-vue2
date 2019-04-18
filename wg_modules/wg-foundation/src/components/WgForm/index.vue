@@ -61,5 +61,10 @@
   };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+:root {
+  --input-border-width: 1px;
+  --input-border-style: solid;
+  --input-border-radius: 0.5em;
+}
 </style>

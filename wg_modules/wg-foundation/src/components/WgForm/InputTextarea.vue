@@ -67,8 +67,8 @@ export default {
     width: 100%;
     min-height: 10em;
     padding: 1em;
-    border-radius: 0.5em;
-    border: 1px solid var(--color-x-8);
+    border-radius: var(--input-border-radius);
+    border: var(--input-border-width) var(--input-border-style) var(--color-x-8);
     background-color: var(--color-x-11);
     color: var(--color-x-3);
     outline: none;
@@ -78,13 +78,13 @@ export default {
     }
     &:focus {
       border-color: var(--color-x-4);
-      box-shadow: inset 0 0 0 1px var(--color-x-4);
+      box-shadow: inset 0 0 0 var(--input-border-width) var(--color-x-4);
     }
 	}
 	&--error {
-    border-color: $color-error;
+    border-color: var(--color-error);
     i {
-      color: $color-error;
+      color: var(--color-error);
     }
   }
 }

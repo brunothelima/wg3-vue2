@@ -40,12 +40,18 @@ export default {
 };
 </script>
 
+<style lang="scss">
+:root {
+  --img-border-radius: 0.25em;
+}
+</style>
+
 <style scoped lang="scss">
 figure {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  border-radius: 0.24em;
+  border-radius: var(--img-border-radius);
   background-color: var(--color-x-9);
   align-items: center;
   justify-content: center;

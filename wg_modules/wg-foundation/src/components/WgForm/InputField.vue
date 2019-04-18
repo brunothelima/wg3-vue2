@@ -46,16 +46,8 @@ export default {
       display: none;
     }
     li {
-      color: $color-error;
+      color: var(--color-error);
       margin-bottom: 0.5em;
-    }
-  }
-  &--error /deep/ .wg-input-text input,
-  &--error /deep/ .wg-input-textarea textarea,
-  &--error /deep/ .wg-input-select {
-    border-color: $color-error;
-    i {
-      color: $color-error;
     }
   }
   &--disabled {
