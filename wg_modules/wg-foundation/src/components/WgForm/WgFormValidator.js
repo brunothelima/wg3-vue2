@@ -2,7 +2,7 @@
  * This class contains all the built-in form validations methods
  *  avaliable for use to json/object 'wg-form' schemas
  */
-class WgValidations {
+class Validator {
   /**
    * Validation for required inputs
    * 
@@ -22,7 +22,7 @@ class WgValidations {
    * @return {Boolean}
    */
   static minlength(value, { limit }) {
-    return value.length >= limit
+    return !!value && value.length >= limit
   }
   /**
    * Validation for inputs with max-length value defined
@@ -33,22 +33,8 @@ class WgValidations {
    * @return {Boolean}
    */
   static maxlength(value, { limit }) {
-    return value.length <= limit
+    return !!value && value.length <= limit
   }
-}
-/**
- * This function creates a model object from the given 'wg-form' schema
- * 
- * @param {Array} schema - The given schema to be converted
- * 
- * @return {Object} model - The schema extracted model
- */
-export function schema2Model(schema) {
-  const model = {}
-  for (const input of schema.values()) {
-    model[input.name] = input.value || ""
-  }
-  return model
 }
 /**
  * This function validates an given model with the validations present in the 
@@ -60,7 +46,7 @@ export function schema2Model(schema) {
  * 
  * @return {Object} errors - The input failed validations names
  */
-export function validate(model, schema) {
+export function validateSchema(schema, model) {
   const errors = {}  
   for (const input of schema.values()) {
     // Ignore validations for disabled inputs
@@ -79,7 +65,7 @@ export function validate(model, schema) {
       }
       // Built-in validation
       const rules = input.validations[key]
-      const valid = WgValidations[key]
+      const valid = Validator[key]
       if (!valid(value, rules)) {
         errors[input.name].push(key)
       } 

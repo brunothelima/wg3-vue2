@@ -25,6 +25,7 @@ export default {
   }
 };
 </script>
+
 <style lang="scss" scoped>
 .field {
   display: flex;

@@ -62,7 +62,9 @@ export default {
     }
   }
   &--error {
-    border-color: var(--color-error);
+    input {
+      border-color: var(--color-error);
+    }
     i {
       color: var(--color-error);
     }

@@ -27,16 +27,14 @@ export default {
   },
   computed: {
     maxlength() {
-      const limit = (this.validations.maxlength)
+      return (this.validations.maxlength)
         ? this.validations.maxlength.limit
         : false 
-      return limit
     },
     count() {
-      if (!this.value) {
-        return 0;
-      }
-      return this.value.length;
+      return (this.value)
+        ? this.value.length
+        : 0
     }
   },
   methods: {
@@ -82,7 +80,9 @@ export default {
     }
 	}
 	&--error {
-    border-color: var(--color-error);
+    textarea {
+      border-color: var(--color-error);
+    }
     i {
       color: var(--color-error);
     }

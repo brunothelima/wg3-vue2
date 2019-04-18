@@ -15,9 +15,8 @@ module.exports = {
   css: {
     loaderOptions: {
       sass: {
-        data: `
-          @import "wg_admin/assets/scss/_settings.scss"; 
-          @import "wg_core/assets/scss/_settings.scss"; 
+        data: ` 
+          @import "wg_core/assets/scss/_utils.scss"; 
         `},
         postcss: { config: { path: path.resolve(__dirname) } 
       },

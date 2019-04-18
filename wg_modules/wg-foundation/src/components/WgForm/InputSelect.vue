@@ -74,5 +74,11 @@ export default {
     width: 100%;
     height: 100%;
   }
+  &--error {
+    border-color: var(--color-error);
+    i {
+      color: var(--color-error);
+    }
+  }
 }
 </style>

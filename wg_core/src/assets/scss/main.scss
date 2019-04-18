@@ -1,18 +1,50 @@
-:root {
-	--font-size: 14px;
-	--font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-	--transition-duration: 200ms;
-	--transition-timing-function: ease-out;
+@import "wg_core/assets/scss/root.scss";
+@import "wg_core/assets/widgricon/style.scss";
+@import "wg_core/assets/scss/vendors/normalize.scss";
+@import "wg_core/assets/scss/vendors/reset.scss";
 
-	--box-shadow-x: 0;
-	--box-shadow-y: 4px;
-	--box-shadow-blur: 8px;
-	--box-shadow-spread: 0;
-
-	--color-info: #3B9DEA;
-	--color-error: #FA4646;
-	--color-warning: #DBC53D;
-	--color-success: #46CD72;
+// Default heading properties
+h1 { font-size: $font-size-h1; }
+h2 { font-size: $font-size-h2; }
+h3 { font-size: $font-size-h3; }
+h4 { font-size: $font-size-h4; }
+h5 { font-size: $font-size-h5; }
+h6 { font-size: $font-size-h6; }
+h1, h2, h3 {
+  margin: 0 0 0.56em;
+}  
+h4, h5, h6, p {
+  margin: 0 0 0.80em;
+}  
+// Default paragraph properties
+p {
+  font-size: $font-size-xxl;
+  line-height: 180%;
+  a, span, label {
+    font-size: inherit;
+  }
 }
-
-@import 'text/_index';
+// Default hyperlink properties
+a {
+  color: var(--color-a-1);
+  text-decoration: none;
+  font-weight: 600;
+  &:hover {
+    color: var(--color-b-1);
+    text-decoration: underline;
+  }
+}
+// Miscalaneous hyperlink properties
+small, sup, sub {
+  font-size: calc(var(--font-size) - 4px);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+code {
+  font-size: var(--font-size);
+  font-weight: 400;
+}
+hr {
+  margin: 2rem 0;
+  border-color: var(--color-x-8);
+}

@@ -28,7 +28,7 @@
 </template>
 
 <script>
-  import { validate, schema2Model } from "wg_core/form.js";
+  import { validateSchema } from "./WgFormValidator.js";
   import InputHelp from "./InputHelp.vue";
 
   export default {
@@ -47,15 +47,23 @@
       schema: Array,
       i18n: Object
     },
+    computed: {
+      model() {
+        const model = {}
+        for (const input of this.schema.values()) {
+          model[input.name] = input.value || null
+        }
+        return model
+      },
+    },
     data() {
       return {
         errors: {},
-        model: schema2Model(this.schema)
       };
     },
     methods: {
       onSubmit(event) {
-        this.errors = validate(this.model, this.schema);
+        this.errors = validateSchema(this.schema, this.model);
       },
     }
   };
