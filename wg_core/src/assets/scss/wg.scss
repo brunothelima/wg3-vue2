@@ -1,8 +1,20 @@
-@import "wg_core/assets/scss/root.scss";
-@import "wg_core/assets/widgricon/style.scss";
+@import "wg_core/assets/icons/widgricon/style.scss";
 @import "wg_core/assets/scss/vendors/normalize.scss";
 @import "wg_core/assets/scss/vendors/reset.scss";
 
+#app {
+  background-color: var(--color-x-11);
+  color: var(--color-x-1);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  @include default-transition(background-color);
+  @media screen and (max-width: #{$tablet-brakepoint}) {
+    font-size: $font-size-xs;
+  }
+  @media screen and (max-width: #{$mobile-brakepoint}) {
+    font-size: $font-size-xxs;
+  }
+}
 // Default heading properties
 h1 { font-size: $font-size-h1; }
 h2 { font-size: $font-size-h2; }
@@ -10,12 +22,8 @@ h3 { font-size: $font-size-h3; }
 h4 { font-size: $font-size-h4; }
 h5 { font-size: $font-size-h5; }
 h6 { font-size: $font-size-h6; }
-h1, h2, h3 {
-  margin: 0 0 0.56em;
-}  
-h4, h5, h6, p {
-  margin: 0 0 0.80em;
-}  
+h1, h2, h3 { margin: 0 0 0.56em; }  
+h4, h5, h6, p { margin: 0 0 0.80em; }  
 // Default paragraph properties
 p {
   font-size: $font-size-xxl;

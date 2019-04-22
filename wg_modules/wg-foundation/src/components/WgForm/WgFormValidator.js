@@ -33,7 +33,7 @@ class Validator {
    * @return {Boolean}
    */
   static maxlength(value, { limit }) {
-    return !!value && value.length <= limit
+    return !value && value < limit
   }
 }
 /**
@@ -73,3 +73,35 @@ export function validateSchema(schema, model) {
   }
   return errors
 }
+
+
+// export function validateSchema() {
+//   const vialidation = false
+//   for (const input of this.schema.values()) {
+//     // Ignore validations for disabled inputs
+//     if (input.disabled || !input.validations) {
+//       continue
+//     }
+//     Vue.set(this.errors, input.name, [])
+//     for (const key in input.validations) {
+//       // Value to be validated
+//       const value = this.model[input.name]
+//       // Condition for custom validations containing a handler function 
+//       if (typeof input.validations[key].handler === 'function') {
+//         if (!input.validations[key].handler(value)) {
+//           this.errors[input.name].push(key) 
+//           validation = true
+//         }
+//         continue
+//       }
+//       // Built-in validation
+//       const rules = input.validations[key]
+//       const valid = Validator[key]
+//       if (!valid(value, rules)) {
+//         this.errors[input.name].push(key)
+//         validation = true
+//       } 
+//     }
+//   }
+//   return validation
+// }

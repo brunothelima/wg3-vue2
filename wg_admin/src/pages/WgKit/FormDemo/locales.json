@@ -6,7 +6,6 @@
         "label": "Campo de texto",
         "placeholder": "Escreva aqui",
         "required": "Input obrigatório",
-        "minlength": "Mínimo de 20 caracteres",
         "custom": "O valor não pode ser 'custom'"
       },
       "input_select": {
@@ -28,7 +27,7 @@
         "label": "Campo de texto grande",
         "placeholder": "Escreva aqui",
         "required": "Input obrigatório",
-        "minlength": "Mínimo de 50 caracteres"
+        "maxlength": "Maximo de 50 caracteres"
       },
       "input_radio": {
         "label": "Campo de seleção radial",
@@ -53,7 +52,6 @@
         "label": "Text input",
         "placeholder": "Type here",
         "required": "Required input",
-        "maxlength": "Minimum of 20 characters",
         "custom": "The value can't be 'custom'"
       },
       "input_select": {
@@ -75,7 +73,7 @@
         "label": "Textarea",
         "placeholder": "Type here",
         "required": "Required input",
-        "maxlength": "Minimum of 50 characters"
+        "maxlength": "Maximum of 50 characters"
       },
       "input_radio": {
         "label": "Radio input",

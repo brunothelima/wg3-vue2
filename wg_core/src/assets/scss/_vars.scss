@@ -1,0 +1,28 @@
+// Brakepoint sizes
+$tablet-brakepoint: 1024px;
+$mobile-brakepoint: 640px;
+// Box shadow weights
+$box-shadow-light: 
+	var(--box-shadow-x) 
+	var(--box-shadow-y) 
+	var(--box-shadow-blur) 
+	var(--box-shadow-spread) 
+	rgba(#110D29, 0.08);
+$box-shadow-heavy: 
+	calc(var(--box-shadow-x) * 2)
+	calc(var(--box-shadow-y) * 2)
+	calc(var(--box-shadow-blur) * 2)
+	calc(var(--box-shadow-spread) * 2)
+	rgba(#110D29, 0.24);
+// Heading font sizes
+$font-size-h1: 4.571rem;
+$font-size-h2: 4.000rem;
+$font-size-h3: 3.429rem;
+$font-size-h4: 2.857rem; 
+$font-size-h5: 2.286rem;
+$font-size-h6: 1.714rem;
+// Body font sizes
+$font-size-xxl: calc(var(--font-size) + 4px);
+$font-size-xl: calc(var(--font-size) + 2px);
+$font-size-xs: calc(var(--font-size) - 2px);
+$font-size-xxs: calc(var(--font-size) - 4px);

@@ -12,11 +12,9 @@ export default {
 	i18n: i18n,
 	store: store,
 	install(Vue) {
-
 		Vue.component(WgContainer.name, WgContainer);
 		Vue.component(WgButton.name, WgButton);
 		Vue.component(WgImg.name, WgImg);
-		
 		Vue.component(WgForm.name, WgForm);
 	},
 };

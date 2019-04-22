@@ -36,13 +36,6 @@
   };
 </script>
 
-<style lang="scss">
-:root {
-  --button-padding: 1em;
-  --button-border-radius: 0.25em;
-}
-</style>
-
 <style scoped lang="scss">
   .wg-button {
     display: flex;

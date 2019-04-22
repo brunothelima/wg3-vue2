@@ -5,7 +5,7 @@
  */
 export default {
   state: {
-    theme: 'dark',
+    theme: 'wg-dark-theme',
     locale: 'en',
   },
   getters: {

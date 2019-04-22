@@ -40,12 +40,6 @@ export default {
 };
 </script>
 
-<style lang="scss">
-:root {
-  --img-border-radius: 0.25em;
-}
-</style>
-
 <style scoped lang="scss">
 figure {
   overflow: hidden;

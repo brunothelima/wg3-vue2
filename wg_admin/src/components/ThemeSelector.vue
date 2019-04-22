@@ -15,8 +15,8 @@
   <select class="wg-theme-selector" 
     @change="onChange($event.target.value)"
     :value="theme">
-      <option value="light">{{ $t('light') }}</option>
-      <option value="dark">{{ $t('dark') }}</option>
+      <option value="wg-light-theme">{{ $t('light') }}</option>
+      <option value="wg-dark-theme">{{ $t('dark') }}</option>
   </select>
 </template>
 
