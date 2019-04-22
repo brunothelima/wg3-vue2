@@ -15,6 +15,7 @@
     font-size: $font-size-xxs;
   }
 }
+
 // Default heading properties
 h1 { font-size: $font-size-h1; }
 h2 { font-size: $font-size-h2; }
@@ -24,6 +25,7 @@ h5 { font-size: $font-size-h5; }
 h6 { font-size: $font-size-h6; }
 h1, h2, h3 { margin: 0 0 0.56em; }  
 h4, h5, h6, p { margin: 0 0 0.80em; }  
+
 // Default paragraph properties
 p {
   font-size: $font-size-xxl;
@@ -32,6 +34,7 @@ p {
     font-size: inherit;
   }
 }
+
 // Default hyperlink properties
 a {
   color: var(--color-a-1);
@@ -42,6 +45,7 @@ a {
     text-decoration: underline;
   }
 }
+
 // Miscalaneous hyperlink properties
 small, sup, sub {
   font-size: calc(var(--font-size) - 4px);

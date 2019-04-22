@@ -1,6 +1,6 @@
 <template>
-  <div class="info">
-    <i class="wg-icon-question-mark"></i>
+  <div class="input-info">
+    <wg-icon :color="false" id="wg-icon-question-mark"></wg-icon>
     <wg-tooltip direction="right">{{ text }}</wg-tooltip>
   </div>
 </template>
@@ -20,12 +20,13 @@
 </script>
 
 <style scoped lang="scss">
-  .info {
+  .input-info {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1em;
+    padding: 16px 1em 0;
+    height: fit-content;
     cursor: help;
   }
 </style>

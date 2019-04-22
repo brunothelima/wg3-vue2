@@ -8,6 +8,11 @@
         "required": "Input obrigatório",
         "custom": "O valor não pode ser 'custom'"
       },
+      "input_password": {
+        "label": "Input de senha",
+        "placeholder": "Digite sua senha",
+        "required": "Input obrigatório"
+      },
       "input_select": {
         "label": "Campo de seleção",
         "placeholder": "Selecione uma opção",
@@ -21,6 +26,11 @@
       "input_file": {
         "label": "Input de arquivo",
         "placeholder": "Selecione um arquivo",
+        "required": "Input obrigatório"
+      },
+      "input_money": {
+        "label": "Campo de preço/valor",
+        "placeholder": "Preço",
         "required": "Input obrigatório"
       },
       "input_textarea": {
@@ -54,8 +64,13 @@
         "required": "Required input",
         "custom": "The value can't be 'custom'"
       },
+      "input_password": {
+        "label": "Password input",
+        "placeholder": "Type your password",
+        "required": "Required input"
+      },
       "input_select": {
-        "label": "Selec input",
+        "label": "Select input",
         "placeholder": "Select one option",
         "required": "Required input",
         "options": {
@@ -67,6 +82,11 @@
       "input_file": {
         "label": "File input",
         "placeholder": "Click to select a file",
+        "required": "Required input"
+      },
+      "input_money": {
+        "label": "Currency input",
+        "placeholder": "Price",
         "required": "Required input"
       },
       "input_textarea": {

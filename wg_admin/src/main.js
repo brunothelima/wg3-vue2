@@ -23,13 +23,12 @@ Vue.use(VueRouter)
  * WgAdmin async initialization
 */
 GET('purchased_modules.php').then(modules => {
-  importModules(Vue, modules, { store, router, i18n })
-    .then(() => {
-      new Vue({
-        router: new VueRouter(router),
-        i18n: new VueI18n(i18n),
-        store: new Vuex.Store(store),
-        render: html => html(App)
-      }).$mount('#WgAdmin')
-    })
+  importModules(Vue, modules, { store, router, i18n }).then(() => {
+    new Vue({
+      router: new VueRouter(router),
+      i18n: new VueI18n(i18n),
+      store: new Vuex.Store(store),
+      render: html => html(App)
+    }).$mount('#WgAdmin')
+  })
 })

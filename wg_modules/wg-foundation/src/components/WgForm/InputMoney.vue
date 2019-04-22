@@ -1,7 +1,8 @@
 <template>
-  <div :class="['input-text', { 'input-text--error': error }]">
+  <div :class="['input-money', { 'input-money--error': error }]">
     <slot name="before" />
-    <div class="input-text__wrapper">
+    <div class="input-money__wrapper">
+      <span class="input-money__currency">{{currency}}</span>
       <input
         type="text"
         :value="value"
@@ -9,18 +10,24 @@
         @input="onInput($event.target.value)"
         @blur="onBlur($event.target.value)"
         @focus="onFocus($event.target.value)"
-      />
+        v-money="{ decimal: ',', thousands: '.' }"
+      >
     </div>
     <slot name="after" />
   </div>
 </template>
 
 <script>
+import {VMoney} from 'v-money'
 import inputDefaults from "wg_modules/wg-foundation/src/mixins/InputDefaults.js";
 
 export default {
-  name: "InputText",
+  name: "InputMoney",
   mixins: [inputDefaults],
+  directives: {money: VMoney},
+  props: {
+    currency: String
+  },
   methods: {
     onFocus(value) {
       this.$emit("interaction", value);
@@ -41,19 +48,34 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.input-text {
+.input-money {
   display: flex;
-  margin-bottom: 0.5rem;
   &__wrapper {
+    position: relative;
     flex: 1;
+    display: grid;
+    grid-template-columns: 48px auto;
+    margin-bottom: 0.5rem;
   }
-  input { 
-    width: 100%;
+  &__currency {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-x-10);
+    font-weight: 600;
+    color: var(--color-a-1);
+    border-radius: var(--input-border-radius) 0 0 var(--input-border-radius);
+  }
+  input {
+    grid-row: 1 / 2;
+    grid-column: 1 / 3;
     box-sizing: border-box;
-    padding: 1em;
+    padding: 1em 1em 1em calc(48px + 1em);
     border-radius: var(--input-border-radius);
     border: var(--input-border-width) var(--input-border-style) var(--color-x-8);
-    background-color: var(--color-x-11);
+    background-color: transparent;
     color: var(--color-x-3);
     outline: none;
     @include default-transition(#{border-color, box-shadow});

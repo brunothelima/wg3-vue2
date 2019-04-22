@@ -15,7 +15,7 @@
     <hr>
     <ul>
 			<li v-for="icon of icons" :key="icon" >
-				<i :class="icon"/>
+				<wg-icon color="a" :id="icon"/>
 				<span>.{{ icon }}</span>
 			</li>
 		</ul>
@@ -97,7 +97,6 @@ export default {
 				height: 2em;
 				border-radius: 0.25em;
 				background-color: var(--color-x-9);
-				color: var(--color-a-1);
 			}
 			span {
 				padding-left: 1em;

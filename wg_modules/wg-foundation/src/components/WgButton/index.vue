@@ -38,6 +38,7 @@
 
 <style scoped lang="scss">
   .wg-button {
+    overflow: hidden;
     display: flex;
     align-items: center;
     padding: var(--button-padding);

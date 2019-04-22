@@ -1,6 +1,5 @@
 <template>
-  <div class="wg-input-radio">
-    <slot name="before" />
+  <div class="input-radio">
     <div v-for="(option, index) of options" :key="`option-${index}`">
       <input
         @input="onInput($event.target.value)"
@@ -12,7 +11,6 @@
       >
       <label :for="`option-${index}`">{{ i18n.t(option.label) }}</label>
     </div>
-    <slot name="after" />
   </div>
 </template>
 
@@ -35,7 +33,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.wg-input-radio {
+.input-radio {
   display: flex;
   margin-left: -1em;
   > div {

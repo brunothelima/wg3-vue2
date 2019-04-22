@@ -1,23 +1,21 @@
 <template>
-  <div :class="['input-textarea', { 'input-textarea--error': error }]">
+  <div :class="['input-password', { 'input-password--error': error }]">
     <slot name="before" />
-
-    <div class="input-textarea__wrapper">
-
-      <textarea
-        type="text"
-        ref="input"
+    <div class="input-password__wrapper">
+      <input
+        :type="type"
         :value="value"
         :placeholder="i18n.t(placeholder)"
-        :maxlength="maxlength"
         @input="onInput($event.target.value)"
+        @blur="onBlur($event.target.value)"
         @focus="onFocus($event.target.value)"
-      ></textarea>
-      <small v-if="maxlength">{{ `${count}/${maxlength}` }}</small>
-      <small v-else>{{ count }}</small>
+      />
+      <wg-icon 
+        color="a" 
+        :id="(type === 'text') ? 'wg-icon-eye' : 'wg-icon-eye-closed'"
+        @click.native="type = (type === 'text') ? 'password' : 'text'"
+      />
     </div>
-    
-
     <slot name="after" />
   </div>
 </template>
@@ -26,61 +24,53 @@
 import inputDefaults from "wg_modules/wg-foundation/src/mixins/InputDefaults.js";
 
 export default {
-  name: "InputTextarea",
+  name: "InputPassword",
   mixins: [inputDefaults],
-  props: {
-    validations: Object
-  },
-  computed: {
-    maxlength() {
-      return (this.validations.maxlength)
-        ? this.validations.maxlength.limit
-        : false 
-    },
-    count() {
-      return (this.value)
-        ? this.value.length
-        : 0
-    }
+  data(){
+    return {
+      type: 'text',
+    } 
   },
   methods: {
-    onInput(value) {
-      this.$emit("input", value);
+    onFocus(value) {
       this.$emit("interaction", value);
+      this.$emit("focus", value);
+      this.callback("focus", value);
+    },
+    onInput(value) {
+      this.$emit("interaction", value);
+      this.$emit("input", value);
       this.callback("input", value);
     },
-    onFocus(value) {
-      this.$emit("focus", value);
+    onBlur(value) {
       this.$emit("interaction", value);
-      this.callback("focus", value);
+      this.$emit("blur", value);
+      this.callback("blur", value);
     }
   }
 };
 </script>
 <style lang="scss" scoped>
-.input-textarea {
+.input-password {
   display: flex;
   margin-bottom: 0.5rem;
   &__wrapper {
     flex: 1;
+    display: grid;
+    grid-template-columns: auto 48px;
   }
-  small {
-    display: block;
-    margin-top: 0.25em;
-    text-align: right;
-  }
-  textarea {
-    overflow: hidden;
-    box-sizing: border-box;
+  input { 
+    grid-row: 1 / 2;
+    grid-column: 1 / 3;
     width: 100%;
-    min-height: 10em;
+    box-sizing: border-box;
     padding: 1em;
     border-radius: var(--input-border-radius);
     border: var(--input-border-width) var(--input-border-style) var(--color-x-8);
     background-color: var(--color-x-11);
     color: var(--color-x-3);
     outline: none;
-    @include default-transition("border-color, box-shadow");
+    @include default-transition(#{border-color, box-shadow});
     &::placeholder {
       color: var(--color-x-7);
     }
@@ -88,9 +78,19 @@ export default {
       border-color: var(--color-x-4);
       box-shadow: 0 0 0 var(--input-border-width) var(--color-x-4);
     }
-	}
-	&--error {
-    textarea {
+  }
+  i {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+    align-self: center;
+    justify-content: center;
+    justify-self: center;
+  }
+  i {
+    cursor: pointer;
+  }
+  &--error {
+    input {
       border-color: var(--color-error);
     }
     i {

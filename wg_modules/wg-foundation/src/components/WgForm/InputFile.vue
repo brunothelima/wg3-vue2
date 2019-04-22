@@ -1,11 +1,13 @@
 <template>
-  <div :class="['wg-input-file', { 'wg-input-file--error': error }]" @click="onClick($event)">
+  <div :class="['input-file', { 'input-file--error': error }]">
     <slot name="before"/>
-    <input ref="file" type="file" @input="onInput($event.target.files[0])">
-    <span :class="(file) ? 'selected' : 'placeholder'">
-      {{ (file) ? file.name : i18n.t(placeholder) }}
-    </span>
-    <i class="wg-icon-upload"></i>
+    <div class="input-file__wrapper" @click="onClick($event)">
+      <input ref="file" type="file" @input="onInput($event.target.files[0])">
+      <span :class="(file) ? 'input-file__selected' : 'input-file__placeholder'">
+        {{ (file) ? file.name : i18n.t(placeholder) }}
+      </span>
+      <wg-icon color="a" id="wg-icon-upload" />
+    </div>
     <slot name="after"/>
   </div>
 </template>
@@ -38,35 +40,38 @@
 </script>
 
 <style lang="scss" scoped>
-  .wg-input-file {
+  .input-file {
     display: flex;
-    position: relative;
-    overflow: hidden;
-    box-sizing: border-box;
-    width: 100%;
-    padding: 1em;
-    margin-bottom: 0.5em;
-    border-radius: var(--input-border-radius);
-    border: var(--input-border-width) var(--input-border-style) var(--color-x-8);
-    background-color: var(--color-x-11);
-    outline: none;
     @include default-transition(#{border-color, box-shadow});
-    span {
-      flex: 1;
-      padding-right: 1em;
-      color: var(--color-x-3);
-      &.placeholder {
-        color: var(--color-x-7);
-      }
-    }
-    i {
-      color: var(--color-a-1);
-    }
     input {
       display: none;
     }
+    &__wrapper {
+      position: relative;
+      overflow: hidden;
+      box-sizing: border-box;
+      width: 100%;
+      padding: 1em;
+      margin-bottom: 0.5em;
+      border-radius: var(--input-border-radius);
+      border: var(--input-border-width) var(--input-border-style) var(--color-x-8);
+      background-color: var(--color-x-11);
+      outline: none;
+      display: flex;
+    }
+    &__selected,
+    &__placeholder {
+      flex: 1;
+      padding-right: 1em;
+      color: var(--color-x-3);
+    }
+    &__placeholder {
+      color: var(--color-x-7);
+    }
     &--error {
-      border-color: var(--color-error);
+      .input-file__wrapper {
+        border-color: var(--color-error);
+      }
       i {
         color: var(--color-error);
       }

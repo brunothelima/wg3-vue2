@@ -1,12 +1,12 @@
 <template>
   <div
-    :class="['field', 
-    { 'field--error': errors.length },
-    { 'field--disabled': input.disabled }]"
+    :class="['input-field', 
+    { 'input-field--error': errors.length },
+    { 'input-field--disabled': input.disabled }]"
   >
-    <label class="field__label" for>{{ i18n.t(input.label) }}</label>
+    <label class="input-field__label" for>{{ i18n.t(input.label) }}</label>
     <slot/>
-    <ul class="field__errors" v-if="errors">
+    <ul class="input-field__errors" v-if="errors">
       <li
         v-for="(error, eIndex) in errors"
         :key="`${error}_${eIndex}`"
@@ -27,7 +27,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.field {
+.input-field {
   display: flex;
   flex-flow: column;
   margin-bottom: 1em;

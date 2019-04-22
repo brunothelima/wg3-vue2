@@ -1,6 +1,5 @@
 <template>
-  <div class="wg-input-checkbox">
-    <slot name="before" />
+  <div class="input-checkbox">
     <input
       type="checkbox"
       :id="name"
@@ -9,7 +8,6 @@
       @input="onInput($event.target.checked)"
     >
     <label :for="name">{{ i18n.t(title) }}</label>
-    <slot name="after" />
   </div>
 </template>
 
@@ -38,7 +36,7 @@
   };
 </script>
 <style lang="scss" scoped>
-  .wg-input-checkbox {
+  .input-checkbox {
     display: flex;
     align-items: center;
     padding: 1em 0;

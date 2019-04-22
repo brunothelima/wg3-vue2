@@ -1,18 +1,20 @@
 <template>
-  <div :class="['wg-input-select', { 'wg-input-select--error': error }]">
+  <div :class="['input-select', { 'input-select--error': error }]">
     <slot name="before" />
-    <select @input="onInput($event.target.value)">
-      <option
-        v-for="(option, index) of options"
-        :key="`option-${index}`"
-        :value="option.value"
-        :selected="option.value === value"
-      >{{ i18n.t(option.label) }}</option>
-    </select>
-    <span :class="(selected) ? 'selected' : 'placeholder'">
-      {{ i18n.t((selected) ? selected.label : placeholder) }}
-    </span>
-    <i class="wg-icon-caret-down"/>
+    <div class="input-select__wrapper">
+      <select @input="onInput($event.target.value)">
+        <option
+          v-for="(option, index) of options"
+          :key="`option-${index}`"
+          :value="option.value"
+          :selected="option.value === value"
+        >{{ i18n.t(option.label) }}</option>
+      </select>
+      <span :class="(selected) ? 'input-select__selected' : 'input-select__placeholder'">
+        {{ i18n.t((selected) ? selected.label : placeholder) }}
+      </span>
+      <wg-icon id="wg-icon-caret-down" color="a" />
+    </div>
     <slot name="after" />
   </div>
 </template>
@@ -24,7 +26,7 @@ export default {
   name: "InputSelect",
   mixins: [inputDefaults],
   props: {
-    options: Array
+    options: Array,
   },
   computed: {
     selected() {
@@ -41,30 +43,8 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.wg-input-select {
+.input-select {
   display: flex;
-  position: relative;
-  overflow: hidden;
-  box-sizing: border-box;
-  width: 100%;
-  margin-bottom: 0.5em;
-  padding: 1em;
-  border-radius: var(--input-border-radius);
-  border: var(--input-border-width) var(--input-border-style) var(--color-x-8);
-  background-color: var(--color-x-11);
-  outline: none;
-  @include default-transition(#{border-color, box-shadow});
-  span {
-    flex: 1;
-    padding-right: 1em;
-    color: var(--color-x-3);
-    &.placeholder {
-      color: var(--color-x-7);
-    }
-  }
-  i {
-    color: var(--color-a-1);
-  }
   select {
     opacity: 0;
     position: absolute;
@@ -74,8 +54,32 @@ export default {
     width: 100%;
     height: 100%;
   }
+  &__wrapper {
+    display: flex;
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1em;
+    margin-bottom: 0.5em;
+    border-radius: var(--input-border-radius);
+    border: var(--input-border-width) var(--input-border-style) var(--color-x-8);
+    background-color: var(--color-x-11);
+    outline: none;
+    @include default-transition(#{border-color, box-shadow});
+  }
+  &__selected,
+  &__placeholder {
+    flex: 1;
+    padding-right: 1em;
+    color: var(--color-x-3);
+  }
+  &__placeholder {
+    color: var(--color-x-7);
+  }
   &--error {
-    border-color: var(--color-error);
+    .input-select__wrapper {
+      border-color: var(--color-error);
+    }
     i {
       color: var(--color-error);
     }

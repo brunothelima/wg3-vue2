@@ -3,6 +3,7 @@
 	/* Font props */
 	--font-size: 14px;
 	--font-family: "Montserrat", Arial, Helvetica, sans-serif;
+	--icons-family: "Widgricon";
 	/* Animation props */
 	--transition-duration: 200ms;
 	--transition-timing-function: ease-out;
@@ -20,9 +21,6 @@
 	--color-error: #FA4646;
 	--color-warning: #DBC53D;
 	--color-success: #46CD72;
-}
-/* Widgrid Light Theme */
-.wg-light-theme {
 	/* Primary color props */
 	--color-a-1: #6F5BED;
 	--color-a-2: #7B66FF;
@@ -52,9 +50,8 @@
 	--color-x-10: #F7F8F9;
 	--color-x-11: #FFFFFF;
 }
-
 /* Widgrid Dark Theme */
-.wg-dark-theme {
+.dark {
 	/* Primary dark color props */
 	--color-a-1: #0BD57D;
 	--color-a-2: #0CEF8C;

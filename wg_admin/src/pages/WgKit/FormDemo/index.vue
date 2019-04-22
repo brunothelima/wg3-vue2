@@ -40,6 +40,18 @@
             }
           },
           {
+            type: "password",
+            name: "input_password",
+            label: "form.input_password.label",
+            placeholder: "form.input_password.placeholder",
+            info: 'Omnis optio esse saepe, possimus a praesentium ea fuga!',
+            validations: {
+              required: {
+                message: "form.input_password.required"
+              },
+            }
+          },
+          {
             type: "select",
             name: "input_select",
             label: "form.input_select.label",
@@ -67,10 +79,24 @@
             }
           },
           {
+            type: "money",
+            name: "input_money",
+            label: "form.input_money.label",
+            placeholder: "form.input_money.placeholder",
+            info: 'Omnis optio esse saepe, possimus a praesentium ea fuga!',
+            currency: 'R$',
+            validations: {
+              required: {
+                message: "form.input_money.required"
+              },
+            }
+          },
+          {
             type: "textarea",
             name: "input_textarea",
             label: "form.input_textarea.label",
             placeholder: "form.input_textarea.placeholder",
+            info: 'Omnis optio esse saepe, possimus a praesentium ea fuga!',
             validations: {
               required: {
                 message: "form.input_textarea.required"

@@ -10,8 +10,8 @@
       :disabled="input.disabled"
     >
       <component
-        v-bind="input"
         :is="`input-${input.type}`"
+        v-bind="input"
         :i18n="i18n"
         :value="model[input.name]"
         :error="errors[input.name] && errors[input.name].length > 0"
@@ -28,43 +28,28 @@
 </template>
 
 <script>
-  import { validateSchema } from "./WgFormValidator.js";
+
+  import Vue from 'vue'
+  import FormEngine from "wg_modules/wg-foundation/src/mixins/FormEngine.js";
   import InputHelp from "./InputHelp.vue";
 
   export default {
     name: "WgForm",
+    mixins: [FormEngine],
     components: {
-      InputHelp,
+      "input-help": () => import("./InputHelp.vue"),
       "input-field": () => import("./InputField.vue"),
       "input-text": () => import("./InputText.vue"),
       "input-textarea": () => import("./InputTextarea.vue"),
       "input-select": () => import("./InputSelect.vue"),
       "input-radio": () => import("./InputRadio.vue"),
       "input-checkbox": () => import("./InputCheckbox.vue"),
-      "input-file": () => import("./InputFile.vue")
+      "input-file": () => import("./InputFile.vue"),
+      "input-money": () => import("./InputMoney.vue"),
+      "input-password": () => import("./InputPassword.vue"),
     },
     props: {
-      schema: Array,
       i18n: Object
     },
-    computed: {
-      model() {
-        const model = {}
-        for (const input of this.schema.values()) {
-          model[input.name] = input.value || null
-        }
-        return model
-      },
-    },
-    data() {
-      return {
-        errors: {},
-      };
-    },
-    methods: {
-      onSubmit(event) {
-        this.errors = validateSchema(this.schema, this.model);
-      },
-    }
   };
 </script>
