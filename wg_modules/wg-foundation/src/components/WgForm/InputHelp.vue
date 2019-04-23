@@ -25,7 +25,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 16px 1em 0;
+    padding: 0 1em;
+    margin-top: 1em;
     height: fit-content;
     cursor: help;
   }

@@ -83,6 +83,7 @@ export default {
             this.errors[input.name].push(key)
           }
         }
+        // Fail on any error detected
         if (this.errors[input.name].length) {
           response = false
         }

@@ -10,7 +10,6 @@
         @input="onInput($event.target.value)"
         @blur="onBlur($event.target.value)"
         @focus="onFocus($event.target.value)"
-        v-money="{ decimal: ',', thousands: '.' }"
       >
     </div>
     <slot name="after" />
@@ -24,7 +23,6 @@ import inputDefaults from "wg_modules/wg-foundation/src/mixins/InputDefaults.js"
 export default {
   name: "InputMoney",
   mixins: [inputDefaults],
-  directives: {money: VMoney},
   props: {
     currency: String
   },
