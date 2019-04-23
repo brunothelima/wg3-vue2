@@ -21,22 +21,21 @@
             name: "input_text",
             label: "form.input_text.label",
             placeholder: "form.input_text.placeholder",
-            info: 'Omnis optio esse saepe, possimus a praesentium ea fuga!',
-            events: {
-              focus: value => {
-                console.log(value)
-              }
-            },
+            // events: {
+            //   focus: value => {
+            //     console.log(value)
+            //   }
+            // },
             validations: {
               required: {
                 message: "form.input_text.required"
               },
-              custom: {
-                message: "form.input_text.custom",
-                handler(value) {
-                  return value != "custom"
-                }
-              }
+              // custom: {
+              //   message: "form.input_text.custom",
+              //   handler(value) {
+              //     return value != "custom"
+              //   }
+              // }
             }
           },
           {
@@ -83,7 +82,6 @@
             name: "input_money",
             label: "form.input_money.label",
             placeholder: "form.input_money.placeholder",
-            info: 'Omnis optio esse saepe, possimus a praesentium ea fuga!',
             currency: 'R$',
             validations: {
               required: {
@@ -96,7 +94,6 @@
             name: "input_textarea",
             label: "form.input_textarea.label",
             placeholder: "form.input_textarea.placeholder",
-            info: 'Omnis optio esse saepe, possimus a praesentium ea fuga!',
             validations: {
               required: {
                 message: "form.input_textarea.required"

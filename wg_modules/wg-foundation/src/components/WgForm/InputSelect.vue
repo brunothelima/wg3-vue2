@@ -55,11 +55,11 @@ export default {
     height: 100%;
   }
   &__wrapper {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto 48px;
     position: relative;
     box-sizing: border-box;
     width: 100%;
-    padding: 1em;
     margin-bottom: 0.5em;
     border-radius: var(--input-border-radius);
     border: var(--input-border-width) var(--input-border-style) var(--color-x-8);
@@ -69,12 +69,21 @@ export default {
   }
   &__selected,
   &__placeholder {
-    flex: 1;
-    padding-right: 1em;
+    padding: 1em 48px 1em 1em;
+    grid-row: 1 / 2;
+    grid-column: 1 / 3;
+  }
+  &__selected {
     color: var(--color-x-3);
   }
   &__placeholder {
     color: var(--color-x-7);
+  }
+  i {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+    align-self: center;
+    justify-self: center;
   }
   &--error {
     .input-select__wrapper {
