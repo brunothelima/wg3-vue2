@@ -24,6 +24,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.wg-icon-thick-2px:before {
+  content: "\e90c";
+}
 .wg-icon-arrow-down:before {
   content: "\e907";
 }

@@ -1,6 +1,6 @@
 <template>
-  <div :class="['input-checkbox', { 'input-checkbox--checked': status }]" >
-    <i class="input-checkbox__ui" @click="$refs.input.click()" />
+  <div :class="['input-toggle', { 'input-toggle--checked': status }]" >
+    <i class="input-toggle__ui" @click="$refs.input.click()" />
     <input
       ref="input"
       type="checkbox"
@@ -9,7 +9,6 @@
       :disabled="disabled"
       @input="onInput($event.target.checked)"
     >
-    <label :for="name">{{ i18n.t(title) }}</label>
   </div>
 </template>
 
@@ -17,7 +16,7 @@
   import inputDefaults from "wg_modules/wg-foundation/src/mixins/InputDefaults.js";
 
   export default {
-    name: "InputCheckbox",
+    name: "InputTgoggle",
     mixins: [inputDefaults],
     props: {
       checked: Boolean,
@@ -39,7 +38,7 @@
   };
 </script>
 <style lang="scss" scoped>
-  .input-checkbox {
+  .input-toggle {
     display: flex;
     align-items: center;
     padding: 1em 0;
@@ -52,31 +51,31 @@
       display: none;
     }
     &__ui {
-      display: grid;
-      align-content: center;
-      justify-content: center;
+      display: inline-flex;
+      width: 42px;
       height: 20px;
-      width: 20px;
-      border: 1px var(--input-border-style) var(--color-x-6);
-      border-radius: 2px;
-      font-family: var(--icons-family);
-      font-style: normal;
-      color: white;
+      border-radius: 13px;
+      background-color: var(--color-x-7);
+      @include default-transition(background-color);
       cursor: pointer;
       &:before {
-        content: "\e90c";
-        opacity: 0;
-      }
-      &:hover {
-        border-color: var(--color-info);
+        content: '';
+        box-sizing: border-box;
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+        transform: scale(1.2);
+        background: white;
+        border: 1px solid var(--color-x-7);
+        @include default-transition(#{transform, border-color})
       }
     }
     &--checked {
-      .input-checkbox__ui {
-        border-color: var(--color-info);
+      .input-toggle__ui {
         background-color: var(--color-info);
         &:before {
-          opacity: 1;
+          transform: scale(1.2) translateX(100%);
+          border-color: var(--color-info);
         }
       }
     }

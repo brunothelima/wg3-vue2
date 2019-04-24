@@ -34,7 +34,7 @@
     flex-direction: column;
     position: absolute;
     z-index: 2;
-    top: 2.5em;
+    top: 1.50em;
     min-width: 220px;
     transform: translate(0, 0.5em);
     visibility: hidden;

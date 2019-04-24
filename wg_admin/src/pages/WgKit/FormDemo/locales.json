@@ -8,6 +8,11 @@
         "required": "Input obrigatório",
         "custom": "O valor não pode ser 'custom'"
       },
+      "input_date": {
+        "label": "Input de data",
+        "placeholder": "Selecione uma data",
+        "required": "Required input"
+      },
       "input_password": {
         "label": "Input de senha",
         "placeholder": "Digite sua senha",
@@ -52,6 +57,9 @@
       "input_checkbox": {
         "title": "Exemplo de um input tipo checkbox",
         "label": "Marcador"
+      },
+      "input_toggle": {
+        "label": "Input toggle"
       }
     }
   },
@@ -63,6 +71,11 @@
         "placeholder": "Type here",
         "required": "Required input",
         "custom": "The value can't be 'custom'"
+      },
+      "input_date": {
+        "label": "Date input",
+        "placeholder": "Chose a date",
+        "required": "Required input"
       },
       "input_password": {
         "label": "Password input",
@@ -108,6 +121,9 @@
       "input_checkbox": {
         "title": "This is an input checkbox example",
         "label": "Checkbox"
+      },
+      "input_toggle": {
+        "label": "Toggle input"
       }
     }
   }

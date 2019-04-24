@@ -1,5 +1,5 @@
 <template>
-  <form class="wg-form" @submit.prevent="onSubmit($event)">
+  <form class="wg-form" @submit.prevent="onSubmit($event)" enctype="multipart/form-data">
     <input-field
       v-for="(input, index) in schema"
       :key="`${input.name}_${index}`"
@@ -47,6 +47,8 @@
       "input-file": () => import("./InputFile.vue"),
       "input-money": () => import("./InputMoney.vue"),
       "input-password": () => import("./InputPassword.vue"),
+      "input-toggle": () => import("./InputToggle.vue"),
+      "input-date": () => import("./InputDate.vue"),
     },
     props: {
       i18n: Object

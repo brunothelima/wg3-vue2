@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'Widgricon';
-  src:  url('fonts/Widgricon.eot?nxhkh');
-  src:  url('fonts/Widgricon.eot?nxhkh#iefix') format('embedded-opentype'),
-    url('fonts/Widgricon.ttf?nxhkh') format('truetype'),
-    url('fonts/Widgricon.woff?nxhkh') format('woff'),
-    url('fonts/Widgricon.svg?nxhkh#Widgricon') format('svg');
+  src:  url('fonts/Widgricon.eot?qwfodn');
+  src:  url('fonts/Widgricon.eot?qwfodn#iefix') format('embedded-opentype'),
+    url('fonts/Widgricon.ttf?qwfodn') format('truetype'),
+    url('fonts/Widgricon.woff?qwfodn') format('woff'),
+    url('fonts/Widgricon.svg?qwfodn#Widgricon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,6 +24,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.wg-icon-thick-2px:before {
+  content: "\e90c";
+}
 .wg-icon-arrow-down:before {
   content: "\e907";
 }

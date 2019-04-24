@@ -1,8 +1,8 @@
 <template>
-  <div :class="['input-money', { 'input-money--error': error }]">
+  <div :class="['input-date', { 'input-date--error': error }]">
     <slot name="before"/>
-    <div class="input-money__wrapper">
-      <span class="input-money__currency">{{currency}}</span>
+    <div class="input-date__wrapper">
+      <wg-icon id="wg-icon-calendar" />
       <input
         ref="input"
         type="text"
@@ -22,7 +22,7 @@
   import inputDefaults from "wg_modules/wg-foundation/src/mixins/InputDefaults.js";
 
   export default {
-    name: "InputMoney",
+    name: "InputDate",
     mixins: [inputDefaults],
     props: {
       currency: String
@@ -49,18 +49,10 @@
         this.callback("blur", value);
       }
     },
-    mounted() {
-      this.$refs.input.value = this.value
-      VMasker(this.$refs.input).maskMoney({
-        precision: 2,
-        separator: ",",
-        delimiter: "."
-      });
-    }
   };
 </script>
 <style lang="scss" scoped>
-  .input-money {
+  .input-date {
     display: flex;
     &__wrapper {
       position: relative;
@@ -69,22 +61,18 @@
       grid-template-columns: 48px auto;
       margin-bottom: 0.5rem;
     }
-    &__currency {
+    i {
       grid-row: 1 / 2;
       grid-column: 1 / 2;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: var(--color-x-10);
-      font-weight: 600;
-      color: var(--color-a-1);
-      border-radius: var(--input-border-radius) 0 0 var(--input-border-radius);
+      align-self: center;
+      justify-self: center;
+      color: var(--color-x-5);
     }
     input {
       grid-row: 1 / 2;
       grid-column: 1 / 3;
       box-sizing: border-box;
-      padding: 1em 1em 1em calc(48px + 1em);
+      padding: 1em 1em 1em 48px;
       border-radius: var(--input-border-radius);
       border: var(--input-border-width) var(--input-border-style) var(--color-x-8);
       background-color: transparent;
@@ -102,6 +90,9 @@
     &--error {
       input {
         border-color: var(--color-error);
+      }
+      i {
+        color: var(--color-error);
       }
     }
   }

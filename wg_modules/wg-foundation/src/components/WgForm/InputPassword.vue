@@ -5,6 +5,7 @@
       <input
         :type="type"
         :value="value"
+        :disabled="disabled"
         :placeholder="i18n.t(placeholder)"
         @input="onInput($event.target.value)"
         @blur="onBlur($event.target.value)"
@@ -12,7 +13,7 @@
       />
       <wg-icon 
         color="a" 
-        :id="(type === 'text') ? 'wg-icon-eye' : 'wg-icon-eye-closed'"
+        :id="(type === 'password') ? 'wg-icon-eye' : 'wg-icon-eye-closed'"
         @click.native="type = (type === 'text') ? 'password' : 'text'"
       />
     </div>
@@ -28,7 +29,7 @@ export default {
   mixins: [inputDefaults],
   data(){
     return {
-      type: 'text',
+      type: 'password',
     } 
   },
   methods: {

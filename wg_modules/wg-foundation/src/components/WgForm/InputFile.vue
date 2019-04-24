@@ -2,7 +2,7 @@
   <div :class="['input-file', { 'input-file--error': error }]">
     <slot name="before"/>
     <div class="input-file__wrapper" @click="onClick($event)">
-      <input ref="file" type="file" @input="onInput($event.target.files[0])">
+      <input :disabled="disabled" ref="file" type="file" @input="onInput($event.target.files[0])">
       <span :class="(file) ? 'input-file__selected' : 'input-file__placeholder'">
         {{ (file) ? file.name : i18n.t(placeholder) }}
       </span>

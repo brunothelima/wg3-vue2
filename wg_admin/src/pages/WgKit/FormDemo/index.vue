@@ -21,6 +21,7 @@
             name: "input_text",
             label: "form.input_text.label",
             placeholder: "form.input_text.placeholder",
+            description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus maxime, sequi eligendi aliquam nostrum quod dolores, quae quasi optio mollitia illum, at debitis. Provident, laudantium at vel tempore facere eligendi?",
             // events: {
             //   focus: value => {
             //     console.log(value)
@@ -36,6 +37,17 @@
               //     return value != "custom"
               //   }
               // }
+            }
+          },
+          {
+            type: "date",
+            name: "input_date",
+            label: "form.input_date.label",
+            placeholder: "form.input_date.placeholder",
+            validations: {
+              required: {
+                message: "form.input_date.required"
+              },
             }
           },
           {
@@ -126,6 +138,13 @@
             name: "input_checkbox",
             label: "form.input_checkbox.label",
             title: "form.input_checkbox.title",
+            checked: false
+          },
+          {
+            type: "toggle",
+            value: "45",
+            name: "input_toggle",
+            label: "form.input_toggle.label",
             checked: false
           },
         ]

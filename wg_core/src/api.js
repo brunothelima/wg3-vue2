@@ -32,9 +32,20 @@ export function GET(endpoint = '', data = {}) {
  */
 export function POST(endpoint = '', data = {}) {
   const url = urlFromServer(endpoint);
+  const body = new FormData();
+  for (const input in data) {
+    body.append(input, data[input]);
+  }
   return new Promise((resolve, reject) => {
-    fetch(url, { method: 'POST', body: JSON.stringify(data) })
-      .then(raw => raw.json())
-      .then(res => resolve(res));
+    fetch(url, { 
+      method: 'POST', 
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'multipart/form-data'
+      },
+      body: body 
+    })
+    .then(raw => raw.json())
+    .then(res => resolve(res));
   })
 }

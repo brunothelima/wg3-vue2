@@ -5,6 +5,7 @@
       <select @input="onInput($event.target.value)">
         <option
           v-for="(option, index) of options"
+          :disabled="disabled"
           :key="`option-${index}`"
           :value="option.value"
           :selected="option.value === value"

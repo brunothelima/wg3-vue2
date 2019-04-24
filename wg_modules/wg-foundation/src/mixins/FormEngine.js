@@ -92,7 +92,8 @@ export default {
     },
     onSubmit(event) {
       if (this.validate()) {
-        POST('form_demo.php').then(response => {
+        console.log(this.model['input_file'])
+        POST('form_demo.php', this.model).then(response => {
           console.log(response)
         })
       }

@@ -9,6 +9,7 @@
         ref="input"
         :value="value"
         :placeholder="i18n.t(placeholder)"
+        :disabled="disabled"
         :maxlength="maxlength"
         @input="onInput($event.target.value)"
         @focus="onFocus($event.target.value)"
