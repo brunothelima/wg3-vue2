@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "flatpickr": "^4.5.7",
     "image-clipper": "^0.4.4",
     "uglifyjs-webpack-plugin": "^2.1.2",
     "vanilla-masker": "^1.2.0",

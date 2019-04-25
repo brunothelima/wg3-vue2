@@ -10,6 +10,7 @@ export default {
   },
   getters: {
     currTheme: state => state.theme,
+    currLocale: state => state.locale,
   },
   mutations: {
     setLocale(state, payload) {

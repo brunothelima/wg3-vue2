@@ -2,7 +2,7 @@
   <div :class="['input-date', { 'input-date--error': error }]">
     <slot name="before"/>
     <div class="input-date__wrapper">
-      <wg-icon id="wg-icon-calendar" />
+      <wg-icon id="wg-icon-calendar"/>
       <input
         ref="input"
         type="text"
@@ -18,19 +18,21 @@
 </template>
 
 <script>
-  import VMasker from "vanilla-masker";
+  import { mapGetters } from "vuex";
+  import flatpickr from "flatpickr";
+  import "flatpickr/dist/l10n/pt.js";
   import inputDefaults from "wg_modules/wg-foundation/src/mixins/InputDefaults.js";
 
   export default {
     name: "InputDate",
     mixins: [inputDefaults],
-    props: {
-      currency: String
+    computed: {
+      ...mapGetters({
+        locale: "currLocale"
+      })
     },
-    data() {
-      return {
-        price: this.value
-      }
+    props: {
+      time: Boolean,
     },
     methods: {
       onFocus(value) {
@@ -47,11 +49,33 @@
         this.$emit("interaction", value);
         this.$emit("blur", value);
         this.callback("blur", value);
-      }
+      },
+      init() {
+        flatpickr(this.$refs.input, {
+          locale: this.locale,
+          enableTime: this.time,
+          dateFormat: "Y-m-d H:i",
+          defaultDate: (this.value)
+            ? this.value 
+            : null,
+        })
+      },
     },
+    watch: {
+      locale(l10n) {
+        l10n = flatpickr.l10ns[l10n]
+        flatpickr.localize(l10n)
+        this.init()
+      },
+    },
+    mounted() {
+      this.init()
+    }
   };
 </script>
-<style lang="scss" scoped>
+
+<style src="flatpickr/dist/flatpickr.min.css" />
+<style lang="scss" scoped >
   .input-date {
     display: flex;
     &__wrapper {
