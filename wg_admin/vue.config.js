@@ -7,7 +7,6 @@ module.exports = {
       alias: {
         'wg_modules': path.resolve(__dirname, '../wg_modules'),
         'wg_core': path.resolve(__dirname, '../wg_core/src'),
-        'wg_vendors': path.resolve(__dirname, '../wg_vendors'),
         'wg_admin': path.resolve(__dirname, './src')
       }
     }

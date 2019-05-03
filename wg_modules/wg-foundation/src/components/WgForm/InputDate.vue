@@ -18,10 +18,11 @@
 </template>
 
 <script>
+
   import { mapGetters } from "vuex";
-  import flatpickr from "flatpickr";
+  import flatpickr from  "flatpickr";
   import "flatpickr/dist/l10n/pt.js";
-  import inputDefaults from "wg_modules/wg-foundation/src/mixins/InputDefaults.js";
+  import inputDefaults from "../../mixins/InputDefaults.js";
 
   export default {
     name: "InputDate",
@@ -33,6 +34,7 @@
     },
     props: {
       time: Boolean,
+      mode: 'single',
     },
     methods: {
       onFocus(value) {
@@ -52,9 +54,13 @@
       },
       init() {
         flatpickr(this.$refs.input, {
+          static: true,
+          mode: this.mode,
           locale: this.locale,
           enableTime: this.time,
-          dateFormat: "Y-m-d H:i",
+          dateFormat: (this.time) 
+            ? "Y/m/d H:i" 
+            : 'Y/m/d',
           defaultDate: (this.value)
             ? this.value 
             : null,
@@ -74,8 +80,9 @@
   };
 </script>
 
-<style src="flatpickr/dist/flatpickr.min.css" />
-<style lang="scss" scoped >
+<style src="flatpickr/dist/flatpickr.min.css"></style>
+<style lang="scss" src="wg_modules/wg-foundation/src/assets/scss/flatpickr-custom.scss"></style>
+<style lang="scss" scoped>
   .input-date {
     display: flex;
     &__wrapper {
@@ -92,9 +99,12 @@
       justify-self: center;
       color: var(--color-x-5);
     }
-    input {
+    /deep/ .flatpickr-wrapper {
       grid-row: 1 / 2;
       grid-column: 1 / 3;
+    }
+    input {
+      width: 100%;
       box-sizing: border-box;
       padding: 1em 1em 1em 48px;
       border-radius: var(--input-border-radius);
@@ -102,6 +112,7 @@
       background-color: transparent;
       color: var(--color-x-3);
       outline: none;
+      cursor: pointer;
       @include default-transition(#{border-color, box-shadow});
       &::placeholder {
         color: var(--color-x-7);

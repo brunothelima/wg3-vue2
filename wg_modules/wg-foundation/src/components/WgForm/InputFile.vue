@@ -48,6 +48,7 @@
     }
     &__wrapper {
       position: relative;
+      display: flex;
       overflow: hidden;
       box-sizing: border-box;
       width: 100%;
@@ -57,7 +58,7 @@
       border: var(--input-border-width) var(--input-border-style) var(--color-x-8);
       background-color: var(--color-x-11);
       outline: none;
-      display: flex;
+      cursor: pointer;
     }
     &__selected,
     &__placeholder {

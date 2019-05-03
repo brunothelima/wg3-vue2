@@ -31,12 +31,12 @@
               required: {
                 message: "form.input_text.required"
               },
-              // custom: {
-              //   message: "form.input_text.custom",
-              //   handler(value) {
-              //     return value != "custom"
-              //   }
-              // }
+              custom: {
+                message: "form.input_text.custom",
+                handler(value) {
+                  return value != "custom"
+                }
+              }
             }
           },
           {

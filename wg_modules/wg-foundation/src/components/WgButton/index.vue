@@ -43,6 +43,7 @@
     align-items: center;
     padding: var(--button-padding);
     border-radius: var(--button-border-radius);
+    font-size: var(--font-size);
     outline: none;
     cursor: pointer;
     &[disabled] {
@@ -50,7 +51,8 @@
       cursor: default;
     }
     i,
-    svg {
+    svg,
+    span {
       display: inline-block;
       font-size: inherit;
     }

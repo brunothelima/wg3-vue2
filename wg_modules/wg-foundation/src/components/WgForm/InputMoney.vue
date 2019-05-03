@@ -27,11 +27,6 @@
     props: {
       currency: String
     },
-    data() {
-      return {
-        price: this.value
-      }
-    },
     methods: {
       onFocus(value) {
         this.$emit("interaction", value);
