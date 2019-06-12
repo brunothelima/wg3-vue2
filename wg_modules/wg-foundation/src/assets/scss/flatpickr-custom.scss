@@ -12,6 +12,9 @@
     font-size: var(--font-size);
     color: var(--color-a-1);
   }
+  &-days .dayContainer {
+    justify-content: flex-start;
+  }
   &-day {
     font-size: $font-size-xs;
     height: 26px;

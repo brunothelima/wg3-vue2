@@ -86,6 +86,9 @@ export default {
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		grid-gap: 1em;
+		@media screen and (max-width: #{$tablet-brakepoint}) {
+			grid-template-columns: repeat(1, 1fr);
+		}
 		li {
 			display: flex;
 			align-items: center;

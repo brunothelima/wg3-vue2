@@ -9,7 +9,7 @@ import router from './router'
 import store from './store'
 import i18n from './i18n'
 // Wg core functions imports
-import { GET } from 'wg_core/api.js' 
+import { GET } from 'wg_core/lib/api.js' 
 import { importModules } from 'wg_core/wg.js'
 // Root component to render the application
 import App from './app.vue'

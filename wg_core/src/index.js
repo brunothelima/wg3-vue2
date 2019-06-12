@@ -5,7 +5,7 @@ import VueI18n from 'vue-i18n/dist/vue-i18n.min.js'
 import VueLocalStorage from 'vue-localstorage'
 // Wg core functions imports
 import { installModule } from './wg.js'
-import { GET } from './api.js';
+import { GET } from './lib/api.js';
 // Modules extentions 
 const store = { modules: {} }
 const i18n = { locale: 'pt', messages: {} }

@@ -30,12 +30,20 @@ export default {
 <style lang="scss" scoped>
 .system-colors ul {		
 	display: flex;
+	@media screen and (max-width: #{$tablet-brakepoint}) {
+		flex-direction: column;
+	}
 	li {
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		flex: 1;
 		height: 40px;
 		padding: 0.25em 1em;
 		color: var(--color-x-11);
-		@include flex-center();
+		@media screen and (max-width: #{$tablet-brakepoint}) {
+			flex: none;
+		}
 		&.color-info { background-color: var(--color-info); }
 		&.color-error { background-color: var(--color-error); }
 		&.color-warning { background-color: var(--color-warning);}

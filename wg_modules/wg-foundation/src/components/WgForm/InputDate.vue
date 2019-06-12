@@ -4,11 +4,11 @@
     <div class="input-date__wrapper">
       <wg-icon id="wg-icon-calendar"/>
       <input
+        class="app-date"
         ref="input"
         type="text"
         :disabled="disabled"
         :placeholder="i18n.t(placeholder)"
-        @input="onInput($event.target.value)"
         @blur="onBlur($event.target.value)"
         @focus="onFocus($event.target.value)"
       >
@@ -30,14 +30,33 @@
     computed: {
       ...mapGetters({
         locale: "currLocale"
-      })
+      }),
+      options() {
+        return {
+          static: true,
+          locale: this.locale,
+          enableTime: this.time,
+          mode:  !!this.mode
+            ? this.mode
+            : 'single',
+          dateFormat: !!this.time
+            ? "Y/m/d H:i" 
+            : 'Y/m/d',
+          defaultDate: !!this.value
+            ? this.value 
+            : null,
+          onChange: (_, value) => {
+            this.onInput(value);
+          }
+        }
+      }
     },
     props: {
       time: Boolean,
-      mode: 'single',
+      mode: String,
     },
     methods: {
-      onFocus(value) {
+      onFocus(value) { 
         this.$emit("interaction", value);
         this.$emit("focus", value);
         this.callback("focus", value);
@@ -52,30 +71,16 @@
         this.$emit("blur", value);
         this.callback("blur", value);
       },
-      init() {
-        flatpickr(this.$refs.input, {
-          static: true,
-          mode: this.mode,
-          locale: this.locale,
-          enableTime: this.time,
-          dateFormat: (this.time) 
-            ? "Y/m/d H:i" 
-            : 'Y/m/d',
-          defaultDate: (this.value)
-            ? this.value 
-            : null,
-        })
-      },
     },
     watch: {
       locale(l10n) {
         l10n = flatpickr.l10ns[l10n]
         flatpickr.localize(l10n)
-        this.init()
+        flatpickr(this.$refs.input, this.options);
       },
     },
     mounted() {
-      this.init()
+      flatpickr(this.$refs.input, this.options);
     }
   };
 </script>
