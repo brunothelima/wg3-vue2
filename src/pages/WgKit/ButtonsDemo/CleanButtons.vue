@@ -11,12 +11,12 @@
 </template>
 
 <script>
-import ButtonsList from "./ButtonsList";
+import ButtonsList from './ButtonsList'
 
 export default {
-  name: "CleanButtons",
+  name: 'CleanButtons',
   components: {
     ButtonsList
   }
-};
+}
 </script>

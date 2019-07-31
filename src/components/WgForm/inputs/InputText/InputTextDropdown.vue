@@ -23,50 +23,50 @@
 </template>
 
 <script>
-import InputMixin from "@/mixins/InputMixin.js";
-import WgFormDropdown from "@/components/WgForm/WgFormDropdown";
-import WgIcon from "@/components/WgIcon";
+import InputMixin from '@/mixins/InputMixin.js'
+import WgFormDropdown from '@/components/WgForm/WgFormDropdown'
+import WgIcon from '@/components/WgIcon'
 
 export default {
-  name: "InputTextDropdown",
+  name: 'InputTextDropdown',
   mixins: [InputMixin],
   props: {
     dropdown: {
       type: Object,
       default: () => ({
-				prefix: "",
-				default: 1,
+        prefix: '',
+        default: 1,
         options: []
       })
     }
   },
   components: {
     WgFormDropdown,
-    WgIcon,
+    WgIcon
   },
   methods: {
-		onDropdownSelect(value) {
-			this.$emit("interaction", value);
-      this.$emit("dropdownSelect", value);
-      this.callback("dropdownSelect", value);
-		},
-    onFocus(value) {
-      this.$emit("interaction", value);
-      this.$emit("focus", value);
-      this.callback("focus", value);
+    onDropdownSelect (value) {
+      this.$emit('interaction', value)
+      this.$emit('dropdownSelect', value)
+      this.callback('dropdownSelect', value)
     },
-    onInput(value) {
-      this.$emit("interaction", value);
-      this.$emit("input", value);
-      this.callback("input", value);
+    onFocus (value) {
+      this.$emit('interaction', value)
+      this.$emit('focus', value)
+      this.callback('focus', value)
     },
-    onBlur(value) {
-      this.$emit("interaction", value);
-      this.$emit("blur", value);
-      this.callback("blur", value);
+    onInput (value) {
+      this.$emit('interaction', value)
+      this.$emit('input', value)
+      this.callback('input', value)
+    },
+    onBlur (value) {
+      this.$emit('interaction', value)
+      this.$emit('blur', value)
+      this.callback('blur', value)
     }
   }
-};
+}
 </script>
 <style lang="scss" scoped>
 .input-text-dropdown {

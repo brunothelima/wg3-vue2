@@ -23,6 +23,6 @@
 
 <script>
 export default {
-  name: "Paragraph"
-};
+  name: 'Paragraph'
+}
 </script>

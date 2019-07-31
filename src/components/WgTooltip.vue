@@ -25,11 +25,11 @@
 
 <script>
 export default {
-  name: "WgTooltip",
+  name: 'WgTooltip',
   props: {
     direction: String
   }
-};
+}
 </script>
 
 <style lang="scss">

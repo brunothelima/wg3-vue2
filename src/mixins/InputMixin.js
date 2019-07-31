@@ -12,15 +12,15 @@ export default {
       default: function () {
         return {
           t: (value) => {
-            return value || '';
+            return value || ''
           }
         }
-      },
+      }
     }
   },
   methods: {
-    callback(callback, event) {
-      if (this.events && typeof this.events[callback] === "function") {
+    callback (callback, event) {
+      if (this.events && typeof this.events[callback] === 'function') {
         this.events[callback](event)
       }
     }

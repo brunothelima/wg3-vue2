@@ -6,8 +6,8 @@
 
 <script>
 export default {
-  name: "CleanButton"
-};
+  name: 'CleanButton'
+}
 </script>
 
 <style scoped lang="scss">

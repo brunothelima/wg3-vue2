@@ -12,12 +12,12 @@
 
 <script>
 export default {
-  name: "ColorPalette",
+  name: 'ColorPalette',
   props: {
     range: Number,
     cssVar: String
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

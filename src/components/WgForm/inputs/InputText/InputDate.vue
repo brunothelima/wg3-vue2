@@ -18,35 +18,35 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
-import flatpickr from "flatpickr";
-import "flatpickr/dist/l10n/pt.js";
-import InputMixin from "@/mixins/InputMixin.js";
+import { mapGetters } from 'vuex'
+import flatpickr from 'flatpickr'
+import 'flatpickr/dist/l10n/pt.js'
+import InputMixin from '@/mixins/InputMixin.js'
 
-import WgIcon from "@/components/WgIcon";
+import WgIcon from '@/components/WgIcon'
 
 export default {
-  name: "InputDate",
+  name: 'InputDate',
   mixins: [InputMixin],
   components: {
     WgIcon
   },
   computed: {
     ...mapGetters({
-      locale: "currLocale"
+      locale: 'currLocale'
     }),
-    options() {
+    options () {
       return {
         static: true,
         locale: this.locale,
         enableTime: this.time,
-        mode: !!this.mode ? this.mode : "single",
-        dateFormat: !!this.time ? "Y/m/d H:i" : "Y/m/d",
-        defaultDate: !!this.value ? this.value : null,
+        mode: this.mode ? this.mode : 'single',
+        dateFormat: this.time ? 'Y/m/d H:i' : 'Y/m/d',
+        defaultDate: this.value ? this.value : null,
         onChange: (_, value) => {
-          this.onInput(value);
+          this.onInput(value)
         }
-      };
+      }
     }
   },
   props: {
@@ -54,33 +54,33 @@ export default {
     mode: String
   },
   methods: {
-    onFocus(value) {
-      this.$emit("interaction", value);
-      this.$emit("focus", value);
-      this.callback("focus", value);
+    onFocus (value) {
+      this.$emit('interaction', value)
+      this.$emit('focus', value)
+      this.callback('focus', value)
     },
-    onInput(value) {
-      this.$emit("interaction", value);
-      this.$emit("input", value);
-      this.callback("input", value);
+    onInput (value) {
+      this.$emit('interaction', value)
+      this.$emit('input', value)
+      this.callback('input', value)
     },
-    onBlur(value) {
-      this.$emit("interaction", value);
-      this.$emit("blur", value);
-      this.callback("blur", value);
+    onBlur (value) {
+      this.$emit('interaction', value)
+      this.$emit('blur', value)
+      this.callback('blur', value)
     }
   },
   watch: {
-    locale(l10n) {
-      l10n = flatpickr.l10ns[l10n];
-      flatpickr.localize(l10n);
-      flatpickr(this.$refs.input, this.options);
+    locale (l10n) {
+      l10n = flatpickr.l10ns[l10n]
+      flatpickr.localize(l10n)
+      flatpickr(this.$refs.input, this.options)
     }
   },
-  mounted() {
-    flatpickr(this.$refs.input, this.options);
+  mounted () {
+    flatpickr(this.$refs.input, this.options)
   }
-};
+}
 </script>
 
 <style src="flatpickr/dist/flatpickr.min.css"></style>

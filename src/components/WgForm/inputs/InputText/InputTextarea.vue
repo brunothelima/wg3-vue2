@@ -20,37 +20,37 @@
 </template>
 
 <script>
-import InputMixin from "@/mixins/InputMixin.js";
+import InputMixin from '@/mixins/InputMixin.js'
 
 export default {
-  name: "InputTextarea",
+  name: 'InputTextarea',
   mixins: [InputMixin],
   props: {
     validations: Object
   },
   computed: {
-    maxlength() {
+    maxlength () {
       return this.validations.maxlength
         ? this.validations.maxlength.limit
-        : false;
+        : false
     },
-    count() {
-      return this.value ? this.value.length : 0;
+    count () {
+      return this.value ? this.value.length : 0
     }
   },
   methods: {
-    onInput(value) {
-      this.$emit("input", value);
-      this.$emit("interaction", value);
-      this.callback("input", value);
+    onInput (value) {
+      this.$emit('input', value)
+      this.$emit('interaction', value)
+      this.callback('input', value)
     },
-    onFocus(value) {
-      this.$emit("focus", value);
-      this.$emit("interaction", value);
-      this.callback("focus", value);
+    onFocus (value) {
+      this.$emit('focus', value)
+      this.$emit('interaction', value)
+      this.callback('focus', value)
     }
   }
-};
+}
 </script>
 <style lang="scss" scoped>
 .input-textarea {

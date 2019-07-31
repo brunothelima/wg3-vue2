@@ -40,19 +40,19 @@
 </template>
 
 <script>
-import WgIcon from '@/components/WgIcon';
+import WgIcon from '@/components/WgIcon'
 
 export default {
-  name: "AsideMenu",
+  name: 'AsideMenu',
   components: {
     WgIcon
   }
-};
+}
 </script>
 
 <style lang="scss">
-.aside-menu { 
-  height: 100vh;  
+.aside-menu {
+  height: 100vh;
   background-color: var(--color-x-11);
   border-right: 1px solid var(--color-x-10);
   // box-shadow: 0 0 10px 10px rgba(red(var(--color-x-10)), green(var(--color-x-10)), blue(var(--color-x-10)), 1);
@@ -88,7 +88,7 @@ export default {
       }
       &:hover {
         color: var(--color-x-6);
-      } 
+      }
     }
   }
 }

@@ -7,16 +7,16 @@
 </template>
 
 <script>
-import WgLocaleSelector from "@/components/WgLocaleSelector";
-import WgThemeSelector from "@/components/WgThemeSelector";
+import WgLocaleSelector from '@/components/WgLocaleSelector'
+import WgThemeSelector from '@/components/WgThemeSelector'
 
 export default {
-  name: "WgPageSettings",
+  name: 'WgPageSettings',
   components: {
     WgLocaleSelector,
-    WgThemeSelector,
-  },
-};
+    WgThemeSelector
+  }
+}
 </script>
 <style lang="scss" scoped>
 .wg-page-settings {

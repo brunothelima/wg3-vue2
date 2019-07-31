@@ -29,16 +29,16 @@
 </template>
 
 <script>
-import GlassyButtons from "./GlassyButtons";
-import CleanButtons from "./CleanButtons";
+import GlassyButtons from './GlassyButtons'
+import CleanButtons from './CleanButtons'
 
 export default {
-  name: "ButtonsDemo",
+  name: 'ButtonsDemo',
   components: {
     GlassyButtons,
     CleanButtons
-  },
-};
+  }
+}
 </script>
 
 <style lang="scss" scoped>

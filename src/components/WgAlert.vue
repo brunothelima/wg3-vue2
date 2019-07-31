@@ -2,52 +2,52 @@
   <ul class="wg-alert" v-if="hasMessages">
 		<li v-for="(message, index) of messages" :key="`alert-${index}`">
 			<span>
-				<wg-icon @click.native="onClose(index)" id="wg-icon-close" /> 
-				<span>{{ message }}</span>	
+				<wg-icon @click.native="onClose(index)" id="wg-icon-close" />
+				<span>{{ message }}</span>
 			</span>
 		</li>
 	</ul>
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
-import WgIcon from '@/components/WgIcon';
+import { mapGetters } from 'vuex'
+import WgIcon from '@/components/WgIcon'
 
 export default {
-	name: "WgAlert",
-	components: {
-		WgIcon
-	},
-	computed: {
-		...mapGetters({
-			hasMessages: 'alert/hasMessages',
-			messages: 'alert/getMessages'
-		})
-	},
-	data() {
-		return {
-			interval: false,
-		}
-	},
-	methods: {
-		onClose(index) {
-			this.$store.commit('alert/removeMessage', index);
-		}
-	},
-	watch: {
-		hasMessages(status) {
-			if (typeof this.interval === 'object') {
-				clearTimeout(this.interval);
-				this.interval = fallse;
-			}
-			if (status && !this.interval) {
-				this.interval = setInterval(() => {
-					this.$store.commit('alert/removeLastMessage');
-				}, 5000);
-			}
-		}
-	}
-};
+  name: 'WgAlert',
+  components: {
+    WgIcon
+  },
+  computed: {
+    ...mapGetters({
+      hasMessages: 'alert/hasMessages',
+      messages: 'alert/getMessages'
+    })
+  },
+  data () {
+    return {
+      interval: false
+    }
+  },
+  methods: {
+    onClose (index) {
+      this.$store.commit('alert/removeMessage', index)
+    }
+  },
+  watch: {
+    hasMessages (status) {
+      if (typeof this.interval === 'object') {
+        clearTimeout(this.interval)
+        this.interval = fallse
+      }
+      if (status && !this.interval) {
+        this.interval = setInterval(() => {
+          this.$store.commit('alert/removeLastMessage')
+        }, 5000)
+      }
+    }
+  }
+}
 </script>
 <style lang="scss" scoped>
 .wg-alert {

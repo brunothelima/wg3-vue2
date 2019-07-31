@@ -17,29 +17,29 @@
 </template>
 
 <script>
-import InputMixin from "@/mixins/InputMixin.js";
+import InputMixin from '@/mixins/InputMixin.js'
 
 export default {
-  name: "InputText",
+  name: 'InputText',
   mixins: [InputMixin],
   methods: {
-    onFocus(value) {
-      this.$emit("interaction", value);
-      this.$emit("focus", value);
-      this.callback("focus", value);
+    onFocus (value) {
+      this.$emit('interaction', value)
+      this.$emit('focus', value)
+      this.callback('focus', value)
     },
-    onInput(value) {
-      this.$emit("interaction", value);
-      this.$emit("input", value);
-      this.callback("input", value);
+    onInput (value) {
+      this.$emit('interaction', value)
+      this.$emit('input', value)
+      this.callback('input', value)
     },
-    onBlur(value) {
-      this.$emit("interaction", value);
-      this.$emit("blur", value);
-      this.callback("blur", value);
+    onBlur (value) {
+      this.$emit('interaction', value)
+      this.$emit('blur', value)
+      this.callback('blur', value)
     }
   }
-};
+}
 </script>
 <style lang="scss" scoped>
 .input-text {

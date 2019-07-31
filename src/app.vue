@@ -1,28 +1,27 @@
 <template>
   <div id="app" :class="['widgrid', theme]">
-    <wg-alert /> 
+    <wg-alert />
     <router-view />
   </div>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
-import WgAlert from "@/components/WgAlert";
-import WgIcon from "@/components/WgIcon";
-
+import { mapGetters } from 'vuex'
+import WgAlert from '@/components/WgAlert'
+import WgIcon from '@/components/WgIcon'
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
     WgAlert,
-    WgIcon,
+    WgIcon
   },
   computed: {
     ...mapGetters({
-      theme: "currTheme",
+      theme: 'currTheme'
     })
-  },
-};
+  }
+}
 </script>
 
 <style lang="scss">

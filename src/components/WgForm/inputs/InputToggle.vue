@@ -13,29 +13,29 @@
 </template>
 
 <script>
-import InputMixin from "@/mixins/InputMixin.js";
+import InputMixin from '@/mixins/InputMixin.js'
 
 export default {
-  name: "InputTgoggle",
+  name: 'InputTgoggle',
   mixins: [InputMixin],
   props: {
     checked: Boolean,
     title: String
   },
-  data() {
+  data () {
     return {
       status: null
-    };
+    }
   },
   methods: {
-    onInput(checked) {
-      this.status = checked;
-      this.$emit("input", checked ? this.value : null);
-      this.$emit("interaction", checked ? this.value : null);
-      this.callback("input", checked ? this.value : null);
+    onInput (checked) {
+      this.status = checked
+      this.$emit('input', checked ? this.value : null)
+      this.$emit('interaction', checked ? this.value : null)
+      this.callback('input', checked ? this.value : null)
     }
   }
-};
+}
 </script>
 <style lang="scss" scoped>
 .input-toggle {

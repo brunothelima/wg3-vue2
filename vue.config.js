@@ -7,9 +7,9 @@ module.exports = {
         data: `
           @import "@/assets/scss/_mixins.scss";
           @import "@/assets/scss/_vars.scss";
-        `},
-        postcss: { config: { path: path.resolve(__dirname) } 
-      },
+        ` },
+      postcss: { config: { path: path.resolve(__dirname) }
+      }
     }
   },
   pluginOptions: {

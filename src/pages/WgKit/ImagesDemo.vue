@@ -44,14 +44,14 @@
   </section>
 </template>
 
-<script> 
-import WgImg from '@/components/WgImg';
+<script>
+import WgImg from '@/components/WgImg'
 
 export default {
   name: 'ImagesDemo',
   components: {
-    WgImg,
-  },
+    WgImg
+  }
 }
 </script>
 
@@ -65,7 +65,7 @@ export default {
   }
   > h1 {
     color: var(--color-a-1);
-  } 
+  }
   > div > div {
     overflow: auto;
     width: 100%;

@@ -3,7 +3,7 @@
     :is="`${model}-button`"
     :disabled="disabled"
     :class="[
-      'wg-button', 
+      'wg-button',
       `wg-button--${size}`,
       { 'wg-button--hover': hover },
       { 'wg-button--active': active },
@@ -19,10 +19,10 @@
 
 <script>
 export default {
-  name: "WgButton",
+  name: 'WgButton',
   components: {
-    "glassy-button": () => import("./GlassyButton"),
-    "clean-button": () => import("./CleanButton")
+    'glassy-button': () => import('./GlassyButton'),
+    'clean-button': () => import('./CleanButton')
   },
   props: {
     icon: String,
@@ -33,7 +33,7 @@ export default {
     reverse: Boolean,
     disabled: Boolean
   }
-};
+}
 </script>
 
 <style scoped lang="scss">

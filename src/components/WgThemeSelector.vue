@@ -17,32 +17,32 @@
     @input="onChange($event)"
     :value="theme"
     :options="[
-      { value: 'light', label: $t('light') }, 
+      { value: 'light', label: $t('light') },
       { value: 'dark', label: $t('dark') }
     ]"
   />
 </template>
 
 <script>
-import { mapGetters } from "vuex";
-import InputSelect from "@/components/WgForm/inputs/InputSelect";
+import { mapGetters } from 'vuex'
+import InputSelect from '@/components/WgForm/inputs/InputSelect'
 
 export default {
-  name: "ThemeSelector",
+  name: 'ThemeSelector',
   components: {
     InputSelect
   },
   computed: {
     ...mapGetters({
-      theme: "currTheme"
+      theme: 'currTheme'
     })
   },
   methods: {
-    onChange(theme) {
-      this.$store.commit("setTheme", theme);
+    onChange (theme) {
+      this.$store.commit('setTheme', theme)
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

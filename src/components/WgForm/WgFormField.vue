@@ -1,7 +1,7 @@
 <template>
   <div
     :class="[
-    'wg-form-field', 
+    'wg-form-field',
     { 'wg-form-field--error': errors.length },
     { 'wg-form-field--disabled': input.disabled }]"
   >
@@ -19,13 +19,13 @@
 
 <script>
 export default {
-  name: "WgFormField",
+  name: 'WgFormField',
   props: {
     i18n: Object,
     input: Object,
     errors: Array
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

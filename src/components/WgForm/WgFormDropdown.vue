@@ -1,6 +1,6 @@
 <template>
   <div class="wg-form-dropdown">
-		
+
     <span class="wg-form-dropdown__prefix" v-if="prefix">{{ i18n.t(prefix) }}</span>
     <span class="wg-form-dropdown__selected">{{ i18n.t((selected) ? selected.label : placeholder) }}</span>
     <wg-icon id="wg-icon-caret-down" color="a" />
@@ -16,47 +16,47 @@
 </template>
 
 <script>
-import WgIcon from "@/components/WgIcon";
+import WgIcon from '@/components/WgIcon';
 export default {
-  name: "WgFormDropdown",
+  name: 'WgFormDropdown',
   components: {
     WgIcon
   },
   props: {
-		default: '',
-		prefix: String,
-		options: Array,
-		i18n: {
+    default: '',
+    prefix: String,
+    options: Array,
+    i18n: {
       type: Object,
-      default: function() {
+      default: function () {
         return { t: (value) => {
-          return value || '';
+          return value || ''
         }}
-      },
+      }
     }
-	},
-	data() {
-		return {
-			value: '',
-		}
-	},
-	computed: {
-    selected() {
+  },
+  data () {
+    return {
+      value: ''
+    }
+  },
+  computed: {
+    selected () {
       return this.options.find(option => {
-				if (this.value) {
-					return option.value === this.value
-				}
-				return option.value === this.default
-			});
+        if (this.value) {
+          return option.value === this.value
+        }
+        return option.value === this.default
+      })
     }
   },
   methods: {
-    onInput(value) {
-			this.value = value;
-      this.$emit("input", value);
+    onInput (value) {
+      this.value = value
+      this.$emit('input', value)
     }
   }
-};
+}
 </script>
 <style lang="scss" scoped>
 .wg-form-dropdown {

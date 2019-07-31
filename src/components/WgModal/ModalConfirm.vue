@@ -17,7 +17,7 @@
         class="left"
         @click="onButtonLeftClick($event)"
         :style="`
-            color: var(--color-${buttonLeft.color || 'x-6'}); 
+            color: var(--color-${buttonLeft.color || 'x-6'});
             flex: ${buttonLeft.flex || 1};}
         `"
       >{{ buttonLeft.label || buttonLeft }}</button>
@@ -26,7 +26,7 @@
         class="right"
         @click="onButtonRightClick($event)"
         :style="`
-          color: var(--color-${buttonRight.color || 'x-6'}); 
+          color: var(--color-${buttonRight.color || 'x-6'});
           flex: ${buttonRight.flex || 1};}
         `"
       >{{ buttonRight.label || buttonRight }}</button>
@@ -35,10 +35,10 @@
 </template>
 
 <script>
-import WgIcon from "@/components/WgIcon";
+import WgIcon from '@/components/WgIcon'
 
 export default {
-  name: "ModalConfirmation",
+  name: 'ModalConfirmation',
   components: {
     WgIcon
   },
@@ -52,14 +52,14 @@ export default {
     buttonRight: [String, Object]
   },
   methods: {
-    onButtonLeftClick(event) {
-      this.$emit("buttonLeftClick");
+    onButtonLeftClick (event) {
+      this.$emit('buttonLeftClick')
     },
-    onButtonRightClick(event) {
-      this.$emit("buttonRightClick");
+    onButtonRightClick (event) {
+      this.$emit('buttonRightClick')
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

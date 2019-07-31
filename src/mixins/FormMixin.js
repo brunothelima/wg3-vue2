@@ -3,23 +3,23 @@ import Validations from '@/vendors/js/validations.js'
 
 export default {
   props: {
-    schema: Array,
+    schema: Array
   },
-  data() {
+  data () {
     return {
       model: this.schema2Model(),
-      errors: {},
-    };
+      errors: {}
+    }
   },
   methods: {
-    schema2Model() {
+    schema2Model () {
       const model = {}
       for (const input of this.schema.values()) {
         model[input.name] = input.value || null
       }
       return model
     },
-    validate() {
+    validate () {
       let response = true
       for (const input of this.schema.values()) {
         // Ignore validations for disabled inputs
@@ -30,7 +30,7 @@ export default {
         for (const key in input.validations) {
           // Value to be validated
           const value = this.model[input.name]
-          // Condition for custom validations containing a handler function 
+          // Condition for custom validations containing a handler function
           if (typeof input.validations[key].handler === 'function') {
             if (!input.validations[key].handler(value)) {
               this.errors[input.name].push(key)
@@ -50,6 +50,6 @@ export default {
         }
       }
       return response
-    },
-  },
+    }
+  }
 }

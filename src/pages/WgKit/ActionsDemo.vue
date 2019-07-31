@@ -28,29 +28,29 @@
 </template>
 
 <script>
-import WgButton from "@/components/WgButton";
-import ModalDemo from "./ModalDemo";
+import WgButton from '@/components/WgButton'
+import ModalDemo from './ModalDemo'
 
 export default {
-  name: "ActionsDemo",
+  name: 'ActionsDemo',
   components: {
-		WgButton,
-		ModalDemo
-	},
-	data() {
+    WgButton,
+    ModalDemo
+  },
+  data () {
     return {
       deleteId: 0
-    };
+    }
   },
   methods: {
-    messageDemo(message) {
-      this.$store.commit("alert/addMessage", this.$i18n.t(message));
+    messageDemo (message) {
+      this.$store.commit('alert/addMessage', this.$i18n.t(message))
     },
-    deleteDemo(id) {
-      this.deleteId = id;
-    },
+    deleteDemo (id) {
+      this.deleteId = id
+    }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

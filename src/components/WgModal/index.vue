@@ -10,15 +10,15 @@
 <script>
 
 export default {
-  name: "WgModal",
-  created() {
+  name: 'WgModal',
+  created () {
     window.addEventListener('keydown', e => {
       if (e.key == 'Escape') {
-        this.$emit('cancel');
+        this.$emit('cancel')
       }
-    });
-  },
-};
+    })
+  }
+}
 </script>
 
 <style lang="scss" scoped>
