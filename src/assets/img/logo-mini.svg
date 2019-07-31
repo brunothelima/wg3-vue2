@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="9px" viewBox="0 0 14 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>wLogo</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="landing-page" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="largeContent" transform="translate(-953.000000, -8352.000000)">
+            <g id="footer" transform="translate(0.000000, 8323.000000)">
+                <g id="wLogo" transform="translate(952.000000, 25.000000)">
+                    <rect id="bounds" x="0" y="0" width="16" height="16"></rect>
+                    <path d="M11.4045085,4 L14.59548,4 C14.781325,4 14.9022,4.195578 14.819085,4.3618035 L12.999995,7.999985 L11.1809015,4.3618035 C11.097789,4.195578 11.218663,4 11.4045085,4 Z" id="path1_fill" fill="#0CEF8C" fill-rule="nonzero"></path>
+                    <path d="M5.27638,12.55275 L3.49999,8.999985 L1.1809015,4.3618035 C1.097789,4.195578 1.218663,4 1.4045085,4 L4.84548,4 C4.94017,4 5.026735,4.0535005 5.069085,4.1381965 L7.4441,8.88818 C7.47925,8.95856 7.47925,9.0414 7.4441,9.1118 L5.72359,12.55275 C5.63146,12.737 5.36851,12.737 5.27638,12.55275 Z" id="path2_fill" fill="#0CEF8C" fill-rule="nonzero"></path>
+                    <path d="M12.4441,9.1118 L10.72359,12.55275 C10.63146,12.737 10.36851,12.737 10.27638,12.55275 L6.1809015,4.3618035 C6.097789,4.195578 6.218663,4 6.4045085,4 L9.84548,4 C9.94017,4 10.026735,4.0535005 10.069085,4.1381965 L12.4441,8.88818 C12.47925,8.95856 12.47925,9.0414 12.4441,9.1118 Z" id="path3_fill" fill="#0CEF8C" fill-rule="nonzero"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

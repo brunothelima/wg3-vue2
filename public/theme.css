@@ -1,0 +1,90 @@
+/* Light Theme */
+:root {	
+	/* Font props */
+	--font-size: 14px;
+	--font-family: "Montserrat", Arial, Helvetica, sans-serif;
+	--icons-family: "Widgricon";
+	/* Animation props */
+	--transition-duration: 200ms;
+	--transition-timing-function: ease-out;
+	/* Image props */
+	--img-border-radius: 0.50em;
+	/* Button props */
+	--button-padding: 1em;
+  --button-border-radius: 0.50em;
+	/* Input props */
+	--input-border-width: 1px;
+  --input-border-style: solid;
+	--input-border-radius: 0.50em;
+	/* Card props */
+	--card-border-radius: 0.50em;
+	--card-border-width: 1px;
+	--card-border-style: solid;
+	--card-border-radius: 0.50em;
+	/* System color props */
+	--color-info: #3B9DEA;
+	--color-error: #FA4646;
+	--color-warning: #DBC53D;
+	--color-success: #46CD72;
+	
+	/* Primary color props */
+	--color-a-1: hsl(248, 80%, 64%, 1);
+	--color-a-2: hsla(248, 100%, 70%, 1);
+	--color-a-3: hsla(248, 100%, 73%, 1);
+	--color-a-4: hsla(248, 80%, 64%, 0.41);
+	--color-a-5: hsla(248, 80%, 64%, 0.28);
+	--color-a-6: hsla(248, 80%, 64%, 0.12);
+	--color-a-7: hsla(248, 80%, 64%, 0.06);
+	/* Secondary color props */
+	--color-b-1: hsla(154, 90%, 44%, 1);
+	--color-b-2: hsla(154, 87%, 49%, 1);
+	--color-b-3: hsla(154, 98%, 52%, 1);
+	--color-b-4: hsla(154, 90%, 44%, 0.41);
+	--color-b-5: hsla(154, 90%, 44%, 0.28);
+	--color-b-6: hsla(154, 90%, 44%, 0.12);
+	--color-b-7: hsla(154, 90%, 44%, 0.06);
+	/* Monochromatic color props */
+	--color-x-1: #171A1E;
+	--color-x-2: #22272C;
+	--color-x-3: #373E45;
+	--color-x-4: #5C636F;
+	--color-x-5: #768091;
+	--color-x-6: #8C95A3;
+	--color-x-7: #BABFC8;
+	--color-x-8: #E5E7EB;
+	--color-x-9: #F2F3F5;
+	--color-x-10: #F7F8F9;
+	--color-x-11: #FFFFFF;
+}
+/* Widgrid Dark Theme */
+.dark {
+	/* Primary dark color props */
+	--color-a-1: #0BD57D;
+	--color-a-2: #0CEF8C;
+	--color-a-3: #0DFC93;
+	--color-a-4: rgba(11, 213, 125, 0.41);
+	--color-a-5: rgba(11, 213, 125, 0.28);
+	--color-a-6: rgba(11, 213, 125, 0.12);
+	--color-a-7: rgba(11, 213, 125, 0.06);
+	/* Secondary dark color props */
+	--color-b-1: #6F5BED;
+	--color-b-2: #7B66FF;
+	--color-b-3: #8A77FF;
+	--color-b-4: rgba(111, 91, 237, 0.41);
+	--color-b-5: rgba(111, 91, 237, 0.28);
+	--color-b-6: rgba(111, 91, 237, 0.12);
+	--color-b-7: rgba(111, 91, 237, 0.06);
+	/* Monochromatic dark color props */
+	--color-x-1: #FFFFFF;
+	--color-x-2: #F7F8F9;
+	--color-x-3: #F2F3F5;
+	--color-x-4: #E5E7EB;
+	--color-x-5: #BABFC8;
+	--color-x-6: #8C95A3;
+	--color-x-7: #768091;
+	--color-x-8: #5C636F;
+	--color-x-9: #373E45;
+	--color-x-10: #22272C;
+	--color-x-11: #171A1E;
+	
+}

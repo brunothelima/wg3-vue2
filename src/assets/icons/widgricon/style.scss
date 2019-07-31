@@ -1,0 +1,224 @@
+@font-face {
+  font-family: 'Widgricon';
+  src:  url('assets/icons/widgricon/fonts/Widgricon.eot?b5aawo');
+  src:  url('assets/icons/widgricon/fonts/Widgricon.eot?b5aawo#iefix') format('embedded-opentype'),
+    url('assets/icons/widgricon/fonts/Widgricon.ttf?b5aawo') format('truetype'),
+    url('assets/icons/widgricon/fonts/Widgricon.woff?b5aawo') format('woff'),
+    url('assets/icons/widgricon/fonts/Widgricon.svg?b5aawo#Widgricon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="wg-icon-"], [class*=" wg-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: var(--icons-family);
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  font-size: 16px;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.wg-icon-accordion:before {
+  content: "\e92c";
+}
+.wg-icon-anchor:before {
+  content: "\e92d";
+}
+.wg-icon-asterisk:before {
+  content: "\e92e";
+}
+.wg-icon-custom-form:before {
+  content: "\e934";
+}
+.wg-icon-template:before {
+  content: "\e944";
+}
+.wg-icon-earth-solid:before {
+  content: "\e937";
+}
+.wg-icon-earth:before {
+  content: "\e938";
+}
+.wg-icon-filter:before {
+  content: "\e93a";
+}
+.wg-icon-grid-view-small:before {
+  content: "\e93d";
+}
+.wg-icon-grid-view:before {
+  content: "\e917";
+}
+.wg-icon-grid-view-solid:before {
+  content: "\e93e";
+}
+.wg-icon-icon:before {
+  content: "\e93f";
+}
+.wg-icon-layout:before {
+  content: "\e940";
+}
+.wg-icon-small-list:before {
+  content: "\e943";
+}
+.wg-icon-trash-bin-small:before {
+  content: "\e946";
+}
+.wg-icon-thick-2px:before {
+  content: "\e90c";
+}
+.wg-icon-avatar:before {
+  content: "\e904";
+}
+.wg-icon-button:before {
+  content: "\e905";
+}
+.wg-icon-calendar:before {
+  content: "\e906";
+}
+.wg-icon-caret-down:before {
+  content: "\e900";
+}
+.wg-icon-caret-left:before {
+  content: "\e931";
+}
+.wg-icon-caret-right:before {
+  content: "\e908";
+}
+.wg-icon-caret-up:before {
+  content: "\e909";
+}
+.wg-icon-arrow-down:before {
+  content: "\e907";
+}
+.wg-icon-arrow-left:before {
+  content: "\e9012";
+}
+.wg-icon-arrow-right:before {
+  content: "\e902";
+}
+.wg-icon-arrow-up:before {
+  content: "\e903";
+}
+.wg-icon-checkmark:before {
+  content: "\e90a";
+}
+.wg-icon-close-small:before {
+  content: "\e933";
+}
+.wg-icon-close:before {
+  content: "\e90b";
+}
+.wg-icon-form:before {
+  content: "\e901";
+}
+.wg-icon-draggable-1:before {
+  content: "\e90d";
+}
+.wg-icon-draggable-2:before {
+  content: "\e90e";
+}
+.wg-icon-engine:before {
+  content: "\e90f";
+}
+.wg-icon-exclamation-mark:before {
+  content: "\e910";
+}
+.wg-icon-eye-closed:before {
+  content: "\e911";
+}
+.wg-icon-eye:before {
+  content: "\e912";
+}
+.wg-icon-floppy-disk:before {
+  content: "\e913";
+}
+.wg-icon-focal-point:before {
+  content: "\e914";
+}
+.wg-icon-folder:before {
+  content: "\e915";
+}
+.wg-icon-folder-solid:before {
+  content: "\e93c";
+}
+.wg-icon-form2:before {
+  content: "\e916";
+}
+.wg-icon-hamburger:before {
+  content: "\e918";
+}
+.wg-icon-heading:before {
+  content: "\e919";
+}
+.wg-icon-horizontal-dots:before {
+  content: "\e91a";
+}
+.wg-icon-iframe:before {
+  content: "\e91b";
+}
+.wg-icon-image:before {
+  content: "\e91c";
+}
+.wg-icon-info:before {
+  content: "\e91d";
+}
+.wg-icon-list-view-solid:before {
+  content: "\e941";
+}
+.wg-icon-list-view:before {
+  content: "\e91e";
+}
+.wg-icon-magnifying-glass:before {
+  content: "\e923";
+}
+.wg-icon-moon:before {
+  content: "\e920";
+}
+.wg-icon-pencil:before {
+  content: "\e921";
+}
+.wg-icon-plus:before {
+  content: "\e922";
+}
+.wg-icon-plus-small:before {
+  content: "\e942";
+}
+.wg-icon-question-mark:before {
+  content: "\e91f";
+}
+.wg-icon-quote:before {
+  content: "\e924";
+}
+.wg-icon-sign-out:before {
+  content: "\e925";
+}
+.wg-icon-sun:before {
+  content: "\e926";
+}
+.wg-icon-text:before {
+  content: "\e927";
+}
+.wg-icon-trash-bin:before {
+  content: "\e928";
+}
+.wg-icon-upload:before {
+  content: "\e929";
+}
+.wg-icon-vertical-dots:before {
+  content: "\e92a";
+}
+.wg-icon-video:before {
+  content: "\e92b";
+}
+.wg-icon-big-list:before {
+  content: "\e930";
+}
+.wg-icon-big-list-solid:before {
+  content: "\e92f";
+}
