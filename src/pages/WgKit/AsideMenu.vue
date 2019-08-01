@@ -86,8 +86,9 @@ export default {
       i {
         color: inherit;
       }
-      &:hover {
-        color: var(--color-x-6);
+      &:hover,
+      &.router-link-active {
+        color: var(--color-b-3);
       }
     }
   }

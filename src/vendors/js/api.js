@@ -8,7 +8,7 @@ import store from '@/store/index.js'
  * @return {URL}
  */
 export function urlFromServer (endpoint) {
-  return new URL(`http://localhost/wg3/api/${endpoint}`)
+  return new URL(`http://localhost/widgrid/api/${endpoint}`)
 }
 /**
  * Fetch data from a given endpoint via GET method,

@@ -1,5 +1,5 @@
 <template>
-  <form class="wg-form" @submit.prevent="onSubmit($event)" enctype="multipart/form-data">
+  <form class="wg-form" @submit.prevent="onSubmit($event)">
     <div class="wg-form__fields">
       <wg-form-field
         v-for="(input, index) in schema"

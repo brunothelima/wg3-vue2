@@ -36,24 +36,16 @@
 </i18n>
 
 <template>
-  <div class="wg-login">
-    <wg-page-settings />
-    <wg-container>
-      <div class="panel">
-        <img src="@/assets/img/logo-vtc.svg" alt="Widgrid" class="panel__logo" />
-        <wg-form @success="login($event)" :schema="schema" :i18n="$i18n">
-          <wg-button model="glassy">{{ $t('button') }}</wg-button>
-        </wg-form>
-      </div>
-    </wg-container>
-  </div>
+  <wg-form @success="login($event)" :schema="schema" :i18n="$i18n">
+    <footer>
+      <a href="">Esqueci minha senha</a>
+      <wg-button model="glassy" :reverse="true" icon="icon-arrow-right">Login</wg-button>
+    </footer>
+  </wg-form>
 </template>
 
 <script>
-import { POST } from '@/vendors/js/api.js'
 import AuthMixin from '@/mixins/AuthMixin.js'
-import WgPageSettings from '@/components/WgPageSettings'
-import WgContainer from '@/components/WgContainer'
 import WgButton from '@/components/WgButton'
 import WgForm from '@/components/WgForm'
 
@@ -63,8 +55,6 @@ export default {
   components: {
     WgForm,
     WgButton,
-    WgContainer,
-    WgPageSettings
   },
   data () {
     return {
@@ -101,29 +91,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.wg-login {
-  .wg-page-settings {
-    position: absolute;
-    right: 2em;
-    top: 2em;
-  }
-  .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
-  .panel {
-    width: 300px;
-    padding: 2em;
-    border: var(--card-border-width) var(--card-border-style) var(--color-x-8);
-    border-radius: var(--card-border-radius);
-    &__logo {
-      display: block;
-      margin-bottom: 3em;
-    }
-  }
-}
-</style>
