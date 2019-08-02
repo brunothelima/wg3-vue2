@@ -15,7 +15,7 @@
     <wg-container>
       <div class="panel">
         <img src="@/assets/img/logo-vtc.svg" alt="Widgrid" class="panel__logo" />
-        <p>{{ $t('continue')}}</p>
+        <p>{{ $t('continue') }}</p>
         <wg-login-form />
       </div>
     </wg-container>
