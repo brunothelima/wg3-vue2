@@ -13,34 +13,34 @@
 </template>
 
 <script>
-import InputMixin from '@/mixins/InputMixin.js'
+import InputMixin from "@/mixins/InputMixin.js";
 
-import WgIcon from '@/components/WgIcon'
+import WgIcon from "@/components/WgIcon";
 export default {
-  name: 'InputFile',
+  name: "InputFile",
   mixins: [InputMixin],
   components: {
     WgIcon
   },
-  data () {
+  data() {
     return {
-      file: ''
-    }
+      file: ""
+    };
   },
   methods: {
-    onInput (value) {
+    onInput(value) {
       if (value) {
-        this.file = value
-        this.$emit('input', value)
-        this.callback('input', value)
+        this.file = value;
+        this.$emit("input", value);
+        this.callback("input", value);
       }
     },
-    onClick (event) {
-      this.$emit('interaction')
-      this.$refs.file.click()
+    onClick(event) {
+      this.$emit("interaction");
+      this.$refs.file.click();
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

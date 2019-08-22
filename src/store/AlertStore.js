@@ -13,13 +13,13 @@ export default {
     getMessages: state => state.messages
   },
   mutations: {
-    addMessage (state, payload) {
+    addMessage(state, payload) {
       state.messages.push(payload)
     },
-    removeMessage (state, payload) {
+    removeMessage(state, payload) {
       state.messages.splice(payload, 1)
     },
-    removeLastMessage (state) {
+    removeLastMessage(state) {
       state.messages.shift()
     }
   }

@@ -17,14 +17,14 @@
 </template>
 
 <script>
-import ColorPalette from './ColorPalette'
+import ColorPalette from "./ColorPalette";
 
 export default {
-  name: 'GrayishColors',
+  name: "GrayishColors",
   components: {
     ColorPalette
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -34,7 +34,7 @@ export default {
   }
   /deep/ li:nth-child(1n + 5) {
     color: var(--color-x-1);
-     &:last-child {
+    &:last-child {
       border: 1px solid var(--color-x-1);
     }
   }

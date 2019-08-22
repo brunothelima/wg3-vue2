@@ -22,38 +22,38 @@
 </template>
 
 <script>
-import InputMixin from '@/mixins/InputMixin.js'
-import WgIcon from '@/components/WgIcon'
+import InputMixin from "@/mixins/InputMixin.js";
+import WgIcon from "@/components/WgIcon";
 
 export default {
-  name: 'InputPassword',
+  name: "InputPassword",
   mixins: [InputMixin],
   components: {
     WgIcon
   },
-  data () {
+  data() {
     return {
-      type: 'password'
-    }
+      type: "password"
+    };
   },
   methods: {
-    onFocus (value) {
-      this.$emit('interaction', value)
-      this.$emit('focus', value)
-      this.callback('focus', value)
+    onFocus(value) {
+      this.$emit("interaction", value);
+      this.$emit("focus", value);
+      this.callback("focus", value);
     },
-    onInput (value) {
-      this.$emit('interaction', value)
-      this.$emit('input', value)
-      this.callback('input', value)
+    onInput(value) {
+      this.$emit("interaction", value);
+      this.$emit("input", value);
+      this.callback("input", value);
     },
-    onBlur (value) {
-      this.$emit('interaction', value)
-      this.$emit('blur', value)
-      this.callback('blur', value)
+    onBlur(value) {
+      this.$emit("interaction", value);
+      this.$emit("blur", value);
+      this.callback("blur", value);
     }
   }
-}
+};
 </script>
 <style lang="scss" scoped>
 .input-password {

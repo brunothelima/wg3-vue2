@@ -6,8 +6,8 @@
 
 <script>
 export default {
-  name: 'WgContainer'
-}
+  name: "WgContainer"
+};
 </script>
 
 <style scoped lang="scss">

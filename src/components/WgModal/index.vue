@@ -2,23 +2,22 @@
   <div class="wg-modal">
     <div class="wg-modal__mask" @click="$emit('cancel')"></div>
     <div class="wg-modal__content">
-			<slot />
+      <slot />
     </div>
   </div>
 </template>
 
 <script>
-
 export default {
-  name: 'WgModal',
-  created () {
-    window.addEventListener('keydown', e => {
-      if (e.key == 'Escape') {
-        this.$emit('cancel')
+  name: "WgModal",
+  created() {
+    window.addEventListener("keydown", e => {
+      if (e.key == "Escape") {
+        this.$emit("cancel");
       }
-    })
+    });
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

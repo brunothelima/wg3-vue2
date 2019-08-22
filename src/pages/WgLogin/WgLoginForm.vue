@@ -38,56 +38,56 @@
 <template>
   <wg-form @success="login($event)" :schema="schema" :i18n="$i18n">
     <footer>
-      <a href="">Esqueci minha senha</a>
+      <a href>Esqueci minha senha</a>
       <wg-button model="glassy" :reverse="true" icon="icon-arrow-right">Login</wg-button>
     </footer>
   </wg-form>
 </template>
 
 <script>
-import AuthMixin from '@/mixins/AuthMixin.js'
-import WgButton from '@/components/WgButton'
-import WgForm from '@/components/WgForm'
+import AuthMixin from "@/mixins/AuthMixin.js";
+import WgButton from "@/components/WgButton";
+import WgForm from "@/components/WgForm";
 
 export default {
-  name: 'WgLogin',
+  name: "WgLogin",
   mixins: [AuthMixin],
   components: {
     WgForm,
-    WgButton,
+    WgButton
   },
-  data () {
+  data() {
     return {
       schema: [
         // EMAIL INPUT
         {
-          type: 'text',
-          name: 'username',
-          label: 'form.username.label',
-          placeholder: 'form.username.placeholder',
+          type: "text",
+          name: "username",
+          label: "form.username.label",
+          placeholder: "form.username.placeholder",
           validations: {
             required: {
-              message: 'form.username.required'
+              message: "form.username.required"
             },
             email: {
-              message: 'form.username.email'
+              message: "form.username.email"
             }
           }
         },
         // PASSWORD INPUT
         {
-          type: 'password',
-          name: 'password',
-          label: 'form.password.label',
-          placeholder: 'form.password.placeholder',
+          type: "password",
+          name: "password",
+          label: "form.password.label",
+          placeholder: "form.password.placeholder",
           validations: {
             required: {
-              message: 'form.password.required'
+              message: "form.password.required"
             }
           }
         }
       ]
-    }
+    };
   }
-}
+};
 </script>

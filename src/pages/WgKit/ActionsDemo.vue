@@ -19,46 +19,46 @@
   <section class="actions-demo">
     <h1>{{ $t('title') }}</h1>
     <hr />
-		<div class="actions">
-			<wg-button @click.native="messageDemo('demo')" model="glassy">{{ $t('message') }}</wg-button>
-			<wg-button @click.native="deleteDemo(1)" model="glassy">{{ $t('modal') }}</wg-button>
-		</div>
-		<modal-demo @cancel="deleteId = 0" v-if="deleteId > 0" />
+    <div class="actions">
+      <wg-button @click.native="messageDemo('demo')" model="glassy">{{ $t('message') }}</wg-button>
+      <wg-button @click.native="deleteDemo(1)" model="glassy">{{ $t('modal') }}</wg-button>
+    </div>
+    <modal-demo @cancel="deleteId = 0" v-if="deleteId > 0" />
   </section>
 </template>
 
 <script>
-import WgButton from '@/components/WgButton'
-import ModalDemo from './ModalDemo'
+import WgButton from "@/components/WgButton";
+import ModalDemo from "./ModalDemo";
 
 export default {
-  name: 'ActionsDemo',
+  name: "ActionsDemo",
   components: {
     WgButton,
     ModalDemo
   },
-  data () {
+  data() {
     return {
       deleteId: 0
-    }
+    };
   },
   methods: {
-    messageDemo (message) {
-      this.$store.commit('alert/addMessage', this.$i18n.t(message))
+    messageDemo(message) {
+      this.$store.commit("alert/addMessage", this.$i18n.t(message));
     },
-    deleteDemo (id) {
-      this.deleteId = id
+    deleteDemo(id) {
+      this.deleteId = id;
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
 .actions {
-	display: flex;
-	align-items: center;
-	.wg-button {
-		margin-right: 1em;
-	}
+  display: flex;
+  align-items: center;
+  .wg-button {
+    margin-right: 1em;
+  }
 }
 </style>

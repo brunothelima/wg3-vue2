@@ -26,8 +26,8 @@
 
 <script>
 export default {
-  name: 'SystemColors'
-}
+  name: "SystemColors"
+};
 </script>
 <style lang="scss" scoped>
 .system-colors ul {

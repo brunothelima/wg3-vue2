@@ -6,11 +6,11 @@
 </template>
 
 <script>
-import WgIcon from '@/components/WgIcon'
-import WgTooltip from '@/components/WgTooltip'
+import WgIcon from "@/components/WgIcon";
+import WgTooltip from "@/components/WgTooltip";
 
 export default {
-  name: 'WgFormHelp',
+  name: "WgFormHelp",
   props: {
     text: String
   },
@@ -18,7 +18,7 @@ export default {
     WgIcon,
     WgTooltip
   }
-}
+};
 </script>
 
 <style scoped lang="scss">

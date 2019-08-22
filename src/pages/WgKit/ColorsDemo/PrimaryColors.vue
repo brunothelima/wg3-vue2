@@ -17,14 +17,14 @@
 </template>
 
 <script>
-import ColorPalette from './ColorPalette'
+import ColorPalette from "./ColorPalette";
 
 export default {
-  name: 'PrimaryColors',
+  name: "PrimaryColors",
   components: {
     ColorPalette
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -36,5 +36,4 @@ export default {
     color: var(--color-x-1);
   }
 }
-
 </style>

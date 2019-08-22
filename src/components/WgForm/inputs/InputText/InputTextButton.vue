@@ -17,12 +17,12 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-import InputMixin from '@/mixins/InputMixin.js'
-import WgButton from '@/components/WgButton'
+import { mapGetters } from "vuex";
+import InputMixin from "@/mixins/InputMixin.js";
+import WgButton from "@/components/WgButton";
 
 export default {
-  name: 'InputTextButton',
+  name: "InputTextButton",
   mixins: [InputMixin],
   props: {
     button: String
@@ -31,30 +31,30 @@ export default {
     WgButton
   },
   methods: {
-    onFocus (value) {
-      this.$emit('interaction', value)
-      this.$emit('focus', value)
-      this.callback('focus', value)
+    onFocus(value) {
+      this.$emit("interaction", value);
+      this.$emit("focus", value);
+      this.callback("focus", value);
     },
-    onInput (value) {
-      this.$emit('interaction', value)
-      this.$emit('input', value)
-      this.callback('input', value)
+    onInput(value) {
+      this.$emit("interaction", value);
+      this.$emit("input", value);
+      this.callback("input", value);
     },
-    onBlur (value) {
-      this.$emit('interaction', value)
-      this.$emit('blur', value)
-      this.callback('blur', value)
+    onBlur(value) {
+      this.$emit("interaction", value);
+      this.$emit("blur", value);
+      this.callback("blur", value);
     },
-    onSubmit (event) {
-      event.preventDefault()
-      const value = this.$refs.input.value
-      this.$emit('interaction', value)
-      this.$emit('submit', value)
-      this.callback('submit', value)
+    onSubmit(event) {
+      event.preventDefault();
+      const value = this.$refs.input.value;
+      this.$emit("interaction", value);
+      this.$emit("submit", value);
+      this.callback("submit", value);
     }
   }
-}
+};
 </script>
 
 <style src="flatpickr/dist/flatpickr.min.css"></style>

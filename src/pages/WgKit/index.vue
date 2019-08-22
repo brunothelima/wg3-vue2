@@ -13,15 +13,15 @@
 </template>
 
 <script>
-import AuthMixin from '@/mixins/AuthMixin.js'
-import WgPageSettings from '@/components/WgPageSettings'
-import WgContainer from '@/components/WgContainer'
-import WgButton from '@/components/WgButton'
-import AsideMenu from './AsideMenu'
+import AuthMixin from "@/mixins/AuthMixin.js";
+import WgPageSettings from "@/components/WgPageSettings";
+import WgContainer from "@/components/WgContainer";
+import WgButton from "@/components/WgButton";
+import AsideMenu from "./AsideMenu";
 
 // Demo sections
 export default {
-  name: 'WgKit',
+  name: "WgKit",
   mixins: [AuthMixin],
   components: {
     WgContainer,
@@ -29,7 +29,7 @@ export default {
     WgButton,
     AsideMenu
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

@@ -21,22 +21,22 @@
 </template>
 
 <script>
-import InputMixin from '@/mixins/InputMixin.js'
+import InputMixin from "@/mixins/InputMixin.js";
 
 export default {
-  name: 'InputRadio',
+  name: "InputRadio",
   mixins: [InputMixin],
   props: {
     options: Array
   },
   methods: {
-    onInput (value) {
-      this.$emit('input', value)
-      this.$emit('interaction', value)
-      this.callback('input', value)
+    onInput(value) {
+      this.$emit("input", value);
+      this.$emit("interaction", value);
+      this.callback("input", value);
     }
   }
-}
+};
 </script>
 <style lang="scss" scoped>
 .input-radio {

@@ -30,7 +30,7 @@
         "label": "Campo de texto com botão",
         "placeholder": "Escreva aqui",
         "required": "Input obrigatório",
-        "button": "Enviar"
+        "button": "Aplicar"
       },
       "input_date": {
         "label": "Input de data",
@@ -94,6 +94,11 @@
       },
       "input_toggle": {
         "label": "Input toggle"
+      },
+      "input_wysiwyg": {
+        "label": "Editor de texto",
+        "placeholder": "Escreva aqui",
+        "required": "Input obrigatório"
       }
     }
   },
@@ -192,6 +197,11 @@
       },
       "input_toggle": {
         "label": "Toggle input"
+      },
+      "input_wysiwyg": {
+        "label": "Text editor",
+        "placeholder": "Type here",
+        "required": "Required input"
       }
     }
   }

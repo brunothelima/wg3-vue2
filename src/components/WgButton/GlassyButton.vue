@@ -6,8 +6,8 @@
 
 <script>
 export default {
-  name: 'GlassyButton'
-}
+  name: "GlassyButton"
+};
 </script>
 
 <style scoped lang="scss">

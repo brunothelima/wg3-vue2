@@ -19,10 +19,10 @@
 
 <script>
 export default {
-  name: 'WgButton',
+  name: "WgButton",
   components: {
-    'glassy-button': () => import('./GlassyButton'),
-    'clean-button': () => import('./CleanButton')
+    "glassy-button": () => import("./GlassyButton"),
+    "clean-button": () => import("./CleanButton")
   },
   props: {
     icon: String,
@@ -33,7 +33,7 @@ export default {
     reverse: Boolean,
     disabled: Boolean
   }
-}
+};
 </script>
 
 <style scoped lang="scss">
@@ -48,13 +48,15 @@ export default {
   cursor: pointer;
   &[disabled] {
     opacity: 0.24;
-    cursor: default;
+    cursor: not-allowed;
   }
   i,
   svg,
   span {
-    display: inline-block;
-    font-size: inherit;
+    display: inline-flex;
+  }
+  i {
+    font-size: 16px;
   }
   * ~ span {
     margin: 0 0 0 1em;

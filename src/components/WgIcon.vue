@@ -6,12 +6,12 @@
 
 <script>
 export default {
-  name: 'WgIcon',
+  name: "WgIcon",
   props: {
     id: String,
     color: [String, Boolean]
   }
-}
+};
 </script>
 
 <style scoped lang="scss">

@@ -31,10 +31,10 @@
 </template>
 
 <script>
-import WgButton from '@/components/WgButton'
+import WgButton from "@/components/WgButton";
 
 export default {
-  name: 'ButtonsList',
+  name: "ButtonsList",
   components: {
     WgButton
   },
@@ -43,10 +43,10 @@ export default {
     title: String,
     model: {
       type: String,
-      default: 'glassy'
+      default: "glassy"
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

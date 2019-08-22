@@ -34,25 +34,35 @@
       </div>
       <h6>{{ $t('smart-on') }}</h6>
       <div class="reverse">
-        <wg-img src="image_before3.jpg" :w="182" ratio="16:9" :smart="true">{{ $t("landscape") }} 16:9</wg-img>
+        <wg-img
+          src="image_before3.jpg"
+          :w="182"
+          ratio="16:9"
+          :smart="true"
+        >{{ $t("landscape") }} 16:9</wg-img>
         <wg-img src="image_before4.jpg" :w="182" ratio="4:3" :smart="true">{{ $t("landscape") }} 4:3</wg-img>
         <wg-img src="image_before5.jpg" :w="182" ratio="1:1" :smart="true">{{ $t("square") }} 1:1</wg-img>
         <wg-img src="image_before3.jpg" :w="182" ratio="3:4" :smart="true">{{ $t("portrait") }} 3:4</wg-img>
-        <wg-img src="image_before4.jpg" :w="182" ratio="9:16" :smart="true">{{ $t("portrait") }} 9:16</wg-img>
+        <wg-img
+          src="image_before4.jpg"
+          :w="182"
+          ratio="9:16"
+          :smart="true"
+        >{{ $t("portrait") }} 9:16</wg-img>
       </div>
     </div>
   </section>
 </template>
 
 <script>
-import WgImg from '@/components/WgImg'
+import WgImg from "@/components/WgImg";
 
 export default {
-  name: 'ImagesDemo',
+  name: "ImagesDemo",
   components: {
     WgImg
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

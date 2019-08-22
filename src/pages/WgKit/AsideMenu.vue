@@ -22,40 +22,63 @@
 </i18n>
 
 <template>
-	<aside class="aside-menu">
-		<header>
-			<img src="@/assets/img/logo-vtc.svg" />
-			<sub>(doc's)</sub>
-		</header>
-		<nav>
-			<router-link to="/wg-kit/buttons"><span>{{ $t('buttons') }}</span> <wg-icon id="wg-icon-arrow-right" /> </router-link>
-			<router-link to="/wg-kit/colors"><span>{{ $t('colors') }}</span> <wg-icon id="wg-icon-arrow-right" /> </router-link>
-			<router-link to="/wg-kit/form"><span>{{ $t('form') }}</span> <wg-icon id="wg-icon-arrow-right" /> </router-link>
-			<router-link to="/wg-kit/text"><span>{{ $t('text') }}</span> <wg-icon id="wg-icon-arrow-right" /> </router-link>
-			<router-link to="/wg-kit/actions"><span>{{ $t('actions') }}</span> <wg-icon id="wg-icon-arrow-right" /> </router-link>
-			<router-link to="/wg-kit/icons"><span>{{ $t('icons') }}</span> <wg-icon id="wg-icon-arrow-right" /> </router-link>
-			<router-link to="/wg-kit/images"><span>{{ $t('images') }}</span> <wg-icon id="wg-icon-arrow-right" /> </router-link>
-		</nav>
-	</aside>
+  <aside class="aside-menu">
+    <header>
+      <img src="@/assets/img/logo-vtc.svg" />
+      <sup>(Ui-kit)</sup>
+    </header>
+    <nav>
+      <router-link to="/wg-kit/buttons">
+        <span>{{ $t('buttons') }}</span>
+        <wg-icon id="wg-icon-arrow-right" />
+      </router-link>
+      <router-link to="/wg-kit/colors">
+        <span>{{ $t('colors') }}</span>
+        <wg-icon id="wg-icon-arrow-right" />
+      </router-link>
+      <router-link to="/wg-kit/form">
+        <span>{{ $t('form') }}</span>
+        <wg-icon id="wg-icon-arrow-right" />
+      </router-link>
+      <router-link to="/wg-kit/text">
+        <span>{{ $t('text') }}</span>
+        <wg-icon id="wg-icon-arrow-right" />
+      </router-link>
+      <router-link to="/wg-kit/actions">
+        <span>{{ $t('actions') }}</span>
+        <wg-icon id="wg-icon-arrow-right" />
+      </router-link>
+      <router-link to="/wg-kit/icons">
+        <span>{{ $t('icons') }}</span>
+        <wg-icon id="wg-icon-arrow-right" />
+      </router-link>
+      <router-link to="/wg-kit/images">
+        <span>{{ $t('images') }}</span>
+        <wg-icon id="wg-icon-arrow-right" />
+      </router-link>
+    </nav>
+  </aside>
 </template>
 
 <script>
-import WgIcon from '@/components/WgIcon'
+import WgIcon from "@/components/WgIcon";
 
 export default {
-  name: 'AsideMenu',
+  name: "AsideMenu",
   components: {
     WgIcon
   }
-}
+};
 </script>
 
 <style lang="scss">
 .aside-menu {
+  position: fixed;
+  z-index: 1;
   height: 100vh;
+  min-width: 300px;
   background-color: var(--color-x-11);
   border-right: 1px solid var(--color-x-10);
-  // box-shadow: 0 0 10px 10px rgba(red(var(--color-x-10)), green(var(--color-x-10)), blue(var(--color-x-10)), 1);
   header {
     display: flex;
     align-items: center;
@@ -64,10 +87,11 @@ export default {
     img {
       display: block;
     }
-    sub {
-      font-size: 7px;
+    sup {
+      font-size: 8px;
       color: var(--color-x-5);
-      transform: translateX(-65%) translateY(-17px);
+      text-transform: none;
+      transform: translateX(-100%) translateY(-13px);
     }
   }
   nav {
@@ -88,7 +112,7 @@ export default {
       }
       &:hover,
       &.router-link-active {
-        color: var(--color-b-3);
+        color: var(--color-x-5);
       }
     }
   }

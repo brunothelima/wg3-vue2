@@ -23,18 +23,18 @@
 </template>
 
 <script>
-import WgContainer from '@/components/WgContainer'
-import WgPageSettings from '@/components/WgPageSettings'
-import WgLoginForm from './WgLoginForm'
+import WgContainer from "@/components/WgContainer";
+import WgPageSettings from "@/components/WgPageSettings";
+import WgLoginForm from "./WgLoginForm";
 
 export default {
-  name: 'WgLogin',
+  name: "WgLogin",
   components: {
     WgContainer,
     WgPageSettings,
     WgLoginForm
-  },
-}
+  }
+};
 </script>
 
 <style lang="scss" scoped>

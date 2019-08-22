@@ -22,18 +22,18 @@
 </template>
 
 <script>
-import Headings from './Headings'
-import Paragraph from './Paragraph'
-import Labels from './Labels'
+import Headings from "./Headings";
+import Paragraph from "./Paragraph";
+import Labels from "./Labels";
 
 export default {
-  name: 'TextDemo',
+  name: "TextDemo",
   components: {
-    'wg-headings': Headings,
-    'wg-paragraph': Paragraph,
-    'wg-labels': Labels
+    "wg-headings": Headings,
+    "wg-paragraph": Paragraph,
+    "wg-labels": Labels
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

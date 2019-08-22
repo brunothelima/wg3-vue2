@@ -50,8 +50,8 @@
 
 <script>
 export default {
-  name: 'Headings'
-}
+  name: "Headings"
+};
 </script>
 
 <style lang="scss" scoped>

@@ -5,21 +5,21 @@ export default {
   props: {
     schema: Array
   },
-  data () {
+  data() {
     return {
       model: this.schema2Model(),
       errors: {}
     }
   },
   methods: {
-    schema2Model () {
+    schema2Model() {
       const model = {}
       for (const input of this.schema.values()) {
         model[input.name] = input.value || null
       }
       return model
     },
-    validate () {
+    validate() {
       let response = true
       for (const input of this.schema.values()) {
         // Ignore validations for disabled inputs

@@ -32,8 +32,8 @@
 
 <script>
 export default {
-  name: 'Labels'
-}
+  name: "Labels"
+};
 </script>
 <style lang="scss" scoped>
 ul {

@@ -35,10 +35,10 @@
 </template>
 
 <script>
-import WgIcon from '@/components/WgIcon'
+import WgIcon from "@/components/WgIcon";
 
 export default {
-  name: 'ModalConfirmation',
+  name: "ModalConfirmation",
   components: {
     WgIcon
   },
@@ -52,14 +52,14 @@ export default {
     buttonRight: [String, Object]
   },
   methods: {
-    onButtonLeftClick (event) {
-      this.$emit('buttonLeftClick')
+    onButtonLeftClick(event) {
+      this.$emit("buttonLeftClick");
     },
-    onButtonRightClick (event) {
-      this.$emit('buttonRightClick')
+    onButtonRightClick(event) {
+      this.$emit("buttonRightClick");
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

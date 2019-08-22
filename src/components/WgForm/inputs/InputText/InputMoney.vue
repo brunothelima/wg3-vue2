@@ -18,41 +18,41 @@
 </template>
 
 <script>
-import VMasker from 'vanilla-masker'
-import InputMixin from '@/mixins/InputMixin.js'
+import VMasker from "vanilla-masker";
+import InputMixin from "@/mixins/InputMixin.js";
 
 export default {
-  name: 'InputMoney',
+  name: "InputMoney",
   mixins: [InputMixin],
   props: {
     currency: String
   },
   methods: {
-    onFocus (value) {
-      this.$emit('interaction', value)
-      this.$emit('focus', value)
-      this.callback('focus', value)
+    onFocus(value) {
+      this.$emit("interaction", value);
+      this.$emit("focus", value);
+      this.callback("focus", value);
     },
-    onInput (value) {
-      this.$emit('interaction', value)
-      this.$emit('input', value)
-      this.callback('input', value)
+    onInput(value) {
+      this.$emit("interaction", value);
+      this.$emit("input", value);
+      this.callback("input", value);
     },
-    onBlur (value) {
-      this.$emit('interaction', value)
-      this.$emit('blur', value)
-      this.callback('blur', value)
+    onBlur(value) {
+      this.$emit("interaction", value);
+      this.$emit("blur", value);
+      this.callback("blur", value);
     }
   },
-  mounted () {
-    this.$refs.input.value = this.value
+  mounted() {
+    this.$refs.input.value = this.value;
     VMasker(this.$refs.input).maskMoney({
       precision: 2,
-      separator: ',',
-      delimiter: '.'
-    })
+      separator: ",",
+      delimiter: "."
+    });
   }
-}
+};
 </script>
 <style lang="scss" scoped>
 .input-money {

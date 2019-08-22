@@ -22,10 +22,10 @@ export default new Vuex.Store({
     currLocale: state => state.locale
   },
   mutations: {
-    setLocale (state, payload) {
+    setLocale(state, payload) {
       state.locale = payload
     },
-    setTheme (state, payload) {
+    setTheme(state, payload) {
       state.theme = payload
     }
   },

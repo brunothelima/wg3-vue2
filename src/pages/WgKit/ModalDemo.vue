@@ -18,48 +18,48 @@
 </i18n>
 
 <template>
-	<wg-modal @cancel="onCancel()">
-		<modal-confirm
-			@cancel="onCancel()"
-			icon="wg-icon-trash-bin-small"
-			:header="$t('header')"
-			:title="$t('title')"
-			:text="$t('text')"
-			:buttonLeft="{
+  <wg-modal @cancel="onCancel()">
+    <modal-confirm
+      @cancel="onCancel()"
+      icon="wg-icon-trash-bin-small"
+      :header="$t('header')"
+      :title="$t('title')"
+      :text="$t('text')"
+      :buttonLeft="{
 				label: $t('buttonLeft'),
 				color: 'x-6',
 				flex: 2,
 			}"
-			:buttonRight="{
+      :buttonRight="{
 				label: $t('buttonRight'),
 				color: 'error',
 				flex: 1,
 			}"
-			@buttonLeftClick="onCancel()"
-			@buttonRightClick="onCancel()"
-		/>
-	</wg-modal>
+      @buttonLeftClick="onCancel()"
+      @buttonRightClick="onCancel()"
+    />
+  </wg-modal>
 </template>
 
 <script>
-import WgModal from '@/components/WgModal'
-import ModalConfirm from '@/components/WgModal/ModalConfirm'
+import WgModal from "@/components/WgModal";
+import ModalConfirm from "@/components/WgModal/ModalConfirm";
 
 export default {
-  name: 'WgKit',
+  name: "WgKit",
   components: {
     WgModal,
     ModalConfirm
   },
-  data () {
+  data() {
     return {
       deleteId: 0
-    }
+    };
   },
   methods: {
-    onCancel (event) {
-      this.$emit('cancel')
+    onCancel(event) {
+      this.$emit("cancel");
     }
   }
-}
+};
 </script>

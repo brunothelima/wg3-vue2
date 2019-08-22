@@ -8,11 +8,11 @@
 </template>
 
 <script>
-import Vue from 'vue'
-import { urlFromServer } from '@/vendors/js/api'
+import Vue from "vue";
+import { urlFromServer } from "@/vendors/js/api";
 
 export default {
-  name: 'WgImg',
+  name: "WgImg",
   props: {
     w: Number,
     h: Number,
@@ -23,22 +23,22 @@ export default {
     smart: Boolean
   },
   computed: {
-    path () {
-      const url = new URL(`${urlFromServer('img/image_crop.php')}`)
+    path() {
+      const url = new URL(`${urlFromServer("img/image_crop.php")}`);
       for (const prop in this.$props) {
         if (this[prop]) {
-          url.searchParams.append(prop, this[prop])
+          url.searchParams.append(prop, this[prop]);
         }
       }
-      return url
+      return url;
     }
   },
   methods: {
-    onLoad ($event) {
-      this.$refs.figure.style.maxWidth = `${this.$refs.img.naturalWidth}px`
+    onLoad($event) {
+      this.$refs.figure.style.maxWidth = `${this.$refs.img.naturalWidth}px`;
     }
   }
-}
+};
 </script>
 
 <style scoped lang="scss">

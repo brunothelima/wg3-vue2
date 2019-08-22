@@ -21,24 +21,23 @@
   <section class="buttons-demo">
     <h1>{{ $t('title') }}</h1>
     <hr />
-    <div class="text">
-    </div>
+    <div class="text"></div>
     <glassy-buttons />
     <clean-buttons />
   </section>
 </template>
 
 <script>
-import GlassyButtons from './GlassyButtons'
-import CleanButtons from './CleanButtons'
+import GlassyButtons from "./GlassyButtons";
+import CleanButtons from "./CleanButtons";
 
 export default {
-  name: 'ButtonsDemo',
+  name: "ButtonsDemo",
   components: {
     GlassyButtons,
     CleanButtons
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

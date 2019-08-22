@@ -19,13 +19,13 @@
 
 <script>
 export default {
-  name: 'WgFormField',
+  name: "WgFormField",
   props: {
     i18n: Object,
     input: Object,
     errors: Array
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

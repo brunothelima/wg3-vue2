@@ -11,12 +11,12 @@
 </template>
 
 <script>
-import ButtonsList from './ButtonsList'
+import ButtonsList from "./ButtonsList";
 
 export default {
-  name: 'GlassyButtons',
+  name: "GlassyButtons",
   components: {
     ButtonsList
   }
-}
+};
 </script>
