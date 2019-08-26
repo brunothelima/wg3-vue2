@@ -17,14 +17,14 @@
 </template>
 
 <script>
-import ColorPalette from "./ColorPalette";
+import ColorPalette from './ColorPalette'
 
 export default {
-  name: "GrayishColors",
+  name: 'GrayishColors',
   components: {
     ColorPalette
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

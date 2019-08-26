@@ -5,10 +5,13 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "fix": "vue-cli-service lint --fix"
   },
   "dependencies": {
     "@ckeditor/ckeditor5-build-balloon-block": "^12.3.1",
+    "@ckeditor/ckeditor5-build-decoupled-document": "^12.4.0",
+    "@ckeditor/ckeditor5-engine": "^14.0.0",
     "@ckeditor/ckeditor5-vue": "^1.0.0-beta.2",
     "core-js": "^2.6.5",
     "flatpickr": "^4.6.1",

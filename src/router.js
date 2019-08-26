@@ -16,7 +16,7 @@ Vue.use(VueRouter)
  */
 const isAuthorized = (to, from, next) => {
   let fallback = '/login'
-  if (!store.getters['auth/isAuthorized'] && to.path != fallback) {
+  if (!store.getters['auth/isAuthorized'] && to.path !== fallback) {
     next(fallback)
     return
   }

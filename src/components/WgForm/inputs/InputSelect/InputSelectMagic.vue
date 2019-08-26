@@ -20,30 +20,27 @@
 </template>
 
 <script>
-import InputMixin from "@/mixins/InputMixin.js";
-import WgIcon from "@/components/WgIcon";
+import InputMixin from '@/mixins/InputMixin.js'
+
 export default {
-  name: "InputSelectMagic",
+  name: 'InputSelectMagic',
   mixins: [InputMixin],
-  components: {
-    WgIcon
-  },
   props: {
     options: Array
   },
   computed: {
-    selected() {
-      return this.options.find(option => option.value === this.value);
+    selected () {
+      return this.options.find(option => option.value === this.value)
     }
   },
   methods: {
-    onInput(value) {
-      this.$emit("input", value);
-      this.$emit("interaction", value);
-      this.callback("input", value);
+    onInput (value) {
+      this.$emit('input', value)
+      this.$emit('interaction', value)
+      this.callback('input', value)
     }
   }
-};
+}
 </script>
 <style lang="scss" scoped>
 .input-select-magic {

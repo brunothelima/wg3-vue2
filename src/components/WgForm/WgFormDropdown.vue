@@ -15,49 +15,49 @@
 </template>
 
 <script>
-import WgIcon from "@/components/WgIcon";
+import WgIcon from '@/components/WgIcon'
 export default {
-  name: "WgFormDropdown",
+  name: 'WgFormDropdown',
   components: {
     WgIcon
   },
   props: {
-    default: "",
+    default: [String, Number],
     prefix: String,
     options: Array,
     i18n: {
       type: Object,
-      default: function() {
+      default: function () {
         return {
           t: value => {
-            return value || "";
+            return value || ''
           }
-        };
+        }
       }
     }
   },
-  data() {
+  data () {
     return {
-      value: ""
-    };
+      value: ''
+    }
   },
   computed: {
-    selected() {
+    selected () {
       return this.options.find(option => {
         if (this.value) {
-          return option.value === this.value;
+          return option.value === this.value
         }
-        return option.value === this.default;
-      });
+        return option.value === this.default
+      })
     }
   },
   methods: {
-    onInput(value) {
-      this.value = value;
-      this.$emit("input", value);
+    onInput (value) {
+      this.value = value
+      this.$emit('input', value)
     }
   }
-};
+}
 </script>
 <style lang="scss" scoped>
 .wg-form-dropdown {

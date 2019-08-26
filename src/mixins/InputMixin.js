@@ -19,7 +19,7 @@ export default {
     }
   },
   methods: {
-    callback(callback, event) {
+    callback (callback, event) {
       if (this.events && typeof this.events[callback] === 'function') {
         this.events[callback](event)
       }

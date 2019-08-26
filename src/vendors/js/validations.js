@@ -1,6 +1,6 @@
 /**
  * This class contains all the built-in form validations methods
- *  avaliable for use to json/object 'wg-form' schemas
+ *  avaliable for use to json/object "wg-form" schemas
  */
 export default class {
   /**
@@ -21,7 +21,7 @@ export default class {
    * @return {Boolean}
    */
   static email (email) {
-    var re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/
+    var re = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>().,;\s@"]+\.{0,1})+([^<>().,;:\s@"]{2,}|[\d.]+))$/
     return re.test(String(email).toLowerCase())
   }
   /**

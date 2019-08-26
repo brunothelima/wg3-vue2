@@ -5,5 +5,6 @@ export default [
   { path: 'images', component: () => import('@/pages/WgKit/ImagesDemo') },
   { path: 'icons', component: () => import('@/pages/WgKit/IconsDemo') },
   { path: 'form', component: () => import('@/pages/WgKit/FormDemo') },
+  { path: 'editor', component: () => import('@/pages/WgKit/EditorDemo') },
   { path: 'actions', component: () => import('@/pages/WgKit/ActionsDemo') }
 ]

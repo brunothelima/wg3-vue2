@@ -9,15 +9,15 @@
 
 <script>
 export default {
-  name: "WgModal",
-  created() {
-    window.addEventListener("keydown", e => {
-      if (e.key == "Escape") {
-        this.$emit("cancel");
+  name: 'WgModal',
+  created () {
+    window.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        this.$emit('cancel')
       }
-    });
+    })
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

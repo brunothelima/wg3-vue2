@@ -55,14 +55,14 @@
 </template>
 
 <script>
-import WgImg from "@/components/WgImg";
+import WgImg from '@/components/WgImg'
 
 export default {
-  name: "ImagesDemo",
+  name: 'ImagesDemo',
   components: {
     WgImg
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

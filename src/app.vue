@@ -6,22 +6,20 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
-import WgAlert from "@/components/WgAlert";
-import WgIcon from "@/components/WgIcon";
+import { mapGetters } from 'vuex'
+import WgAlert from '@/components/WgAlert'
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
-    WgAlert,
-    WgIcon
+    WgAlert
   },
   computed: {
     ...mapGetters({
-      theme: "currTheme"
+      theme: 'currTheme'
     })
   }
-};
+}
 </script>
 
 <style lang="scss">

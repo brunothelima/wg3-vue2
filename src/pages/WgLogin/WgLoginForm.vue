@@ -1,6 +1,6 @@
 <i18n>
 {
-	"pt": {
+  "pt": {
     "button": "Enviar",
     "form": {
       "username": {
@@ -15,8 +15,8 @@
         "required": "Input obrigatório"
       }
     }
-	},
-	"en": {
+  },
+  "en": {
     "button": "Send",
     "form": {
       "username": {
@@ -31,7 +31,7 @@
         "required": "Required input"
       }
     }
-	}
+  }
 }
 </i18n>
 
@@ -45,49 +45,49 @@
 </template>
 
 <script>
-import AuthMixin from "@/mixins/AuthMixin.js";
-import WgButton from "@/components/WgButton";
-import WgForm from "@/components/WgForm";
+import AuthMixin from '@/mixins/AuthMixin.js'
+import WgButton from '@/components/WgButton'
+import WgForm from '@/components/WgForm'
 
 export default {
-  name: "WgLogin",
+  name: 'WgLogin',
   mixins: [AuthMixin],
   components: {
     WgForm,
     WgButton
   },
-  data() {
+  data () {
     return {
       schema: [
         // EMAIL INPUT
         {
-          type: "text",
-          name: "username",
-          label: "form.username.label",
-          placeholder: "form.username.placeholder",
+          type: 'text',
+          name: 'username',
+          label: 'form.username.label',
+          placeholder: 'form.username.placeholder',
           validations: {
             required: {
-              message: "form.username.required"
+              message: 'form.username.required'
             },
             email: {
-              message: "form.username.email"
+              message: 'form.username.email'
             }
           }
         },
         // PASSWORD INPUT
         {
-          type: "password",
-          name: "password",
-          label: "form.password.label",
-          placeholder: "form.password.placeholder",
+          type: 'password',
+          name: 'password',
+          label: 'form.password.label',
+          placeholder: 'form.password.placeholder',
           validations: {
             required: {
-              message: "form.password.required"
+              message: 'form.password.required'
             }
           }
         }
       ]
-    };
+    }
   }
-};
+}
 </script>

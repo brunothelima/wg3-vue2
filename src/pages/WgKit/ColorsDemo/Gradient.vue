@@ -20,8 +20,8 @@
 
 <script>
 export default {
-  name: "Gradient"
-};
+  name: 'Gradient'
+}
 </script>
 
 <style lang="scss" scoped>

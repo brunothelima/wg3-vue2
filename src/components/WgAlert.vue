@@ -10,44 +10,44 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
-import WgIcon from "@/components/WgIcon";
+import { mapGetters } from 'vuex'
+import WgIcon from '@/components/WgIcon'
 
 export default {
-  name: "WgAlert",
+  name: 'WgAlert',
   components: {
     WgIcon
   },
   computed: {
     ...mapGetters({
-      hasMessages: "alert/hasMessages",
-      messages: "alert/getMessages"
+      hasMessages: 'alert/hasMessages',
+      messages: 'alert/getMessages'
     })
   },
-  data() {
+  data () {
     return {
       interval: false
-    };
+    }
   },
   methods: {
-    onClose(index) {
-      this.$store.commit("alert/removeMessage", index);
+    onClose (index) {
+      this.$store.commit('alert/removeMessage', index)
     }
   },
   watch: {
-    hasMessages(status) {
-      if (typeof this.interval === "object") {
-        clearTimeout(this.interval);
-        this.interval = fallse;
+    hasMessages (status) {
+      if (typeof this.interval === 'object') {
+        clearTimeout(this.interval)
+        this.interval = null
       }
       if (status && !this.interval) {
         this.interval = setInterval(() => {
-          this.$store.commit("alert/removeLastMessage");
-        }, 5000);
+          this.$store.commit('alert/removeLastMessage')
+        }, 5000)
       }
     }
   }
-};
+}
 </script>
 <style lang="scss" scoped>
 .wg-alert {

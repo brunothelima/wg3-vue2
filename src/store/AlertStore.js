@@ -1,7 +1,6 @@
 /**
  * Export for the authentication methods for the admin store.
- * Here we have all the necessaries methods necessary to
- * 	authenticate or log out an user
+ * Here we have all the necessaries methods necessary to authenticate or log out an user
  */
 export default {
   namespaced: true,
@@ -13,13 +12,13 @@ export default {
     getMessages: state => state.messages
   },
   mutations: {
-    addMessage(state, payload) {
+    addMessage (state, payload) {
       state.messages.push(payload)
     },
-    removeMessage(state, payload) {
+    removeMessage (state, payload) {
       state.messages.splice(payload, 1)
     },
-    removeLastMessage(state) {
+    removeLastMessage (state) {
       state.messages.shift()
     }
   }

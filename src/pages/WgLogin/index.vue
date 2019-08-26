@@ -1,11 +1,11 @@
 <i18n>
 {
-	"pt": {
+  "pt": {
     "continue": "Você precisa estar logado para continuar"
-	},
-	"en": {
+  },
+  "en": {
     "continue": "You must be logged in to continue"
-	}
+  }
 }
 </i18n>
 
@@ -23,18 +23,18 @@
 </template>
 
 <script>
-import WgContainer from "@/components/WgContainer";
-import WgPageSettings from "@/components/WgPageSettings";
-import WgLoginForm from "./WgLoginForm";
+import WgContainer from '@/components/WgContainer'
+import WgPageSettings from '@/components/WgPageSettings'
+import WgLoginForm from './WgLoginForm'
 
 export default {
-  name: "WgLogin",
+  name: 'WgLogin',
   components: {
     WgContainer,
     WgPageSettings,
     WgLoginForm
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

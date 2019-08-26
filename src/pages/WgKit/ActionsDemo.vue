@@ -1,13 +1,13 @@
 <i18n>
 {
-	"pt": {
-		"title": "Ações especiais",
+  "pt": {
+    "title": "Ações especiais",
     "message": "Mostrar mensagem",
     "demo": "Está é uma mensagem de teste",
     "modal": "Acionar painel de confirmação"
   },
   "en": {
-		"title": "Special actions",
+    "title": "Special actions",
     "message": "Show message",
     "demo": "This is a test message",
     "modal": "Show modal panel"
@@ -28,29 +28,29 @@
 </template>
 
 <script>
-import WgButton from "@/components/WgButton";
-import ModalDemo from "./ModalDemo";
+import WgButton from '@/components/WgButton'
+import ModalDemo from './ModalDemo'
 
 export default {
-  name: "ActionsDemo",
+  name: 'ActionsDemo',
   components: {
     WgButton,
     ModalDemo
   },
-  data() {
+  data () {
     return {
       deleteId: 0
-    };
+    }
   },
   methods: {
-    messageDemo(message) {
-      this.$store.commit("alert/addMessage", this.$i18n.t(message));
+    messageDemo (message) {
+      this.$store.commit('alert/addMessage', this.$i18n.t(message))
     },
-    deleteDemo(id) {
-      this.deleteId = id;
+    deleteDemo (id) {
+      this.deleteId = id
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

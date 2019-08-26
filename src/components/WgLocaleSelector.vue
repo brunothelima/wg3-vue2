@@ -11,29 +11,29 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
-import InputSelect from "@/components/WgForm/inputs/InputSelect";
+import { mapState } from 'vuex'
+import InputSelect from '@/components/WgForm/inputs/InputSelect'
 
 export default {
-  name: "WgLocaleSelector",
+  name: 'WgLocaleSelector',
   components: {
     InputSelect
   },
-  computed: mapState(["locale"]),
+  computed: mapState(['locale']),
   methods: {
-    onChange(locale) {
-      this.$store.commit("setLocale", locale);
+    onChange (locale) {
+      this.$store.commit('setLocale', locale)
     }
   },
   watch: {
     locale: {
       immediate: true,
-      handler(locale) {
-        this.$i18n.locale = locale;
+      handler (locale) {
+        this.$i18n.locale = locale
       }
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

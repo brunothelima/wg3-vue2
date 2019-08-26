@@ -1,43 +1,33 @@
 <template>
   <div class="input-wysiwyg" @click="onClick($event)">
-    <ckeditor
-      :editor="editor"
-      :value="`<p>${i18n.t(placeholder)}</p>` || value"
-      @input="onInput($event)"
-    ></ckeditor>
+    <div ref="editor" id="editor">{{ value || i18n.t(placeholder) }}</div>
   </div>
 </template>
 
 <script>
-import Vue from "vue";
-import InputMixin from "@/mixins/InputMixin.js";
-import CKEditor from "@ckeditor/ckeditor5-vue";
-import BalloonBlockEditor from "@ckeditor/ckeditor5-build-balloon-block";
-
-Vue.use(CKEditor);
+import InputMixin from '@/mixins/InputMixin.js'
+import CKEditor from '@ckeditor/ckeditor5-build-balloon-block'
 
 export default {
-  name: "WgEditor",
+  name: 'WgEditor',
   mixins: [InputMixin],
-  data() {
-    return {
-      editor: BalloonBlockEditor
-    };
-  },
   methods: {
-    onInput(value) {
-      this.$emit("input", value);
-      this.callback("input", value);
+    onInput (value) {
+      this.$emit('input', value)
+      this.callback('input', value)
     },
-    onClick(event) {
-      this.$emit("interaction");
+    onClick (event) {
+      this.$emit('interaction')
     }
+  },
+  mounted () {
+    CKEditor.create(this.$refs.editor)
   }
-};
+}
 </script>
 
 <style lang="scss">
 .input-wysiwyg {
-	margin-bottom: 2em;
+  margin-bottom: 2em;
 }
 </style>

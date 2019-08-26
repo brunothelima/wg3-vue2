@@ -4,6 +4,7 @@
     "buttons": "Botões",
     "colors": "Colors",
     "form": "Formulário",
+    "editor": "Editor",
     "text": "Texto",
     "actions": "Ações especiais",
     "icons": "Icones",
@@ -13,6 +14,7 @@
     "buttons": "Buttons",
     "colors": "Colors",
     "form": "Formulário",
+    "editor": "Editor",
     "text": "Text",
     "actions": "Special Actions",
     "icons": "Icons",
@@ -40,6 +42,10 @@
         <span>{{ $t('form') }}</span>
         <wg-icon id="wg-icon-arrow-right" />
       </router-link>
+      <router-link to="/wg-kit/editor">
+        <span>{{ $t('editor') }}</span>
+        <wg-icon id="wg-icon-arrow-right" />
+      </router-link>
       <router-link to="/wg-kit/text">
         <span>{{ $t('text') }}</span>
         <wg-icon id="wg-icon-arrow-right" />
@@ -61,14 +67,14 @@
 </template>
 
 <script>
-import WgIcon from "@/components/WgIcon";
+import WgIcon from '@/components/WgIcon'
 
 export default {
-  name: "AsideMenu",
+  name: 'AsideMenu',
   components: {
     WgIcon
   }
-};
+}
 </script>
 
 <style lang="scss">

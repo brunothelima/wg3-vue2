@@ -1,18 +1,18 @@
 <i18n>
 {
   "pt": {
-		"header": "Confirmação",
-		"title": "Você tem certeza que quer Excluír este post?",
-		"text": "Excluír post, resultará na retirada deste conteúdo de todas as paginas e widgets. Esta ação não pode ser disfeita",
-		"buttonLeft": "Cancelar",
-		"buttonRight": "Excluír"
+    "header": "Confirmação",
+    "title": "Você tem certeza que quer Excluír este post?",
+    "text": "Excluír post, resultará na retirada deste conteúdo de todas as paginas e widgets. Esta ação não pode ser disfeita",
+    "buttonLeft": "Cancelar",
+    "buttonRight": "Excluír"
   },
   "en": {
-		"header": "Confirmation",
-		"title": "Are you sure you want to delete this post?",
-		"text": "Deleting this post will remove it from all the pages and widgets. This action can not be undone.",
-		"buttonLeft": "Cancel",
-		"buttonRight": "Delete"
+    "header": "Confirmation",
+    "title": "Are you sure you want to delete this post?",
+    "text": "Deleting this post will remove it from all the pages and widgets. This action can not be undone.",
+    "buttonLeft": "Cancel",
+    "buttonRight": "Delete"
   }
 }
 </i18n>
@@ -26,15 +26,15 @@
       :title="$t('title')"
       :text="$t('text')"
       :buttonLeft="{
-				label: $t('buttonLeft'),
-				color: 'x-6',
-				flex: 2,
-			}"
+        label: $t('buttonLeft'),
+        color: 'x-6',
+        flex: 2,
+      }"
       :buttonRight="{
-				label: $t('buttonRight'),
-				color: 'error',
-				flex: 1,
-			}"
+        label: $t('buttonRight'),
+        color: 'error',
+        flex: 1,
+      }"
       @buttonLeftClick="onCancel()"
       @buttonRightClick="onCancel()"
     />
@@ -42,24 +42,24 @@
 </template>
 
 <script>
-import WgModal from "@/components/WgModal";
-import ModalConfirm from "@/components/WgModal/ModalConfirm";
+import WgModal from '@/components/WgModal'
+import ModalConfirm from '@/components/WgModal/ModalConfirm'
 
 export default {
-  name: "WgKit",
+  name: 'WgKit',
   components: {
     WgModal,
     ModalConfirm
   },
-  data() {
+  data () {
     return {
       deleteId: 0
-    };
+    }
   },
   methods: {
-    onCancel(event) {
-      this.$emit("cancel");
+    onCancel (event) {
+      this.$emit('cancel')
     }
   }
-};
+}
 </script>

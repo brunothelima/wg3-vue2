@@ -4,7 +4,7 @@ import { POST } from '@/vendors/js/api'
 /**
  * Export for the authentication methods for the admin store.
  * Here we have all the necessaries methods necessary to
- * 	authenticate or log out an user
+ * authenticate or log out an user
  */
 export default {
   namespaced: true,
@@ -21,22 +21,22 @@ export default {
     }
   },
   actions: {
-    async login({ commit }, data) {
+    async login ({ commit }, data) {
       const res = await POST('auth_user.php', data)
       commit('setUser', res.user)
       commit('setJWT', res.jwt)
     },
-    async logout({ commit }) {
+    async logout ({ commit }) {
       await POST('auth_user.php')
       commit('setUser', {})
       commit('setJWT', '')
     }
   },
   mutations: {
-    setUser(state, payload) {
+    setUser (state, payload) {
       Vue.set(state, 'user', payload)
     },
-    setJWT(state, payload) {
+    setJWT (state, payload) {
       state.jwt = payload
       localStorage.setItem(
         'WG_USER_JWT',

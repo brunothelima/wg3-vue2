@@ -4,7 +4,7 @@
      "title": "Palheta de cores"
   },
   "en": {
-		"title": "Color Palette"
+    "title": "Color Palette"
   }
 }
 </i18n>
@@ -24,22 +24,22 @@
 </template>
 
 <script>
-import PrimaryColors from "./PrimaryColors";
-import SecondaryColors from "./SecondaryColors";
-import GrayishColors from "./GrayishColors";
-import SystemColors from "./SystemColors";
-import Gradient from "./Gradient";
+import PrimaryColors from './PrimaryColors'
+import SecondaryColors from './SecondaryColors'
+import GrayishColors from './GrayishColors'
+import SystemColors from './SystemColors'
+import Gradient from './Gradient'
 
 export default {
-  name: "ColorPallet",
+  name: 'ColorPallet',
   components: {
     PrimaryColors,
     SecondaryColors,
     GrayishColors,
     SystemColors,
-    "css-gradient": Gradient
+    'css-gradient': Gradient
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
