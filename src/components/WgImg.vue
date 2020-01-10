@@ -1,6 +1,8 @@
 <template>
   <figure ref="figure">
-    <img :src="path" ref="img" @load="onLoad($event)" />
+    <picture>
+      <img :src="path" ref="img" @load="onLoad($event)" />
+    </picture>
     <figcaption v-if="$slots.default">
       <slot />
     </figcaption>
